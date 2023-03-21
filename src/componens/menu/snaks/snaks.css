@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: one;
+    src: url(../../../../fonts/DelaGothicOne/DelaGothicOne-Regular.ttf) format(ttf);
+    font-weight: 800;
+    font-style: normal;
+         
+   }
+.skakes{
+    margin: 10px 0px 10px 0px ;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.snakes-item{
+font-family:one;
+    font-size: 50px;
+    text-shadow: 3px 1px 2px rgb(144, 141, 142);
+    text-align: center;
+}
+
+.none {
+    display:none;
+}
+.item{
+    display: flex;
+    border-bottom: 1px solid grey;
+    justify-content: space-between;
+    padding: 5px 5px 5px 5px ;
+}
+.price{
+    flex-basis:55px;
+    color: brown;
+    align-self:flex-end;
+
+}
+.label{
+    width: 300px;
+    padding-top: 8px;
+    font-weight: 500;
+    
+}
+.btn-back{
+    font-size: 30px;
+}
+.qr{
+    width: 40px;
+}
