@@ -16,12 +16,6 @@ const [display_menu,set_display_menu] = useState(true)
 
 const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Напитки"]
 
-  const arr = [
-    {
-      name:"Sergey",
-      age:36
-    }
-  ]
 
 
 
