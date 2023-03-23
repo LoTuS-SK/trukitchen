@@ -23,7 +23,7 @@ const menu_eat = ["Закуски","Салаты","Горячие блюда","�
     }
   ]
 
-const arrst = JSON.stringify(arr)
+
 
 const click =(e)=>{
  
