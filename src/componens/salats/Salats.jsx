@@ -14,7 +14,7 @@ const Salats = () => {
 
 
 
-  const arr = JSON.parse(unescape(queryParameters.get("name")))
+  const arr = JSON.parse(decodeURI(queryParameters.get("name")))
   
   return (
     <div>
