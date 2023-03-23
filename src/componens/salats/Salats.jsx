@@ -12,9 +12,9 @@ const Salats = () => {
 
 //nst str2 = decodeURI(str)
 
+ const str = decodeURI(queryParameters.get("name"))
 
-
-  const arr = JSON.parse(decodeURI(queryParameters.get("name")))
+  const arr = JSON.parse(str)
   
   return (
     <div>
@@ -22,6 +22,7 @@ const Salats = () => {
       {arr.map((el=>(
         <div>{el.name}</div>
       )))}
+      <div>{str}</div>
       
     </div>
   )
