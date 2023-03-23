@@ -11,9 +11,9 @@ const Salats = () => {
   return (
     <div>
       <h1>Заказ</h1>
-      {arr.map(el=>(
+      
         <div>{arr}</div>
-      ))}
+    
       
     </div>
   )
