@@ -6,13 +6,13 @@ const Salats = () => {
 
   const [queryParameters] = useSearchParams()
 
-  const arr = JSON.parse(queryParameters.get("name"))
+  const arr = queryParameters.get("name")
   
   return (
     <div>
       <h1>Заказ</h1>
       {arr.map(el=>(
-        <div>{el.name} - {el.count}</div>
+        <div>{arr}</div>
       ))}
       
     </div>

@@ -58,6 +58,9 @@ function back_snakes(){
   set_display_snakes(false)
 }
 
+function chek(){
+  console.log(query)
+}
 
  const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(chek_list)}`
 //const query2 = `http://localhost:3000/salat?name=${JSON.stringify(chek_list)}`
@@ -77,7 +80,7 @@ function back_snakes(){
         {menu_eat.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
         </div>   
           
-    <div className='qrcode-wrap'>
+    <div className='qrcode-wrap' onClick={chek}>
          <Link to={query}>
                 <QRCode
                     size={256}
