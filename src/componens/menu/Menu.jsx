@@ -62,8 +62,8 @@ function chek(){
   console.log(query)
 }
 
- const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(chek_list)}`
-//const query2 = `http://localhost:3000/salat?name=${JSON.stringify(chek_list)}`
+const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(chek_list)}`
+//const query = `http://localhost:3001/salat?name=${JSON.stringify(chek_list)}`
 
 
   return (
