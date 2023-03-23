@@ -64,11 +64,8 @@ function back_snakes(){
   set_display_snakes(false)
 }
 
-function post(){
-  const query = JSON.stringify(chek_list)
-  console.log(query)
-}
-const query = `/salat?name=${arrst}`
+
+const query = `/salat?name=${JSON.stringify(chek_list)}`
 
 
   return (

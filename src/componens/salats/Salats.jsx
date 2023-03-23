@@ -10,8 +10,10 @@ const Salats = () => {
   
   return (
     <div>
-      <h1>TEST</h1>
-      <h2>{arr[0].name}</h2>
+      <h1>Заказ</h1>
+      {arr.map(el=>(
+        <div>{el.name} - {el.count}</div>
+      ))}
       
     </div>
   )
