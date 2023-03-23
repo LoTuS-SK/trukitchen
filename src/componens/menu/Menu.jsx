@@ -4,7 +4,6 @@ import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
 import Snaks from './snaks/snaks';
 import "../menu/menu.css"
-import logo from "../../img/QR.jpg"
 
 
 
@@ -74,7 +73,7 @@ const query = `/salat?name=${arrst}`
 
   return (
     <>
-  <img className='img' src={logo} alt="img" onClick={post}/>
+  
     <Snaks display={display_snakes} func={add} back={back_snakes}/>
     
     <div className={display_menu?"wrap":"wrap none"}>
