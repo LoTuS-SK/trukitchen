@@ -152,8 +152,8 @@ function back(){
 // }
 
 //const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(parser_list)}`
-const query = `http://localhost:3001/salat?name=${chek_list}`
-
+//const query = `http://localhost:3001/salat?name=${chek_list}`
+const query = "https://truekitchen.netlify.app/"
  
 function display_qr(){
   setqr(false)
