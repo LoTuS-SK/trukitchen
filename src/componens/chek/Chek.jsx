@@ -2,7 +2,7 @@ import React from 'react'
 import { useSearchParams } from "react-router-dom"
 import { snakes } from '../../data/database' 
 
-const Salats = () => {
+const Сhek = () => {
 
   const [queryParameters] = useSearchParams()
 
@@ -34,12 +34,12 @@ const Salats = () => {
     <div>
       <h1>Заказ</h1>
       {pars_url().map((el=>(
-        <div>{el.name}</div>
+        <div>{el.name} - {el.count}</div>
       )))}
-      <div>{str}</div>
+      
       
     </div>
   )
 }
 
-export default Salats
+export default Сhek

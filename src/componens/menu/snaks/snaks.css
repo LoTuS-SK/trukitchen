@@ -31,6 +31,12 @@ font-family:one;
     border-bottom: 1px solid grey;
     justify-content: space-between;
     padding: 5px 5px 5px 5px ;
+    background: none;
+
+}
+
+.item:active{
+    color: aliceblue;
 }
 .price{
     flex-basis:55px;
