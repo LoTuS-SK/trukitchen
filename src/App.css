@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+.chek{
+  position: absolute;
+  top:3px;
+  right: 3px;
+  width: 50px;
 }
 
 .App-logo {
@@ -26,6 +29,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+img{
+  background-color: unset;
 }
 
 @keyframes App-logo-spin {

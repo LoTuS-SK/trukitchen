@@ -2,7 +2,7 @@ import React from 'react'
 import { bake } from '../../../data/database'
 import "../snaks/snaks"
 
-const Bake = ({display,add,back}) => {
+const Bake = ({display,func,back}) => {
   return (
     <>
     <div className={display?"skakes":"snakes none"}>
@@ -10,7 +10,7 @@ const Bake = ({display,add,back}) => {
     <div className='snakes-item'>Печь</div>
     
     {bake.map(el=>(
-        <div className='item' tabIndex="0" onClick={add}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
+        <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
     ))}
     </div>
     </>

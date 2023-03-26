@@ -43,26 +43,26 @@ export const salad = [
 ]
 
 export const soup = [
-    {id:1,name:"Суп из Астраханских раков с обжаренными лангустинами и муссом из Пармезана",price:690,weight:300,section:"супы"},
-    {id:2,name:"Наваристый борщ с дичью и домашней сметаной",price:450,weight:300,section:"супы"},
-    {id:3,name:"Щи из квашеной капусты с лосем",price:390,weight:300,section:"супы"},
-    {id:3,name:"Суп из лесных грибов",price:420,weight:300,section:"супы"},
-    {id:3,name:"Уха из северной рыбы",price:490,weight:300,section:"супы"}
+    {id:37,name:"Суп из Астраханских раков с обжаренными лангустинами и муссом из Пармезана",price:690,weight:300,section:"супы"},
+    {id:38,name:"Наваристый борщ с дичью и домашней сметаной",price:450,weight:300,section:"супы"},
+    {id:39,name:"Щи из квашеной капусты с лосем",price:390,weight:300,section:"супы"},
+    {id:40,name:"Суп из лесных грибов",price:420,weight:300,section:"супы"},
+    {id:41,name:"Уха из северной рыбы",price:490,weight:300,section:"супы"}
     
 ]
 
 export const Bake = [
-    {id:1,name:"Пирог с камчатским крабом",price:990,weight:400,section:"печь"},
-    {id:2,name:"Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком",price:960,weight:420,section:"супы"},
-    {id:3,name:"Пирог с фермерской страчателлой",price:590,weight:400,section:"печь"},
-    {id:4,name:"Беломорский палтус с тыквенным пюре и молодым горошко",price:1340,weight:300,section:"печь"},
-    {id:5,name:"Растомлённая утиная ножка с пюре из сельдерея",price:290,weight:920,section:"печь"},
-    {id:6,name:"Пирог с копчёным оленем на подушке из грибного рагу",price:890,weight:430,section:"печь"},
-    {id:7,name:"Мясо молодого козлёнка с ароматными травами и молодым картофелем",price:1890,weight:400,section:"печь"},
-    {id:8,name:"Гусь с Палехской фермы томлёный с черносливом",price:1290,weight:450,section:"печь"},
-    {id:8,name:"Мозговая косточка из печи",price:370,weight:450,section:"печь"},
-    {id:8,name:"Стерлядь",price:2500,weight:700,section:"печь"},
-    {id:8,name:"Пирог с рапаной",price:790,weight:450,section:"печь"},
+    {id:42,name:"Пирог с камчатским крабом",price:990,weight:400,section:"печь"},
+    {id:43,name:"Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком",price:960,weight:420,section:"супы"},
+    {id:44,name:"Пирог с фермерской страчателлой",price:590,weight:400,section:"печь"},
+    {id:45,name:"Беломорский палтус с тыквенным пюре и молодым горошко",price:1340,weight:300,section:"печь"},
+    {id:46,name:"Растомлённая утиная ножка с пюре из сельдерея",price:290,weight:920,section:"печь"},
+    {id:47,name:"Пирог с копчёным оленем на подушке из грибного рагу",price:890,weight:430,section:"печь"},
+    {id:48,name:"Мясо молодого козлёнка с ароматными травами и молодым картофелем",price:1890,weight:400,section:"печь"},
+    {id:49,name:"Гусь с Палехской фермы томлёный с черносливом",price:1290,weight:450,section:"печь"},
+    {id:50,name:"Мозговая косточка из печи",price:370,weight:450,section:"печь"},
+    {id:51,name:"Стерлядь",price:2500,weight:700,section:"печь"},
+    {id:52,name:"Пирог с рапаной",price:790,weight:450,section:"печь"},
     
 ] 
 
@@ -93,7 +93,7 @@ export const onFire = [
     {id:8,name:"Люля из фермерского ягнёнка",price:890,weight:280,section:"гриль"},
     {id:9,name:"Люля из щуки и Сахалинского гребешка",price:680,weight:280,section:"гриль"},
     {id:10,name:"Морской карась",price:900,weight:300,section:"гриль"},
-    {id:11,name:"Камамбер на гриле с брусничным вареньем",price:2700,weight:300,section:"гриль"},
+    {id:11,name:"Камамбер на гриле с брусничным вареньем",price:690,weight:300,section:"гриль"},
    
 ]
 
@@ -136,6 +136,15 @@ export const sous = [
     {id:3,name:"Перечный",price:150,weight:30,section:"соусы"},
     {id:4,name:"ТОматный",price:150,weight:30,section:"соусы"},
     {id:5,name:"Трюфельный",price:150,weight:30,section:"соусы"},
+]
+
+export const banket = [
+    {id:1,name:"Ассорти солений",price:590,weight:400,section:"банке"},
+    {id:2,name:"Фрутовая тарелка",price:2000,weight:1000,section:"банкет"},
+    {id:3,name:"Овощная тарелка овощей",price:950,weight:500,section:"банкет"},
+    {id:4,name:"Рыбное ассорти",price:1470,weight:300,section:"банкет"},
+    {id:5,name:"Шпажка Креветок на гриле",price:500,weight:100,section:"банкет"},
+    {id:5,name:"Шпажка Гребешов на гриле",price:500,weight:100,section:"банкет"}
 ]
 
 export const Sweets = [

@@ -1,26 +1,29 @@
 import React, { useState } from 'react'
 //import { Link } from "react-router-dom";
-import QRCode from "react-qr-code";
+//import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
 import logo from "../../img/Asset-1.png"
-
+//import Chek from  "../../componens/chek/Chek"
+import chekimg from "../../img/free.png"
 
 import Snaks from './snaks/snaks';
-import Salat from './salats/salat';
+import Salat from './salats/salat'; 
 import Hot from './hot/hot';
 import Soup from "../menu/soup/suop"
 import Onfire from './onfire/onfire';
 import Aqua from './aqua/aqua';
 import Bake from './bake/bake';
 import Garnish from './garnish/garnish';
-//import { Bar } from './bar/bar';
+import List from './list/list';
+import  Bar  from './bar/bar';
+
 
 import "../menu/menu.css"
 //import { snakes } from "../../data/database"
 
 
 
-const Menu = ({disqr,setqr,yes}) => {
+const Menu = ({disqr,setqr,yes,chdis,menu_dis_app}) => {
 
 //const [parser_list,set_parser_list] = useState([])
 const [chek_list,set_chek_list] = useState([])
@@ -33,10 +36,12 @@ const [display_fire,set_display_fire]= useState(false)
 const [display_aqua,set_display_aqua]= useState(false)
 const [display_bake,set_display_bake]= useState(false)
 const [display_Garnish,set_display_Garnish]= useState(false)
+const [disch_chek,set_display_chek] = useState(false)
+const [dispaly_bar,set_display_bar] = useState(false)
 
 
 
-const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Напитки"]
+const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Банкет","Бар"]
 
 
 // function parser1(){
@@ -63,7 +68,7 @@ const menu_eat = ["Закуски","Салаты","Горячие блюда","�
 
 
 const click =(e)=>{
- 
+  
   const target = e.target.textContent
   switch (target) {
     case "Закуски":
@@ -101,6 +106,12 @@ const click =(e)=>{
         set_display_Garnish(true)
         set_display_menu(false)
       break;
+      case "Бар":
+        
+        set_display_menu(false)
+        set_display_bar(true)
+      break;
+  
   
     default:
       break;
@@ -110,7 +121,9 @@ const click =(e)=>{
 }
 
 function add(e){
+  
   const target = e.target.textContent
+  
   
   if (chek_list.length===0){
     let obj = {name:target,count:1}
@@ -145,6 +158,7 @@ function back(){
   set_display_aqua(false)
   set_display_bake(false)
   set_display_Garnish(false)
+  set_display_chek(false)
 }
 
 // function chek(){
@@ -153,20 +167,36 @@ function back(){
 
 //const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(parser_list)}`
 //const query = `http://localhost:3001/salat?name=${chek_list}`
-const query = "https://truekitchen.netlify.app/"
+//const query = "https://truekitchen.netlify.app/"
  
-function display_qr(){
-  setqr(false)
+// function display_qr(){
+//   setqr(false)
+// }
+
+function chektrueDis(){
+  set_display_menu(false)
+  set_display_chek(true)
+  set_display_snakes(false)
+  set_display_salat(false)
+  set_display_hot(false)
+  set_display_soup(false)
+  set_display_fire(false)
+  set_display_aqua(false)
+  set_display_bake(false)
+  set_display_Garnish(false)
+  
 }
 
-
-
+function display_bar_off(){
+  set_display_bar(false)
+}
 
   return (
     <>
    
     
     
+   <img  className='chek' src={chekimg} alt="" onClick={chektrueDis}/>
     <Snaks display={display_snakes} func={add} back={back}/>
     <Salat display={display_salat} func={add} back={back}/>
     <Hot display={display_hot} func={add} back={back}/>
@@ -175,17 +205,19 @@ function display_qr(){
     <Aqua display={display_aqua} func={add} back={back}/>
     <Bake display={display_bake} func={add} back={back}/>
     <Garnish display={display_Garnish} func={add} back={back}/>
-    {/* //<Bar display={display_Garnish} func={add} back={back}/> */}
+    <List display={disch_chek} back={back} list={chek_list}/>
+    <Bar display={dispaly_bar} func={add} back={back} display_off={display_bar_off}/>
+    
     
     <div className={display_menu?"wrap":"wrap none"}>
     <img className='logo' src={logo} alt="" onClick={yes}/>
+   
     
-      
   
         {menu_eat.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
         </div>   
           
-    <div className={disqr?'qrcode-wrap':"qrcode-wrap none"} onClick={display_qr}>
+    {/* <div className={disqr?'qrcode-wrap':"qrcode-wrap none"} onClick={display_qr}>
          
                 <QRCode
                     
@@ -196,7 +228,7 @@ function display_qr(){
                   />
           
           </div>
-    
+     */}
     </>
   )
 }

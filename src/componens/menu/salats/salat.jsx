@@ -2,7 +2,7 @@ import React from 'react'
 import "../snaks/snaks"
 import {salat} from "../../../data/database"
 
-const Salat = ({display,add,back}) => {
+const Salat = ({display,func,back}) => {
   return (
     <>
     <div className={display?"skakes":"snakes none"}>
@@ -10,7 +10,7 @@ const Salat = ({display,add,back}) => {
     <div className='snakes-item'>Салаты</div>
     
     {salat.map(el=>(
-        <div className='item' tabIndex="0" onClick={add}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
+        <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
     ))}
     </div>
     </>

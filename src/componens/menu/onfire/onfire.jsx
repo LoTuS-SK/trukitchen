@@ -2,7 +2,7 @@ import React from 'react'
 import "../snaks/snaks"
 import { onFire } from '../../../data/database'
 
-const Onfire = ({display,back,add}) => {
+const Onfire = ({display,back,func}) => {
   return (
     <>
     <div className={display?"skakes":"snakes none"}>
@@ -10,7 +10,7 @@ const Onfire = ({display,back,add}) => {
     <div className='snakes-item'>Гриль</div>
     
     {onFire.map(el=>(
-        <div className='item' tabIndex="0" onClick={add}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
+        <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
     ))}
     </div>
     </>
