@@ -31,7 +31,7 @@ export const vine = [
     {name:"Грюнер Липко",country:"Россия",type:"белое",producer:"??",price:500},
     {name:"Семейный Резерв Сикоры Рислинг",country:"Россия",type:"белое",producer:"симпл",price:4700},
     {name:"Бланш Де Моникор Бордо",country:"Франция",type:"белое",producer:"тре бикьери",price:3700},
-    {name:"Мюре Гевюрцтраминер Синьятюр",country:"Франция",type:"белое",producer:"классика",price:500}, 
+    // {name:"Мюре Гевюрцтраминер Синьятюр",country:"Франция",type:"белое",producer:"классика",price:500}, 
     {name:"Бланш Де Моникор Бордо",country:"Франция",type:"белое",producer:"тре бикьери",price:3700},   
     {name:"Шабли Домэн де Маланд",country:"Франция",type:"белое",producer:"вининком",price:4500},
     {name:"Сансер Блан Кюве Женез",country:"Франция",type:"белое",producer:"классика",price:6700},
@@ -126,6 +126,7 @@ export const vine = [
     {name:"Вентискуэро Грей Сира",country:"чили",type:"красное",producer:"классика",price:4200},
     {name:"Монтес Альфа Карменер",country:"чили",type:"красное",producer:"классика",price:4900},
     {name:"Макс резерва Пино Нуар",country:"чили",type:"красное",producer:"симпл",price:6500},
+    {name:"Монтес лимитед селекшен",country:"чили",type:"белое",producer:"симпл",price:6500},
     {name:"Монтес Альфа Каберне-Совиньон, Мерло",country:"чили",type:"красное",producer:"симпл",price:15500},
     {name:"Тиефганг Шпетбургундер Калкштейн",country:"Германия",type:"красное",producer:"вайнстудио",price:2900},
     {name:"Вайнгут Хайилингер Пино Менье Резерв",country:"Германия",type:"красное",producer:"классика",price:3900},
@@ -144,5 +145,6 @@ export const vine = [
     {name:"Казал Гарсия Винью Верда",country:"Португалия",type:"розовое",producer:"классика",price:2500},
     {name:"Финка Софениа Альтосур Мальбек Розе",country:"Аргентина",type:"розовое",producer:"вайнстудио",price:2700},
     {name:"Оттелла Розес",country:"Италия",type:"розовое",producer:"???",price:4700},
+    {name:"Кореника И Москон Мальвазия Словенская Истра, Словения",country:"Другие страны",type:"белое",producer:"???",price:4500},
 
 ]

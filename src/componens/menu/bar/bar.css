@@ -5,6 +5,10 @@
     font-style: normal;
          
    }
+   *{
+    box-sizing: border-box;
+   }
+   
    .menu-items{
     font-family:one;
     font-size: 50px;
@@ -22,4 +26,26 @@
     display: flex;
    flex-direction: column;
    align-items: center;
+}
+.vine-items{
+    display: flex;
+    justify-content: space-between;
+
+}
+.h2{
+    color:crimson;
+    align-self:flex-end;
+
+}
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+.items{
+    width: 70%;
+    margin-top: 8px;
+}
+.w_wr_vine{
+    padding-left: 8px;
+    padding-right: 8px;
 }
