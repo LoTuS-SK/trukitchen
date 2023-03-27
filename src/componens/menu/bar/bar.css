@@ -5,6 +5,14 @@
     font-style: normal;
          
    }
+
+   @font-face {
+    font-family: bolt;
+    src: url(../../../../fonts/Dihjauti/Dihjauti-Bold.otf) format(ttf);
+    font-weight: 800;
+    font-style: normal;
+         
+   }
    *{
     box-sizing: border-box;
    }
@@ -35,6 +43,7 @@
 .h2{
     color:crimson;
     align-self:flex-end;
+    font-family:bolt;
 
 }
 h2{
@@ -44,6 +53,7 @@ h2{
 .items{
     width: 70%;
     margin-top: 8px;
+    font-family:bolt
 }
 .w_wr_vine{
     padding-left: 8px;
