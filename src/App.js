@@ -4,7 +4,7 @@ import Menu from "./componens/menu/Menu";
 import {Routes,Route} from 'react-router-dom';
 import Chek from "./componens/chek/Chek"
 import { useState } from 'react';
-import chekimg from "./img/free.png"
+//import chekimg from "./img/free.png"
 
 
 
@@ -12,7 +12,7 @@ function App() {
   
   const[disqr,set_disqr]=useState(true)
   const[dis_ch,set_disch]=useState(false)
-  const[menu_dis_app,set_menu_dis_app]=useState(true)
+  
 
   function setqr(bol){
     set_disqr(bol)
@@ -25,11 +25,7 @@ function App() {
     set_disch(false)
   }
 
-  function chektrueDis(){
-    set_disch(true)
-    set_menu_dis_app(false)
-  }
-
+  
 
   
   return (
@@ -43,7 +39,7 @@ function App() {
     yes={yes} 
     chdis={dis_ch} 
     chsetdis={chsetdis}
-    menu_dis_app={menu_dis_app}
+    
     />} />
       
       <Route path={"menu"} element={<Menu/>} />

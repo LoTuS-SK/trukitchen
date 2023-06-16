@@ -5,7 +5,7 @@ import strelka from "../../../png/strelka.png"
 import Vine from "./vine"
 import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 
 
 
