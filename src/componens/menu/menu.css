@@ -104,3 +104,14 @@ input{
 .none {
     display: none;
 }
+
+.wrap_img_menu {
+    display: flex;
+    
+    
+   
+}
+.wrap_img_menu img{
+    width: 20%;
+
+}

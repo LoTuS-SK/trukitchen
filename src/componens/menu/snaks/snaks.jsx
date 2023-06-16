@@ -1,5 +1,6 @@
 import React from 'react'
 import { snakes } from "../../../data/database"
+import strelka from "../../../png/strelka.png"
 import "../snaks/snaks.css"
 
 
@@ -10,7 +11,7 @@ const Snaks = ({display,func,back}) => {
     <>
     
     <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
+    <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
     <div className='snakes-item'>Закуски</div>
     {snakes.map(el=>(
         <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>

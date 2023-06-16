@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       
-    <img  className='chek' src={chekimg} alt="" onClick={chektrueDis}/>
+    
   
     <Routes>
     <Route index element = {<Menu disqr={disqr} 
@@ -47,7 +47,7 @@ function App() {
     />} />
       
       <Route path={"menu"} element={<Menu/>} />
-      <Route path="/chek" element={<Chek/>} />
+      <Route path="chek" element={<Chek/>} />
      
     </Routes>
                  

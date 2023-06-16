@@ -34,6 +34,12 @@ font-family:one;
     background: none;
 
 }
+.item_pal{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    margin:0px 5px 0px 5px;
+}
 
 .item:active{
     color: aliceblue;
@@ -44,12 +50,30 @@ font-family:one;
     align-self:flex-end;
 
 }
+.price-pl{
+    
+    color: brown;
+    align-self:flex-end;
+    padding: 0px 0px 8px 0px;
+    
+
+}
 .label{
     width: 300px;
     padding-top: 8px;
     font-weight: 500;
     
 }
+
+.label:active{
+    color: aliceblue;
+  
+}
+
+
+
+
+
 .btn-back{
     font-size: 30px;
 }

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
 import logo from "../../img/Asset-1.png"
 //import Chek from  "../../componens/chek/Chek"
-import chekimg from "../../img/free.png"
+import chekimg from "../../png/list.png"
 
 import Snaks from './snaks/snaks';
 import Salat from './salats/salat'; 
@@ -14,11 +14,13 @@ import Onfire from './onfire/onfire';
 import Aqua from './aqua/aqua';
 import Bake from './bake/bake';
 import Garnish from './garnish/garnish';
-import List from './list/list';
+import Sweets from './sweets/sweets'; 
+
 import  Bar  from './bar/bar';
 
 
 import "../menu/menu.css"
+import { useDispatch } from 'react-redux';
 //import { snakes } from "../../data/database"
 
 
@@ -26,7 +28,7 @@ import "../menu/menu.css"
 const Menu = ({disqr,setqr,yes,chdis,menu_dis_app}) => {
 
 //const [parser_list,set_parser_list] = useState([])
-const [chek_list,set_chek_list] = useState([])
+
 const [display_snakes,set_display_snakes ] = useState(false)
 const [display_salat,set_display_salat] =useState(false)
 const [display_menu,set_display_menu] = useState(true)
@@ -36,12 +38,12 @@ const [display_fire,set_display_fire]= useState(false)
 const [display_aqua,set_display_aqua]= useState(false)
 const [display_bake,set_display_bake]= useState(false)
 const [display_Garnish,set_display_Garnish]= useState(false)
-const [disch_chek,set_display_chek] = useState(false)
 const [dispaly_bar,set_display_bar] = useState(false)
+const [dispaly_sweets,set_display_sweets] = useState(false)
 
+const dispath = useDispatch()
 
-
-const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Банкет","Бар"]
+const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Банкет","Бар",]
 
 
 // function parser1(){
@@ -70,6 +72,9 @@ const menu_eat = ["Закуски","Салаты","Горячие блюда","�
 const click =(e)=>{
   
   const target = e.target.textContent
+  const url = encodeURI(target)
+  console.log(url)
+  
   switch (target) {
     case "Закуски":
       set_display_snakes(true)
@@ -111,6 +116,12 @@ const click =(e)=>{
         set_display_menu(false)
         set_display_bar(true)
       break;
+      case "Десерты":
+        set_display_sweets(true)
+        set_display_menu(false)
+        
+      break;
+  
   
   
     default:
@@ -123,29 +134,9 @@ const click =(e)=>{
 function add(e){
   
   const target = e.target.textContent
-  
-  
-  if (chek_list.length===0){
-    let obj = {name:target,count:1}
-    set_chek_list([obj])
-    console.log(chek_list)
-  }
-  console.log(chek_list)
+  console.log(target)
+  dispath({type:"add",payload:target})
 
-
-
-if (chek_list.length>=1){
-  
-  if(chek_list.some(el=>el.name === target)){
-    let count = chek_list[chek_list.findIndex(el=>el.name===target)].count
-    chek_list[chek_list.findIndex(el=>el.name===target)].count=count+1
-    set_chek_list(chek_list)
-  } else
-  {
-    let obj = {name:target,count:1}
-    set_chek_list([obj,...chek_list])
-  }
-}
 }
 
 function back(){ 
@@ -158,7 +149,9 @@ function back(){
   set_display_aqua(false)
   set_display_bake(false)
   set_display_Garnish(false)
-  set_display_chek(false)
+ 
+  set_display_bar(false)
+  set_display_sweets(false)
 }
 
 // function chek(){
@@ -173,30 +166,23 @@ function back(){
 //   setqr(false)
 // }
 
-function chektrueDis(){
-  set_display_menu(false)
-  set_display_chek(true)
-  set_display_snakes(false)
-  set_display_salat(false)
-  set_display_hot(false)
-  set_display_soup(false)
-  set_display_fire(false)
-  set_display_aqua(false)
-  set_display_bake(false)
-  set_display_Garnish(false)
-  
-}
+
 
 function display_bar_off(){
   set_display_bar(false)
 }
+
+function display_bar_on(){
+  set_display_bar(true)
+}
+
 
   return (
     <>
    
     
     
-   <img  className='chek' src={chekimg} alt="" onClick={chektrueDis}/>
+   <Link to="/chek"><img  className='chek' src={chekimg} alt=""/></Link>
     <Snaks display={display_snakes} func={add} back={back}/>
     <Salat display={display_salat} func={add} back={back}/>
     <Hot display={display_hot} func={add} back={back}/>
@@ -205,8 +191,9 @@ function display_bar_off(){
     <Aqua display={display_aqua} func={add} back={back}/>
     <Bake display={display_bake} func={add} back={back}/>
     <Garnish display={display_Garnish} func={add} back={back}/>
-    <List display={disch_chek} back={back} list={chek_list}/>
-    <Bar display={dispaly_bar} func={add} back={back} display_off={display_bar_off}/>
+    <Sweets display={dispaly_sweets} func={add} back={back}/>
+    
+    <Bar display={dispaly_bar} func={add} back={back} display_off={display_bar_off} display_on={display_bar_on} />
     
     
     <div className={display_menu?"wrap":"wrap none"}>

@@ -2,6 +2,7 @@ import React from 'react'
 import "../snaks/snaks"
 import { aqua } from '../../../data/database'
 
+
 const Aqua = ({display,func,back}) => {
   return (
     <>

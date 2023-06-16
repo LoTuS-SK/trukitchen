@@ -1,13 +1,17 @@
 import React from 'react'
-import "../snaks/snaks"
+import strelka from "../../../png/strelka.png"
+import "./salat.css"
 import {salat} from "../../../data/database"
+
 
 const Salat = ({display,func,back}) => {
   return (
     <>
-    <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
-    <div className='snakes-item'>Салаты</div>
+    
+    <div className={display?"salat":"none"}>
+    <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
+    
+    <div className={display?'snakes-item':"none"} >Салаты</div>
     
     {salat.map(el=>(
         <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
