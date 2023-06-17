@@ -25,7 +25,7 @@ import { useDispatch } from 'react-redux';
 
 
 
-const Menu = ({disqr,setqr,yes,chdis,menu_dis_app}) => {
+const Menu = () => {
 
 //const [parser_list,set_parser_list] = useState([])
 
@@ -165,7 +165,9 @@ function back(){
 // function display_qr(){
 //   setqr(false)
 // }
-
+function yes(){
+  dispath({type:"del"})
+}
 
 
 function display_bar_off(){

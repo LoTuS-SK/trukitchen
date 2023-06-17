@@ -31,8 +31,11 @@ const sum = list.reduce(function(sum,num){
   return (num.price * num.count) + sum
 },0)
 
-function click(){
-  console.log(sum)
+function click(e){
+  const count = "Ввидите количество"
+  
+  const pr = prompt("",count)
+  console.log(pr)
 }
   
   return (

@@ -67,7 +67,7 @@ const Bar = ({display,display_off,display_on,back}) => {
             <div className='menu-items' onClick={bar_click}>{el}</div>
         )))}
         <div className='wrap_img_bar'><img src={imgbar} alt="" /></div>
-        <div className='btn-back' onClick={back}><img src={strelka} alt="" /></div>
+        <div className='btn-back' onClick={back}><img className="strelka"src={strelka} alt="" /></div>
     </div>
     <Vine display={display_vine} back={backvine} add={add}/>
     <Barnapitki display = {display_bar} back={backvine} add={add}/>

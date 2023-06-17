@@ -4,7 +4,7 @@ import * as bar from "../data/basebar"
 
 const arreat = []
 const arrbar = []
-const chek = []
+let chek = []
 
 for (const property in eat) {
     
@@ -125,7 +125,10 @@ const cheking = (state = chek,action) =>{
             return state
 
         case "del":
-            return state    
+            
+                chek = [];    
+                console.log(chek)
+            return state = chek   
             
         default:
             return state
