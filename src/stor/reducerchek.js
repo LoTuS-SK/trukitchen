@@ -32,7 +32,7 @@ const cheking = (state = chek,action) =>{
                 const ch = arreat.filter(el=>el.name===add)
                 ch[ch.findIndex(el=>el.name===add)].count = 1
                 chek.push(...ch)
-                console.log(chek)
+                
                 return state = chek
             }
 

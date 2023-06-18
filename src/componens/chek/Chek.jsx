@@ -3,7 +3,7 @@ import './chek.css'
 // import { useSearchParams } from "react-router-dom"
 // import { snakes } from '../../data/database'
 import { useSelector , useDispatch} from 'react-redux'
-import menu from "../../png/menu.png"
+import menu from "../../png/menu2.png"
 import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 
@@ -81,7 +81,7 @@ function click2(e) {
        
       </Link>
       <div className="wr_logo_ch"><img className='logo-ch-2' src={logo} alt=""/></div>
-      {list2.length>0 && <h1 className='zakaz'>Заказ</h1>}
+      {list2.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
       <div className="test">{list2.map(state=>(
         <div className='list_ch'>
            <div className='name' onClick={click2}>{state.name}</div>

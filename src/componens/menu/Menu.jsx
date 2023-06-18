@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 // import Burger from '../burger/Burger';
 import logo from "../../img/Asset-1.png"
 //import Chek from  "../../componens/chek/Chek"
-import chekimg from "../../png/list.png"
-
+import chekimg from "../../png/kor.png"
+import { useSelector } from 'react-redux'
 import Snaks from './snaks/snaks';
 import Salat from './salats/salat'; 
 import Hot from './hot/hot';
@@ -27,7 +27,7 @@ import { useDispatch } from 'react-redux';
 
 const Menu = () => {
 
-//const [parser_list,set_parser_list] = useState([])
+const [count,setcount] = useState(0)
 
 const [display_snakes,set_display_snakes ] = useState(false)
 const [display_salat,set_display_salat] =useState(false)
@@ -128,15 +128,30 @@ const click =(e)=>{
       break;
   }
   
-  console.log(typeof(e.target))
+  
 }
 
 function add(e){
   
   const target = e.target.textContent
-  console.log(target)
+  
+ 
   dispath({type:"add",payload:target})
-
+  
+  if(list3.length===1){
+    setcount(list3[0].count)
+    } 
+    if(list3.length>1){
+     const num = list3.reduce(function(sum,num){
+      return num.count + sum
+     },0)
+      
+      setcount(num)
+      } 
+        
+    
+  
+  
 }
 
 function back(){ 
@@ -168,6 +183,8 @@ function back(){
 function yes(){
   dispath({type:"del"})
 }
+const list3 = useSelector(state => state.chek)
+console.log(list3)
 
 
 function display_bar_off(){
@@ -183,8 +200,10 @@ function display_bar_on(){
     <>
    
     
-    
-   <Link to="/chek"><img  className='chek' src={chekimg} alt=""/></Link>
+   
+   <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
+   {list3.length>0&&<div className="cir">{count}</div>}
+   </Link>
     <Snaks display={display_snakes} func={add} back={back}/>
     <Salat display={display_salat} func={add} back={back}/>
     <Hot display={display_hot} func={add} back={back}/>
