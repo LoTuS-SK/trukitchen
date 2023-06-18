@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 //import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
@@ -22,6 +22,7 @@ import  Bar  from './bar/bar';
 import "../menu/menu.css"
 import { useDispatch } from 'react-redux';
 //import { snakes } from "../../data/database"
+
 
 
 
@@ -137,7 +138,7 @@ function add(e){
   
  
   dispath({type:"add",payload:target})
-  
+ 
   if(list3.length===1){
     setcount(list3[0].count)
     } 
@@ -150,6 +151,9 @@ function add(e){
       } 
         
     
+
+
+ 
   
   
 }
@@ -195,6 +199,21 @@ function display_bar_on(){
   set_display_bar(true)
 }
 
+useEffect(()=>{
+  if(list3.length===1){
+    setcount(list3[0].count)
+    } 
+    if(list3.length>1){
+     const num = list3.reduce(function(sum,num){
+      return num.count + sum
+     },0)
+      
+      setcount(num)
+      } 
+})
+
+
+
 
   return (
     <>
@@ -202,7 +221,7 @@ function display_bar_on(){
     
    
    <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
-   {list3.length>0&&<div className="cir">{count}</div>}
+   {list3.length>0 && <div className="cir">{count}</div>}
    </Link>
     <Snaks display={display_snakes} func={add} back={back}/>
     <Salat display={display_salat} func={add} back={back}/>

@@ -6,6 +6,7 @@ import { useSelector , useDispatch} from 'react-redux'
 import menu from "../../png/menu2.png"
 import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
+import send from "../../png/send.png"
 
 
 const Сhek = () => {
@@ -69,6 +70,24 @@ function click2(e) {
   }
 
 
+const message  = JSON.stringify(list)
+
+const bot = {
+  token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
+  chatID:"",
+  name:"t.me/chikentruebot."
+}
+
+
+
+
+function send2(){
+ console.log("yes")
+
+ fetch(`https://api.telegram.org/bot6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA/sendMessage?chat_id=-985566494&text=${message}`,{method:"GET"})
+
+
+}
 
 
 
@@ -92,7 +111,7 @@ function click2(e) {
       {list2.length>0 && <div className="acc"><span className='sum'>Итого: {sum2} ₽</span></div>}
       {list2.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>}
       </div>
-      
+      <img src={send} alt="" className='menu-back' onClick={send2}/>
     </div>
   )
 }
