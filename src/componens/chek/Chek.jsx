@@ -89,7 +89,8 @@ function click2(e) {
            <div className='prise'><div>{state.count * state.price} ₽</div></div>      
         </div> 
       ))}
-      {list2.length>0 && <div className="acc"><span className='sum'>Итого -{sum2} ₽</span></div>}
+      {list2.length>0 && <div className="acc"><span className='sum'>Итого: {sum2} ₽</span></div>}
+      {list2.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>}
       </div>
       
     </div>
