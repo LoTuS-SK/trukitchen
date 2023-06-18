@@ -72,11 +72,11 @@ function click2(e) {
 
 const message  = JSON.stringify(list)
 
-const bot = {
-  token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
-  chatID:"",
-  name:"t.me/chikentruebot."
-}
+// const bot = {
+//   token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
+//   chatID:"",
+//   name:"t.me/chikentruebot."
+// }
 
 
 
