@@ -210,7 +210,7 @@ useEffect(()=>{
       
       setcount(num)
       } 
-},[])
+},[list3])
 
 
 
