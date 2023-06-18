@@ -33,7 +33,7 @@ const cheking = (state = chek,action) =>{
                 ch[ch.findIndex(el=>el.name===add)].count = 1
                 chek.push(...ch)
                 console.log(chek)
-                return state
+                return state = chek
             }
 
             if (eat&&chek.length>=1) {
@@ -53,7 +53,7 @@ const cheking = (state = chek,action) =>{
 
 
                 console.log(chek)
-                return state
+                return state = chek
             }
 
 
@@ -70,7 +70,7 @@ const cheking = (state = chek,action) =>{
                 ch[ch.findIndex(el=>el.name===add)].count = 1
                 chek.push(...ch)
                 console.log(ch)
-                return state
+                return state = chek
             }
             if (bar&&chek.length>=1) {
                 if(chek.some(chek=>chek.name===add)){
@@ -86,7 +86,7 @@ const cheking = (state = chek,action) =>{
                 }
 
 
-                return state
+                return state = chek
 
 
             }
@@ -96,7 +96,7 @@ const cheking = (state = chek,action) =>{
                 ch[ch.findIndex(el=>el.name===add)].count = 1
                 chek.push(...ch)
                 console.log(ch)
-                return state
+                return state = chek
             }
             if (vine2&&chek.length>=1) {
                 if(chek.some(chek=>chek.name===add)){
@@ -112,7 +112,7 @@ const cheking = (state = chek,action) =>{
                 }
 
 
-                return state
+                return state = chek
 
 
             }
@@ -125,10 +125,26 @@ const cheking = (state = chek,action) =>{
             return state
 
         case "del":
-            
-                chek = [];    
-                console.log(chek)
-            return state = chek   
+            chek = [];    
+            console.log(chek)
+        return state = chek   
+
+        case "delone":
+        const delone = action.payload
+        state.forEach((el)=>{
+            if(el.name===delone){
+                el.count = el.count -1 
+            }
+        })
+        
+        return state
+        
+        
+        case "del-all":
+                const del = action.payload
+                state = del
+        
+        return state    
             
         default:
             return state

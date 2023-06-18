@@ -15,7 +15,7 @@ export const Alobar = ({display,back,add}) => {
         <div className='btn-back' onClick={back}>←</div>
       <h1 className='bar_h'>Настойки</h1>
       {tincture.map(el=>(
-        <div className='item'><span className='label'>{el.name}</span>
+        <div className='item'><span className='label' onClick={add}>{el.name}</span>
         <span className='price'>{el.volume} мл /</span>
         <span className='price'>{el.price} ₽</span>
         </div>
