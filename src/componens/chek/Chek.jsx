@@ -83,7 +83,7 @@ const bot = {
 
 function send2(){
  //console.log("yes")
- alert("Ваш заказ отправлен")
+ 
  animesend()
  let message = ""
 
