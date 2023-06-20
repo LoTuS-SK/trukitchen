@@ -24,6 +24,25 @@
 .menu-back{
     width: 50px;
 }
+
+.send{
+    width: 60px;
+    margin:15px auto;
+    
+}
+
+.send_active{
+    animation-name: send;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+.wrap_send{
+    text-align: center;
+}
+
+
 .list_ch{
     position: relative;
     animation-name: circle;
@@ -113,3 +132,14 @@
         opacity: 1;
     }
     }
+
+    @keyframes send{
+        0%{
+            opacity: 1;
+            
+        }
+        100%{
+            opacity: 0;
+            transform:translate(200px);
+        }
+        }

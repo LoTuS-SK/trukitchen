@@ -70,25 +70,41 @@ function click2(e) {
   }
 
 
-const message  = JSON.stringify(list)
 
-// const bot = {
-//   token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
-//   chatID:"",
-//   name:"t.me/chikentruebot."
-// }
+
+const bot = {
+  token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
+  chatID:"-985566494",
+  name:"t.me/chikentruebot."
+}
 
 
 
 
 function send2(){
- console.log("yes")
+ //console.log("yes")
+ alert("Ваш заказ отправлен")
+ animesend()
+ let message = ""
 
- fetch(`https://api.telegram.org/bot6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA/sendMessage?chat_id=-985566494&text=${message}`,{method:"GET"})
+ list.forEach(element=>{
+  message += `${element.name} - ${element.count} `
+  message +='                                           '
+ })
+ //const message  = JSON.stringify(list)
+  fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatID}&text=${message}`,{method:"GET"})
 
 
 }
 
+const [activ,setactiv]= useState(true) 
+function animesend(){
+  if(activ) {
+    setactiv(false)
+    setTimeout(()=>setactiv(true),1000)
+  } 
+  
+}
 
 
 
@@ -111,7 +127,9 @@ function send2(){
       {list2.length>0 && <div className="acc"><span className='sum'>Итого: {sum2} ₽</span></div>}
       {list2.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>}
       </div>
-      <img src={send} alt="" className='menu-back' onClick={send2}/>
+      {list2.length>0 && <div className='wrap_send'>
+        <img src={send} alt="" className={activ?'send':"send send_active"} onClick={send2}/> </div>
+        }
     </div>
   )
 }
