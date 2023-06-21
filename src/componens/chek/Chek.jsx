@@ -21,7 +21,7 @@ const Сhek = () => {
  
   
   const [list3,setlist] = useState([])
-  const [sum2,setsum] = useState(0)
+  //const [sum2,setsum] = useState(0)
   const [ru,setru] = useState(true)
   
   

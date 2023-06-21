@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 //import Chek from  "../../componens/chek/Chek"
 import chekimg from "../../png/kor.png"
-import  lang_img from "../../png/language.png"
+//import  lang_img from "../../png/language.png"
 import { useSelector } from 'react-redux'
 import Snaks from './snaks/snaks';
 import Salat from './salats/salat'; 
@@ -59,7 +59,7 @@ useEffect(()=>{
   if (lean==="en"){
     setmenulan(menu_eat2)
   }
-},[])
+},[lean])
 
 
 // function parser1(){
@@ -88,8 +88,8 @@ useEffect(()=>{
 const click =(e)=>{
   
   const target = e.target.textContent
-  const url = encodeURI(target)
-  console.log(url)
+  //const url = encodeURI(target)
+ 
   
   switch (target) {
     case "Закуски":
@@ -282,7 +282,8 @@ useEffect(()=>{
           setcount(num)
           } 
 
-},[count])
+      
+      },[count,list3,list_en])
 
 
 
