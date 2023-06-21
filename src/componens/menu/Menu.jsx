@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useMemo} from 'react'
 import { Link } from "react-router-dom";
 //import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
@@ -47,8 +47,8 @@ console.log(lean)
 
 
 
-const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Бар",]
-const menu_eat2 = ["Snacks","Salads","Hot dishes","Soups","Grill","Aquarium","Bake","Side dishes","Desserts","Bar",]
+const menu_eat = useMemo(()=> ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Бар",],[])
+const menu_eat2 = useMemo(()=>["Snacks","Salads","Hot dishes","Soups","Grill","Aquarium","Bake","Side dishes","Desserts","Bar",],[])
 
 const [menu_lan,setmenulan] = useState(menu_eat) 
 
