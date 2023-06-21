@@ -14,24 +14,24 @@ export const Alobar = ({display,back,add}) => {
     <div className={display?"barwarp":"barwarap none"}>
         <div className='btn-back' onClick={back}>←</div>
       <h1 className='bar_h'>Настойки</h1>
-      {tincture.map(el=>(
-        <div className='item'><span className='label' onClick={add}>{el.name}</span>
+      {tincture.map((el,index)=>(
+        <div className='item' key={index}><span className='label' onClick={add}>{el.name}</span>
         <span className='price'>{el.volume} мл /</span>
         <span className='price'>{el.price} ₽</span>
         </div>
         ))}
 
     <h1 className='bar_h'>Виски</h1>
-      {whisky.map(el=>(
-        <div className='item'><span className='label' onClick={add}>{el.name}</span>
+      {whisky.map((el,index)=>(
+        <div className='item' key={index}><span className='label' onClick={add}>{el.name}</span>
         <span className='price'>{el.volume} мл /</span>
         <span className='price'>{el.price} ₽</span>
         </div>
         ))}
       
         <h1 className='bar_h'>Коньяк</h1>
-        {Cognac.map(el=>(
-          <div className='item'><span className='label' onClick={add}>{el.name}</span>
+        {Cognac.map((el,index)=>(
+          <div className='item' key={index} ><span className='label' onClick={add}>{el.name}</span>
           <span className='price'>{el.volume} мл /</span>
           <span className='price'>{el.price} ₽</span>
           </div>

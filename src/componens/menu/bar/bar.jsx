@@ -63,8 +63,8 @@ const Bar = ({display,display_off,display_on,back}) => {
   return (
     <>
     <div className={display?"wrap_bar_1":"wrap_bar_1 none"}>
-        {bar_menu.map((el=>(
-            <div className='menu-items' onClick={bar_click}>{el}</div>
+        {bar_menu.map(((el,index)=>(
+            <div className='menu-items' onClick={bar_click} key={index}>{el}</div>
         )))}
         <div className='wrap_img_bar'><img src={imgbar} alt="" /></div>
         <div className='btn' onClick={back}><img className="strelka"src={strelka} alt="" /></div>

@@ -21,16 +21,16 @@ for (const property in eat) {
 
 const cheking = (state = chek,action) =>{
     switch (action.type) {
-        case "add":
+        case "add_en":
             const add = action.payload
-            const eat = arreat.some(some=>some.name===add)
+            const eat = arreat.some(some=>some.name_en===add)
             const bar = arrbar.some(some=>some.name===add)
             const vine2 = vine.some(some=>some.name===add)
             
             
             if (eat&&chek.length===0) {
-                const ch = arreat.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = arreat.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 
                 return state = chek
@@ -39,15 +39,15 @@ const cheking = (state = chek,action) =>{
             if (eat&&chek.length>=1) {
                 //const ch = chek.filter(el=>el.name===add)
                 
-                if(chek.some(chek=>chek.name===add)){
+                if(chek.some(chek=>chek.name_en===add)){
                     
-                    const count = chek[chek.findIndex(el=>el.name===add)].count
-                    chek[chek.findIndex(el=>el.name===add)].count = count + 1
+                    const count = chek[chek.findIndex(el=>el.name_en===add)].count
+                    chek[chek.findIndex(el=>el.name_en===add)].count = count + 1
                     
                     
                 } else {
-                const ch = arreat.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = arreat.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 }
 
@@ -124,15 +124,15 @@ const cheking = (state = chek,action) =>{
             
             return state
 
-        case "del":
+        case "delone":
             chek = [];    
             console.log(chek)
         return state = chek   
 
-        case "delone":
+        case "delone_en":
         const delone = action.payload
         state.forEach((el)=>{
-            if(el.name===delone){
+            if(el.name_en===delone){
                 el.count = el.count -1 
             }
         })
@@ -140,11 +140,11 @@ const cheking = (state = chek,action) =>{
         return state
         
         
-        case "del-all":
+        case "del-all2":
                 const del = action.payload
-                
+                state = del
         
-        return state = del  
+        return state    
             
         default:
             return state

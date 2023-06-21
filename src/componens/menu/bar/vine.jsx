@@ -3,6 +3,7 @@ import "./bar.css"
 import vine from "../../../png/wine.png"
 import W_VINE from './w_vine'
 import R_VINE from "./r_vine"
+import strelka from "../../../png/strelka.png"
 
 
 const Vine = ({display,back,add}) => {
@@ -45,7 +46,8 @@ function back1(){
                 <div className='wrap_img_vine'>
                     <img src={vine} alt="" />
                 </div>
-            <div className='btn-back' onClick={back}>←</div>
+            {/* <div className='btn-back' onClick={back}>←</div> */}
+            <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
         </div> 
         <W_VINE display ={w_vine_dis} back={back1} add={add}/>
         <R_VINE display ={r_vine_dis} back={back1} add={add}/>

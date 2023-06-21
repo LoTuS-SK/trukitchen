@@ -13,8 +13,8 @@ const Salat = ({display,func,back}) => {
     
     <div className={display?'snakes-item':"none"} >Салаты</div>
     
-    {salat.map(el=>(
-        <div className='item' tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
+    {salat.map((el,index)=>(
+        <div className='item' key={index} tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
     ))}
     </div>
     </>

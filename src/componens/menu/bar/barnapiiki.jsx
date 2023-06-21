@@ -15,7 +15,7 @@ export const Barnapitki = ({display,back,add}) => {
     <div className='btn-back' onClick={back}>←</div>
       <h1 className='bar_h'>Кофе</h1>
       {coffe.map(el=>(
-        <div className='item'><span className='label' onClick={add}>{el.name}</span>
+        <div className='item'><span className='label' key={el.id} onClick={add}>{el.name}</span>
         <span className='price'>{el.price} ₽</span>
         </div>
       ))}

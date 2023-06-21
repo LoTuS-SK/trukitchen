@@ -9,8 +9,8 @@ const W_VINE = ({display,back,add}) => {
     return (
     <div className={display?"w_wr_vine":"w_wr_vine none"}>
     <h2 className='h2'>ВИНА ПО БОКАЛАМ </h2>
-    {vine.filter(el=>(el.price<1000)&&(el.type==="белое")).map(el=>(
-        <div className='vine-items'><div className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
+    {vine.filter(el=>(el.price<1000)&&(el.type==="белое")).map((el,index)=>(
+        <div className='vine-items' key={index}><div className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
     
     <h2 className='h2'>RUSSIA / РОССИЯ  </h2>

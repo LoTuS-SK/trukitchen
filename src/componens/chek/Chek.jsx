@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import './chek.css'
 // import { useSearchParams } from "react-router-dom"
 // import { snakes } from '../../data/database'
@@ -10,19 +10,48 @@ import send from "../../png/send.png"
 
 
 const Сhek = () => {
-  const list = useSelector(state => state.chek).filter(el=>el.count!==0)
+  const list1 = useSelector(state => state.chek).filter(el=>el.count!==0)
+  const list2 = useSelector(state => state.chek_en).filter(el=>el.count!==0)
+  const lang = useSelector(state=>state.one)
   // const [queryParameters] = useSearchParams()
   // const str = decodeURI(queryParameters.get("name"))
   // const arr = JSON.parse(str)
-  console.log(list)
+  console.log(lang)
+  
+ 
+  
+  const [list3,setlist] = useState([])
+  const [sum2,setsum] = useState(0)
+  const [ru,setru] = useState(true)
+  
+  
+  
+
+  useEffect(()=>{
+    if (lang==="ru"){ 
+      setlist([...list1])
+      setru(true) 
+    }
+    if (lang==="en"){
+       setlist([...list2])
+       setru(false)
+      }
+    
+    
+  
+  },[])
+  console.log(list3)
+  const sum = list3.reduce(function(sum,num){
+    return (num.price * num.count) + sum
+  },0)
+
+  
+  
 
 
-const sum = list.reduce(function(sum,num){
-  return (num.price * num.count) + sum
-},0)
 
-const [sum2,setsum]= useState(sum)
-const [list2,setlist] =useState([...list])
+
+
 
 const dispath = useDispatch()
 
@@ -48,25 +77,37 @@ function click(e){
 function click2(e) {
    const target = e.target.textContent
    
-   list.forEach(el=>{
-    if(el.name===target){
+   list3.forEach(el=>{
+    if((el.name)===target){
       console.log(target)
       dispath({type:"delone",payload:target})
-      setsum(list.reduce(function(sum,num){return (num.price * num.count) + sum},0))
+      //setsum(list3.reduce(function(sum,num){return (num.price * num.count) + sum},0))
   }})
 
-    list.forEach(el=>{
+  list3.forEach(el=>{
+    if((el.name_en)===target){
+      console.log(target)
+      dispath({type:"delone_en",payload:target})
+      //setsum(list3.reduce(function(sum,num){return (num.price * num.count) + sum},0))
+  }})
+
+
+
+
+
+    list3.forEach(el=>{
       if(el.count===0){
         console.log("0")
-        const arr = list.filter(el=>el.count!==0)
-        //setlist([...arr])
+        const arr = list3.filter(el=>el.count!==0)
+        setlist(arr)
+        console.log(list3)
         console.log(arr)
         dispath({type:"del-all",payload:arr})
       }
 
       //setlist(...[list])
     })
-    setlist(...[list])
+   // setlist([...list3])
   }
 
 
@@ -87,7 +128,7 @@ function send2(){
  animesend()
  let message = ""
 
- list.forEach(element=>{
+ list3.forEach(element=>{
   message += `${element.name} - ${element.count} `
   message +='                                           '
  })
@@ -116,18 +157,18 @@ function animesend(){
        
       </Link>
       <div className="wr_logo_ch"><img className='logo-ch-2' src={logo} alt=""/></div>
-      {list2.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
-      <div className="test">{list2.map(state=>(
+      {list3.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
+      <div className="test">{list3.map(state=>(
         <div className='list_ch'>
-           <div className='name' onClick={click2}>{state.name}</div>
+           <div className='name' onClick={click2}>{ru?state.name:state.name_en}</div>
            <span className='count'onClick={click} data-id={state.name}>{state.count}</span>
            <div className='prise'><div>{state.count * state.price} ₽</div></div>      
         </div> 
       ))}
-      {list2.length>0 && <div className="acc"><span className='sum'>Итого: {sum2} ₽</span></div>}
-      {list2.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>}
+      {list3.length>0 && <div className="acc"><span className='sum'>Итого: {sum} ₽</span></div>}
+      {list3.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>}
       </div>
-      {list2.length>0 && <div className='wrap_send'>
+      {list3.length>0 && <div className='wrap_send'>
         <img src={send} alt="" className={activ?'send':"send send_active"} onClick={send2}/> </div>
         }
     </div>
@@ -135,3 +176,5 @@ function animesend(){
 }
 
 export default Сhek
+
+

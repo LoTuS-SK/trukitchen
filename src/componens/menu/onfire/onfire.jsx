@@ -10,9 +10,9 @@ const Onfire = ({display,back,func}) => {
     <div className='btn-back' onClick={back}>←</div>
     <div className='snakes-item'>Гриль</div>
     
-    {onFire.map(el=>(
+    {onFire.map((el,index)=>(
         
-        <div className='item' tabIndex="0" onClick={func}>
+        <div className='item' key={index}tabIndex="0" onClick={func}>
             <span className='label'>{el.name}</span>
             <span className='price'>{el.price} ₽</span>
           </div>

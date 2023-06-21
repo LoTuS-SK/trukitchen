@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 //import Chek from  "../../componens/chek/Chek"
 import chekimg from "../../png/kor.png"
+import  lang_img from "../../png/language.png"
 import { useSelector } from 'react-redux'
 import Snaks from './snaks/snaks';
 import Salat from './salats/salat'; 
@@ -15,20 +16,16 @@ import Aqua from './aqua/aqua';
 import Bake from './bake/bake';
 import Garnish from './garnish/garnish';
 import Sweets from './sweets/sweets'; 
-
 import  Bar  from './bar/bar';
 
 
 import "../menu/menu.css"
 import { useDispatch } from 'react-redux';
-//import { snakes } from "../../data/database"
-
-
 
 
 const Menu = () => {
 
-const [count,setcount] = useState(0)
+const [count,setcount] = useState(false)
 
 const [display_snakes,set_display_snakes ] = useState(false)
 const [display_salat,set_display_salat] =useState(false)
@@ -44,7 +41,25 @@ const [dispaly_sweets,set_display_sweets] = useState(false)
 
 const dispath = useDispatch()
 
-const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Банкет","Бар",]
+const lean = useSelector(state => state.one)
+console.log(lean)
+
+
+
+
+const menu_eat = ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Бар",]
+const menu_eat2 = ["Snacks","Salads","Hot dishes","Soups","Grill","Aquarium","Bake","Side dishes","Desserts","Bar",]
+
+const [menu_lan,setmenulan] = useState(menu_eat) 
+
+useEffect(()=>{
+  if (lean==="ru"){
+    setmenulan(menu_eat)
+  }
+  if (lean==="en"){
+    setmenulan(menu_eat2)
+  }
+},[])
 
 
 // function parser1(){
@@ -80,8 +95,14 @@ const click =(e)=>{
     case "Закуски":
       set_display_snakes(true)
       set_display_menu(false)
-      
-        break;
+    break;
+    case "Snacks":
+      set_display_snakes(true)
+      set_display_menu(false)
+    break;
+
+
+
       case "Салаты":
         
         set_display_salat(true)
@@ -132,11 +153,17 @@ const click =(e)=>{
   
 }
 
+const list3 = useSelector(state=>state.chek)
+const list_en = useSelector(state=>state.chek_en)
+
+
 function add(e){
   
   const target = e.target.textContent
   
- 
+  console.log(target)
+ if (lean==="ru"){
+
   dispath({type:"add",payload:target})
  
   if(list3.length===1){
@@ -149,7 +176,23 @@ function add(e){
       
       setcount(num)
       } 
-        
+}   
+if (lean==="en"){
+
+  dispath({type:"add_en",payload:target})
+ 
+  if(list_en.length===1){
+    setcount(list_en.count)
+    } 
+    if(list_en.length>1){
+     const num = list_en.reduce(function(sum,num){
+      return num.count + sum
+     },0)
+      
+      setcount(num)
+      } 
+}    
+     
     
 
 
@@ -186,9 +229,27 @@ function back(){
 // }
 function yes(){
   dispath({type:"del"})
+  
+  
 }
-const list3 = useSelector(state => state.chek)
-console.log(list3)
+
+
+function lang_ch(){
+  
+  if (lean==="ru"){
+    setmenulan(menu_eat2)
+    dispath({type:"en"})
+  }
+  if (lean==="en"){
+    setmenulan(menu_eat)
+    dispath({type:"ru"})
+  }
+}  
+  
+
+
+
+
 
 
 function display_bar_off(){
@@ -210,7 +271,18 @@ useEffect(()=>{
       
       setcount(num)
       } 
-},[list3])
+      if(list_en.length===1){
+        setcount(list_en[0].count)
+        } 
+        if(list_en.length>1){
+         const num = list_en.reduce(function(sum,num){
+          return num.count + sum
+         },0)
+          
+          setcount(num)
+          } 
+
+},[count])
 
 
 
@@ -219,9 +291,10 @@ useEffect(()=>{
     <>
    
     
-   
+   <div className='lang' onClick={lang_ch} >{lean}</div>
+   {/* <img   className='lang' src={lang_img} alt="" onClick={lang_ch}/> */}
    <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
-   {list3.length>0 && <div className="cir">{count}</div>}
+   {(list3.length>0 || list_en.length>0) && <div className="cir">{count}</div>}
    </Link>
     <Snaks display={display_snakes} func={add} back={back}/>
     <Salat display={display_salat} func={add} back={back}/>
@@ -241,7 +314,7 @@ useEffect(()=>{
    
     
   
-        {menu_eat.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
+        {menu_lan.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
         </div>   
           
     {/* <div className={disqr?'qrcode-wrap':"qrcode-wrap none"} onClick={display_qr}>

@@ -122,3 +122,9 @@ input{
     font-weight: 600;
     color:brown;
 }
+
+.lang {
+    width:50px;
+    margin:10px 0px 0px 10px;
+    font-size: 30px;
+}
