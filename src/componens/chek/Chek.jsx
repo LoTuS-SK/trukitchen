@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useCallback, useEffect, useState} from 'react'
 import './chek.css'
 // import { useSearchParams } from "react-router-dom"
 // import { snakes } from '../../data/database'
@@ -18,13 +18,11 @@ const Сhek = () => {
   // const arr = JSON.parse(str)
   console.log(lang)
   
- 
+  const [lang2,setlang] =useState(lang)
   
   const [list3,setlist] = useState([])
   //const [sum2,setsum] = useState(0)
   const [ru,setru] = useState(true)
-  
-  
   
 
   useEffect(()=>{
@@ -35,11 +33,11 @@ const Сhek = () => {
     if (lang==="en"){
        setlist([...list2])
        setru(false)
-      }
-    
+    }
+  },[])
     
   
-  },[lang,list2,list1])
+  
 
   console.log(list3)
   const sum = list3.reduce(function(sum,num){
