@@ -59,7 +59,7 @@ useEffect(()=>{
   if (lean==="en"){
     setmenulan(menu_eat2)
   }
-},[lean])
+},[lean,menu_eat,menu_eat2])
 
 
 // function parser1(){

@@ -39,7 +39,8 @@ const Сhek = () => {
     
     
   
-  },[])
+  },[lang,list2,list1])
+
   console.log(list3)
   const sum = list3.reduce(function(sum,num){
     return (num.price * num.count) + sum
