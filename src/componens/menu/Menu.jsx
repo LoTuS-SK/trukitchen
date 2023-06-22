@@ -106,11 +106,25 @@ const click =(e)=>{
         set_display_menu(false)
       
       break;
+      case "Salads":
+        
+      set_display_salat(true)
+      set_display_menu(false)
+    
+    break;
       case "Горячие блюда":
         set_display_hot(true)
         set_display_menu(false)
       break;
+      case "Hot dishes":
+        set_display_hot(true)
+        set_display_menu(false)
+      break;
       case "Супы":
+        set_display_soup(true)
+        set_display_menu(false)
+      break;
+      case "Soups":
         set_display_soup(true)
         set_display_menu(false)
       break;
