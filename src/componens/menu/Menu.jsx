@@ -129,6 +129,10 @@ const click =(e)=>{
         set_display_bake(true)
         set_display_menu(false)
       break;
+      case "Bake":
+        set_display_bake(true)
+        set_display_menu(false)
+      break;
       case "Гарниры":
         set_display_Garnish(true)
         set_display_menu(false)

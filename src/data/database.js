@@ -1,3 +1,5 @@
+
+
 export const snakes = [
     {id:1,
         name:"Филе Енисейского малосолёного муксуна",
@@ -140,17 +142,53 @@ export const soup = [
 ]
 
 export const bake = [
-    {id:42,name:"Пирог с камчатским крабом",price:990,weight:400,section:"печь"},
-    {id:43,name:"Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком",price:960,weight:420,section:"супы"},
-    {id:44,name:"Пирог с фермерской страчателлой",price:590,weight:400,section:"печь"},
-    {id:45,name:"Беломорский палтус с тыквенным пюре и молодым горошком",price:1340,weight:300,section:"печь"},
-    {id:46,name:"Растомлённая утиная ножка с пюре из сельдерея",price:290,weight:920,section:"печь"},
-    {id:47,name:"Пирог с копчёным оленем на подушке из грибного рагу",price:890,weight:430,section:"печь"},
-    {id:48,name:"Мясо молодого козлёнка с ароматными травами и молодым картофелем",price:1890,weight:400,section:"печь"},
-    {id:49,name:"Гусь с Палехской фермы томлёный с черносливом",price:1290,weight:450,section:"печь"},
-    {id:50,name:"Мозговая косточка из печи",price:370,weight:450,section:"печь"},
-    {id:51,name:"Стерлядь",price:2500,weight:700,section:"печь"},
-    {id:52,name:"Пирог с рапаной",price:790,weight:450,section:"печь"},
+    {id:42,
+        name:"Пирог с камчатским крабом",
+        name_en:"Pie with king crab",
+    price:1050,weight:400,section:"печь"},
+    {id:43,
+        name:"Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком",
+        name_en:"Pie with Far Eastern halibut, burbot liver and fried onions",
+        price:960,weight:420,section:"супы"},
+    {id:44,
+        name:"Пирог с фермерской страчателлой",
+        name_en:"Farm Stracciatella Pie",
+        price:790,weight:400,section:"печь"},
+    {id:45,
+        name:"Беломорский палтус с тыквенным пюре и молодым горошком",
+        name_en:"White Sea halibut with pumpkin puree and young peas",
+        price:1340,weight:300,section:"печь"},
+    {id:46,
+        name:"Растомлённая утиная ножка с пюре из сельдерея",
+        name_en:"Mashed duck leg with celery puree",
+
+        price:290,weight:920,section:"печь"},
+    {id:47,
+        name:"Пирог с копчёным оленем на подушке из грибного рагу",
+        name_en:"Smoked reindeer pie on a bed of mushroom stew",
+    price:890,weight:430,section:"печь"},
+    {id:48
+        ,name:"Мясо молодого козлёнка с ароматными травами и молодым картофелем",
+         name_en:"Young goat meat with aromatic herbs and new potatoes",
+        price:1890,weight:400,section:"печь"},
+    {id:49,
+        name:"Гусь с Палехской фермы томлёный с черносливом",
+        name_en:"Goose from the Palekh farm stewed with prunes",
+        price:1290,weight:450,section:"печь"},
+    {id:50,
+    name:"Мозговая косточка из печи",
+    name_en:"Marrow bone from the oven",
+    price:370,weight:450,section:"печь"},
+
+
+    {id:51,
+        name:"Стерлядь",
+        name_en:"Sterlet",
+        price:2500,weight:700,section:"печь"},
+    {id:52,
+        name:"Пирог с рапаной",
+        name_en:"Pie with rapana",
+        price:790,weight:450,section:"печь"},
     
 ] 
 

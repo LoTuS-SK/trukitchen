@@ -4,77 +4,88 @@ import "../snaks/snaks.css"
 import paltus from "../../../png/foot/paltus.png"
 import strelyd from "../../../png/foot/str3.png"
 import koz4 from "../../../png/foot/koz5.png"
+import { useSelector} from 'react-redux'
 
-const paltus2 = require("../../../png/foot/pirog_paltus 2.png")
+
+//const path = "../../../png/foot/pirog_paltus 2.png"
+
+const paltus2 = require("../../../png/foot/pirog_paltus 2.png") 
 const gus = require("../../../png/foot/gus.png")
-
 const pirog_olen = require("../../../png/foot/pirog-olen.png")
 
 
-const obj =  {id:4,name:"Беломорский палтус с тыквенным пюре и молодым горошком",price:1340,weight:300,section:"печь"}
-
-const bake2 = [
-  {id:42,name:"Пирог с камчатским крабом",price:990,weight:400,section:"печь"},
-  //{id:43,name:"Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком",price:960,weight:420,section:"супы"},
-  {id:44,name:"Пирог с фермерской страчателлой",price:590,weight:400,section:"печь"},
-  //{id:45,name:"Беломорский палтус с тыквенным пюре и молодым горошком",price:1340,weight:300,section:"печь"},
-  {id:46,name:"Растомлённая утиная ножка с пюре из сельдерея",price:290,weight:920,section:"печь"},
-  //{id:47,name:"Пирог с копчёным оленем на подушке из грибного рагу",price:890,weight:430,section:"печь"},
-  //{id:48,name:"Мясо молодого козлёнка с ароматными травами и молодым картофелем",price:1890,weight:400,section:"печь"},
-  //{id:49,name:"Гусь с Палехской фермы томлёный с черносливом",price:1290,weight:450,section:"печь"},
-  {id:50,name:"Мозговая косточка из печи",price:370,weight:450,section:"печь"},
-  //{id:51,name:"Стерлядь",price:2500,weight:700,section:"печь"},
-  {id:52,name:"Пирог с рапаной",price:790,weight:450,section:"печь"},
-  
-] 
 
 
-
-
-
-
+ 
 
 const Bake = ({display,func,back}) => {
+
+  const lean = useSelector(state=>state.one)
+
   return (
     <>
     <div className={display?"skakes":"snakes none"}>
     <div className='btn-back' onClick={back}>←</div>
     <div className='snakes-item'>Печь</div>
-    
-    {bake2.map(el=>(
-        <div className='item' key={el.id}tabIndex="0" onClick={func}><span className='label'>{el.name}</span><span className='price'>{el.price} ₽</span></div>
-       
-    
-    
-    ))}
+  
+    <div className='item_pal'>
+            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Пирог с рапаной":"Pie with rapana"}</span>
+            <div className="wr_img"></div>
+            <div className='price-pl'>{790} ₽</div>
+    </div>
+
+
+
+    <div className='item_pal'>
+            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Мозговая косточка из печи":"Marrow bone from the oven"}</span>
+            <div className="wr_img"></div>
+            <div className='price-pl'>{590} ₽</div>
+    </div>
+
      <div className='item_pal'>
-        
-            
-            <span className='label' onClick={func} tabIndex="0" >{obj.name}</span>
+            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Беломорский палтус с тыквенным пюре и молодым горошком":"White Sea halibut with pumpkin puree and young peas"}</span>
             <div className="wr_img"><img src={paltus} alt="" /></div>
-            <div className='price-pl'>{obj.price} ₽</div>
-            
+            <div className='price-pl'>{1340} ₽</div>
+    </div>
+
+    <div className='item_pal'>
+            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Растомлённая утиная ножка с пюре из сельдерея":"Mashed duck leg with celery puree"}</span>
+            <div className="wr_img"></div>
+            <div className='price-pl'>{920} ₽</div>
+    </div>
+
+
+    <div className='item_pal'>
+            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"? "Пирог с фермерской страчателлой":"Farm Stracciatella Pie"}</span>
+            <div className="wr_img"></div>
+            <div className='price-pl'>{790} ₽</div>
+    </div>
+          
+    <div className='item_pal'>
+      <span className='label' onClick={func}>{lean==="ru"? "Пирог с камчатским крабом":"Pie with king crab"}</span>
+      <div className="wr_img"></div>
+      <div className='price-pl'>1050 ₽</div>
+    </div>
+
+          
+          <div className='item_pal'>
+            <span className='label' onClick={func}>{lean==="ru"? "Пирог с копчёным оленем на подушке из грибного рагу":"Smoked reindeer pie on a bed of mushroom stew"}</span>
+              <div className="wr_img"><img src={pirog_olen} alt="" /></div>
+             <div className='price-pl'>990 ₽</div>
           </div>
+
           <div className='item_pal'>
         
             
-        <span className='label' onClick={func}>Пирог с копчёным оленем на подушке из грибного рагу</span>
-        <div className="wr_img"><img src={pirog_olen} alt="" /></div>
-        <div className='price-pl'>2500 ₽</div>
-        
-      </div>
-          <div className='item_pal'>
-        
-            
-            <span className='label' onClick={func}>Гусь с Палехской фермы томлёный с черносливом</span>
+            <span className='label' onClick={func}>{lean==="ru"?"Гусь с Палехской фермы томлёный с черносливом":"Goose from the Palekh farm stewed with prunes"}</span>
             <div className="wr_img"><img src={gus} alt="" /></div>
-            <div className='price-pl'>2500 ₽</div>
+            <div className='price-pl'>1290 ₽</div>
             
           </div>
           <div className='item_pal'>
         
             
-        <span className='label' onClick={func}>Стерлядь</span>
+        <span className='label' onClick={func}>{lean==="ru"?"Стерлядь":"Sterlet"}</span>
         <div className="wr_img"><img src={strelyd} alt="" /></div>
         <div className='price-pl'>2500 ₽</div>
         
@@ -82,17 +93,17 @@ const Bake = ({display,func,back}) => {
           <div className='item_pal'>
         
             
-        <span className='label' onClick={func}>Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком</span>
+        <span className='label' onClick={func}>{lean==="ru"? "Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком":"Pie with Far Eastern halibut, burbot liver and fried onions"}</span>
         <div className="wr_img"><img src={paltus2} alt="" /></div>
-        <div className='price-pl'>2500 ₽</div>
+        <div className='price-pl'>990 ₽</div>
         
       </div>
           <div className='item_pal'>
         
             
-        <span className='label' onClick={func}>Мясо молодого козлёнка с ароматными травами и молодым картофелем</span>
+        <span className='label' onClick={func}>{lean==="ru"?"Мясо молодого козлёнка с ароматными травами и молодым картофелем}":"Young goat meat with aromatic herbs and new potatoes"}</span>
         <div className="wr_img"><img src={koz4} alt="" /></div>
-        <div className='price-pl'>2500 ₽</div>
+        <div className='price-pl'>1890 ₽</div>
         
       </div>
     
