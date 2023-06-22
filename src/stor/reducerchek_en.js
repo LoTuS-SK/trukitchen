@@ -142,9 +142,9 @@ const cheking = (state = chek,action) =>{
         
         case "del-all2":
                 const del = action.payload
-                state = del
+                
         
-        return state    
+        return state = del 
             
         default:
             return state

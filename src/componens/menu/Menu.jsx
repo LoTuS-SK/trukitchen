@@ -42,7 +42,7 @@ const [dispaly_sweets,set_display_sweets] = useState(false)
 const dispath = useDispatch()
 
 const lean = useSelector(state => state.one)
-console.log(lean)
+
 
 
 
@@ -239,10 +239,12 @@ function lang_ch(){
   if (lean==="ru"){
     setmenulan(menu_eat2)
     dispath({type:"en"})
+    dispath({type:"del"})
   }
   if (lean==="en"){
     setmenulan(menu_eat)
     dispath({type:"ru"})
+    dispath({type:"delone"})
   }
 }  
   
