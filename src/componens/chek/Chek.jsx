@@ -143,7 +143,7 @@ function animesend(){
   
 }
 
-
+console.log(list1.lenght)
 
   return (
     <div >
@@ -153,7 +153,7 @@ function animesend(){
        
       </Link>
       <div className="wr_logo_ch"><img className='logo-ch-2' src={logo} alt=""/></div>
-      
+      {list1.lenght===0 && <Link to={"/"} className='back'>Выбирите блюдо</Link>}
       {list1.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
       {list2.length>0 && <h1 className='zakaz'>You choise</h1>}
       <div className="test">{list1.length>0 && list1.map(state=>(

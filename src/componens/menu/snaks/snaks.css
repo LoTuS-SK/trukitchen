@@ -80,3 +80,10 @@ font-family:one;
 .qr{
     width: 40px;
 }
+.wr_img {
+    width:350px;
+}
+
+.wr_img img{
+    width:100%;
+}
