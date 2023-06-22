@@ -119,7 +119,10 @@ export const snakes = [
 ]
 
 export const salat = [
-    {id:26,name:"Дальневосточный краб с авокадо и сладким томатом",price:1290,weight:200,section:"салаты"},
+    {id:26,
+        name:"Дальневосточный краб с авокадо и сладким томатом",
+        name_en:"Far Eastern crab with avocado and sweet tomato",
+        price:1290,weight:200,section:"салаты"},
     {id:27,name:"Теплый салат с морепродуктами «Сахалин»",price:1190,weight:170,section:"салаты"},
     {id:28,name:"Ростбиф с салатом, огурцом и сладким томатом",price:690,weight:180,section:"салаты"},
     {id:29,name:"Салат с печёной свеклой, авокадо, сладкими томатами и кедровым орехом",price:470,weight:250,section:"салаты"},

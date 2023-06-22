@@ -5,17 +5,17 @@ import strelka from "../../../png/strelka.png"
 import Vine from "./vine"
 import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
-import { useDispatch} from 'react-redux'
+//import { useDispatch} from 'react-redux'
 
 
 
 
 
-const Bar = ({display,display_off,display_on,back}) => {
+const Bar = ({display,display_off,display_on,back,func}) => {
   const [display_vine,set_display_vine]= useState(false)
   const [display_alko,set_display_alko]= useState(false)
   const [display_bar,set_display_bar]= useState(false)
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   
 
 
@@ -54,11 +54,11 @@ const Bar = ({display,display_off,display_on,back}) => {
     display_on()
   }
 
-  function add(e){
-    const chek = e.target.textContent
-    dispatch({type:"add",payload:chek})
-    console.log(chek)
-  }
+  // function add(e){
+  //   const chek = e.target.textContent
+  //   dispatch({type:"add",payload:chek})
+  //   console.log(chek)
+  // }
     
   return (
     <>
@@ -69,9 +69,9 @@ const Bar = ({display,display_off,display_on,back}) => {
         <div className='wrap_img_bar'><img src={imgbar} alt="" /></div>
         <div className='btn' onClick={back}><img className="strelka"src={strelka} alt="" /></div>
     </div>
-    <Vine display={display_vine} back={backvine} add={add}/>
-    <Barnapitki display = {display_bar} back={backvine} add={add}/>
-    <Alobar display = {display_alko} back={backvine} add={add}/>
+    <Vine display={display_vine} back={backvine} add={func}/>
+    <Barnapitki display = {display_bar} back={backvine} add={func}/>
+    <Alobar display = {display_alko} back={backvine} add={func}/>
     </>
   )
 }

@@ -5,7 +5,9 @@ const r_vine = ({display,back,add}) => {
   return (
     
     <div className={display?"r_wr_vine":"r_wr_vine none"}>
+    <div className='btn-back' onClick={back}>←</div>
     <h2 className='h2'>ВИНА ПО БОКАЛАМ </h2>
+    
     {vine.filter(el=>(el.price<1000)&&(el.type==="красное")).map(el=>(
         <div className='vine-items'><div  className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
     ))}

@@ -100,10 +100,7 @@ const click =(e)=>{
       set_display_snakes(true)
       set_display_menu(false)
     break;
-
-
-
-      case "Салаты":
+        case "Салаты":
         
         set_display_salat(true)
         set_display_menu(false)
