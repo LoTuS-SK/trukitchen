@@ -128,3 +128,20 @@ input{
     margin:10px 0px 0px 10px;
     font-size: 30px;
 }
+
+.ferma{
+    width:80px;
+    margin-left: 10px;
+    
+}
+
+.wr_footer{
+    display: flex;
+    justify-content:space-between;
+    width: 95%;
+    flex-grow:1;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid grey;
+     
+}

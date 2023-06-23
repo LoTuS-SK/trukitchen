@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 //import QRCode from "react-qr-code";
 // import Burger from '../burger/Burger';
 import logo from "../../img/Asset-1.png"
+import ferma from "../../png/ferma2.png"
+import tractor from "../../png/tracot.png"
+
 //import Chek from  "../../componens/chek/Chek"
 import chekimg from "../../png/kor.png"
 //import  lang_img from "../../png/language.png"
@@ -132,7 +135,16 @@ const click =(e)=>{
         set_display_fire(true)
         set_display_menu(false)
       break;
+      case "Grill":
+        set_display_fire(true)
+        set_display_menu(false)
+      break;
+      
       case "Аквариум":
+        set_display_aqua(true)
+        set_display_menu(false)
+      break;
+      case "Aquarium":
         set_display_aqua(true)
         set_display_menu(false)
       break;
@@ -148,10 +160,25 @@ const click =(e)=>{
         set_display_Garnish(true)
         set_display_menu(false)
       break;
+      case "Side dishes":
+        set_display_Garnish(true)
+        set_display_menu(false)
+      break;
       case "Бар":
         
         set_display_menu(false)
         set_display_bar(true)
+      break;
+      case "Bar":
+        
+        set_display_menu(false)
+        set_display_bar(true)
+      break;
+      
+      case "Desserts":
+        set_display_sweets(true)
+        set_display_menu(false)
+        
       break;
       case "Десерты":
         set_display_sweets(true)
@@ -333,6 +360,10 @@ useEffect(()=>{
     
   
         {menu_lan.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
+            <div className="wr_footer">
+              <img className='ferma' src={tractor} alt="" onClick={yes}/>
+              <img className='ferma' src={ferma} alt="" onClick={yes}/>
+          </div>
         </div>   
           
     {/* <div className={disqr?'qrcode-wrap':"qrcode-wrap none"} onClick={display_qr}>
@@ -347,6 +378,7 @@ useEffect(()=>{
           
           </div>
      */}
+     
     </>
   )
 }
