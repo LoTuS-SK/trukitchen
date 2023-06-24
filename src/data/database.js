@@ -56,9 +56,13 @@ export const snakes = [
         weight:60,
         section:"закуски"},
     {id:10,
-        name:"Оливки Гиганти / Каламата",
-        name_en:"Olives Giganti / Kalamata",
+        name:"Оливки Гиганти",
+        name_en:"Olives Giganti",
         price:390,weight:90,section:"закуски"},
+    {id:1011,
+            name:"Оливки Каламата",
+            name_en:"Olives Kalamata",
+            price:390,weight:90,section:"закуски"},    
     {id:11
         ,name:"Перчики с рикоттой",
         name_en:"Peppers with ricotta",
@@ -100,7 +104,7 @@ export const snakes = [
         price:770,weight:160,section:"закуски"},
     {id:22,
         name:"Домашнее сало на гренках",
-        name_en:"Dry-cured assortment",
+        name_en:"Homemade lard on toast",
         price:460,weight:120,section:"закуски"},
     {id:23,
         name:"Боровики с душистым маслом",
@@ -114,6 +118,14 @@ export const snakes = [
         name:"Паштет из лесных грибов с гренками",
         name_en:"Forest mushroom pate with croutons",
         price:490,weight:150,section:"закуски"},
+    {id:255,
+            name:"Сугудай из муксуна со сладким луком и заправкой из кислого яблока",
+            name_en:"Muksun sugudai with sweet onion and sour apple dressing",
+            price:790,weight:140,section:"закуски"},
+    {id:256,
+        name:"Сугудай из Мурманской форели с Ялтинским луком",
+        name_en:"Sugudai from Murmansk trout with Yalta onion",
+        price:790,weight:140,section:"закуски"},
     
 
 ]
@@ -187,6 +199,26 @@ export const soup = [
         name_en:"wild mushroom soup",
 
     price:420,weight:300,section:"супы"},
+
+    {id:400,
+        name:"Свекольник",
+        name_en:"beetroot soup ",
+
+    price:450,weight:300,section:"супы"},
+    
+    {id:400,
+        name:"Окрошка на Квасе",
+        name_en:"Okroshka on Kvass",
+
+    price:450,weight:300,section:"супы"},
+
+    {id:400,
+        name:"Окрошка на Тане",
+        name_en:"Okroshka on Tanya",
+
+    price:450,weight:300,section:"супы"},
+    
+    
     {id:41,
         name:"Уха из северной рыбы",
         name_en:"Northern fish ear",
@@ -266,11 +298,11 @@ export const hotbluda = [
     {id:57,
         name:"Cтаврида",
         name_en:"Scad",
-        price:200,weight:550,section:"горячие блюда"},
+        price:550,weight:550,section:"горячие блюда"},
     {id:58,
         name:"Черноморская барабулька",
         name_en:"Black Sea red mullet",
-        price:200,weight:550,section:"горячие блюда"},
+        price:550,weight:200,section:"горячие блюда"},
     {id:59,
         name:"Домашний бефстроганов с картофельным пюре",
         name_en:"Homemade beef stroganoff with mashed potatoes",
