@@ -26,7 +26,7 @@ const Onfire = ({display,back,func}) => {
         
         <div className='item' key={index}tabIndex="0" onClick={func}>
             <span className='label'>{ru==="ru"?el.name:el.name_en}</span>
-            {el.name==="Камамбер на гриле с брусничным вареньем"&&<div className="wr_img"><img src={kamamber} alt="" /></div>}
+           
             <span className='price'>{el.price} ₽</span>
           </div>
 
