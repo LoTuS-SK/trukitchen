@@ -38,7 +38,7 @@ font-family:one;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid grey;
-    margin:0px 5px 0px 5px;
+    margin:0px 15px 0px 15px;
 }
 
 .item:active{
@@ -59,10 +59,12 @@ font-family:one;
 
 }
 .label{
-    width: 300px;
+    width: 390px;
     padding-top: 8px;
+    padding-right: 15px;
     font-weight: 500;
-    
+    font-size: 20px;
+    flex-grow:1;
 }
 
 .label:active{

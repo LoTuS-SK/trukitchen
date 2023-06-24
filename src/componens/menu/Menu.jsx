@@ -201,7 +201,18 @@ const list_en = useSelector(state=>state.chek_en)
 
 function add(e){
   
-  const target = e.target.textContent
+  console.log(typeof(e))
+  let target
+
+  if(typeof(e)==="object"){
+    target = e.target.textContent
+  }
+
+  if(typeof(e)==="string"){
+    target = e
+  }
+  
+  
   
   console.log(target)
  if (lean==="ru"){

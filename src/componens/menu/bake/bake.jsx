@@ -21,6 +21,13 @@ const pirog_olen = require("../../../png/foot/pirog-olen.png")
 const Bake = ({display,func,back}) => {
 
   const lean = useSelector(state=>state.one)
+  
+
+  function clickimg(e){
+   const str = e.target.dataset.id
+    func(str)
+  }
+
 
   return (
     <>
@@ -70,7 +77,7 @@ const Bake = ({display,func,back}) => {
           
           <div className='item_pal'>
             <span className='label' onClick={func}>{lean==="ru"? "Пирог с копчёным оленем на подушке из грибного рагу":"Smoked reindeer pie on a bed of mushroom stew"}</span>
-              <div className="wr_img"><img src={pirog_olen} alt="" /></div>
+              <div className="wr_img"><img src={pirog_olen} alt="" data-id={lean==="ru"? "Пирог с копчёным оленем на подушке из грибного рагу":"Smoked reindeer pie on a bed of mushroom stew"}onClick={clickimg}/></div>
              <div className='price-pl'>990 ₽</div>
           </div>
 

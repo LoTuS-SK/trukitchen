@@ -161,10 +161,14 @@ export const salat = [
         name:"Салат с жареными баклажанами",
         name_en:"Salad with fried eggplant",
         price:490,weight:200,section:"салаты"},
+    // {id:36,
+    //     name:"Салат с лесными грибами и яйцом пашот",
+    //     name_en:"Salad with fried eggplant",
+    //     price:590,weight:200,section:"салаты"},
     {id:36,
-        name:"Салат с лесными грибами и яйцом пашот",
-        name_en:"Salad with fried eggplant",
-        price:590,weight:200,section:"салаты"},
+            name:"Цезарь с цыпленком",
+            name_en:"Caesar with chicken",
+            price:670,weight:200,section:"салаты"},
 ]
 
 export const soup = [
@@ -340,7 +344,7 @@ export const onFire = [
     {id:75,
         name:"Камамбер на гриле с брусничным вареньем",
         name_en:"Grilled camembert with lingonberry jam",
-        price:2700,weight:300,section:"гриль"},
+        price:690,weight:300,section:"гриль"},
    
 ]
 
