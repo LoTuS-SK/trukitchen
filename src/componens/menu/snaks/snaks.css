@@ -21,6 +21,7 @@ font-family:one;
     font-size: 50px;
     text-shadow: 3px 1px 2px rgb(144, 141, 142);
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .none {
@@ -38,6 +39,7 @@ font-family:one;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
     margin:0px 15px 0px 15px;
 }
 
@@ -59,7 +61,7 @@ font-family:one;
 
 }
 .label{
-    width: 390px;
+    
     padding-top: 8px;
     padding-right: 15px;
     font-weight: 500;
