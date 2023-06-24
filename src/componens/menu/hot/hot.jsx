@@ -1,6 +1,6 @@
 import React from 'react'
 import "../snaks/snaks"
-import {hotbluda} from "../../../data/database"
+//import {hotbluda} from "../../../data/database"
 import { useSelector } from "react-redux"
 // import more from "../../../png/foot/moreassorti.png"
 import utka from "../../../png/foot/utka.png"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { snakes } from "../../../data/database"
+//import { snakes } from "../../../data/database"
 import strelka from "../../../png/strelka.png"
 import "../snaks/snaks.css"
 import { useSelector} from 'react-redux'
