@@ -7,6 +7,7 @@ import utka from "../../../png/foot/utka.png"
 import treska from "../../../png/foot/treska.png"
 import kotlet from "../../../png/foot/kotleta.png"
 import olem from "../../../png/foot/fileolen.png"
+import pelmeni from "../../../png/foot/pelmeni.png"
 
 const Hot = ({display,func,back}) => {
 const lean = useSelector(state=>state.one)
@@ -49,7 +50,7 @@ const lean = useSelector(state=>state.one)
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Пельмени из дичи с домашней сметаной":"Game dumplings with homemade sour cream"}</div>
-            {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
+            <div className="wr_img"><img src={pelmeni} alt="" /></div>
             <span className='price-pl'>780 ₽</span>
           </div>
 

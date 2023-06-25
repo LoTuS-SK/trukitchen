@@ -4,6 +4,7 @@ import "./salat.css"
 import {salat} from "../../../data/database"
 import { useSelector } from 'react-redux'
 import cesar from "../../../png/foot/cesar.png"
+import svekla from "../../../png/foot/svekla.png"
 
 
 const Salat = ({display,func,back}) => {
@@ -21,6 +22,12 @@ const Salat = ({display,func,back}) => {
             <div className='label' onClick={func}>{ru==="ru"?"Цезарь с цыпленком":"Caesar with chicken"}</div>
             <div className="wr_img"><img src={cesar} alt="" /></div>
             <span className='price-pl'>670 ₽</span>
+          </div>
+
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Салат с печёной свеклой, авокадо, сладкими томатами и кедровым орехом":"Salad with baked beets, avocado, sweet tomatoes and pine nuts"}</div>
+            <div className="wr_img"><img src={svekla} alt="" /></div>
+            <span className='price-pl'>470 ₽</span>
           </div>
 
 

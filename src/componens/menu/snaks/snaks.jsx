@@ -12,6 +12,7 @@ import sheese from "../../../png/foot/chees.png"
 import tartar from "../../../png/foot/tartar.png"
 import forchmak from "../../../png/foot/for4mak.png"
 import gribi from "../../../png/foot/gribi.png"
+import  sugudai from "../../../png/foot/sugudai.png"
 
 
 const Snaks = ({display,func,back}) => {
@@ -84,7 +85,7 @@ const lean = useSelector(state=>state.one)
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Сугудай из муксуна со сладким луком и заправкой из кислого яблока":"Muksun sugudai with sweet onion and sour apple dressing"}</div>
-            {/* <div className="wr_img"><img src={seledka} alt="" /></div> */}
+            <div className="wr_img"><img src={sugudai} alt="" /></div>
             <span className='price-pl'>790 ₽</span>
           </div>
 

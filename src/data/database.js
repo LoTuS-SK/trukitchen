@@ -407,7 +407,12 @@ export const aqua = [
         name_en:"Oyster Pink Jolie",
         price:420,weight:1,section:"аквариум"},
     {id:7,
-        name:"Морской ёж",price:320,weight:1,section:"аквариум"},
+        name:"Морской ёж",
+        name_en:"Sea urchin",
+        price:320,weight:1,section:"аквариум",
+        
+    },
+
     {id:8,
         name:"Сахалинский гребешок",
         name_en:"Sakhalin scallop",
