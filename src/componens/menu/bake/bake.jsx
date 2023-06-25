@@ -1,7 +1,7 @@
 import React from 'react'
 //import { bake } from '../../../data/database'
 import "../snaks/snaks.css"
-import paltus from "../../../png/foot/paltus.png"
+import paltus from "../../../png/foot/paltuss.png"
 import strelyd from "../../../png/foot/str3.png"
 import koz4 from "../../../png/foot/koz5.png"
 import { useSelector} from 'react-redux'

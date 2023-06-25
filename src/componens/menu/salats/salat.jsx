@@ -1,5 +1,5 @@
 import React from 'react'
-import strelka from "../../../png/strelka.png"
+//import strelka from "../../../png/strelka.png"
 import "./salat.css"
 import {salat} from "../../../data/database"
 import { useSelector } from 'react-redux'
@@ -13,8 +13,8 @@ const Salat = ({display,func,back}) => {
     <>
     
     <div className={display?"salat":"none"}>
-    <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
-    
+    {/* <div className='strelka' onClick={back}><img src={strelka} alt="" /></div> */}
+    <div className='btn-back' onClick={back}>←</div>
     <div className={display?'snakes-item':"none"} >{ru==="ru"?"Салаты":"Salads"}</div>
     
     <div className='item_pal' tabIndex="0" >

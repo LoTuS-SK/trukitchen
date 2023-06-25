@@ -6,6 +6,7 @@ import { useSelector } from "react-redux"
 import utka from "../../../png/foot/utka.png"
 import treska from "../../../png/foot/treska.png"
 import kotlet from "../../../png/foot/kotleta.png"
+import olem from "../../../png/foot/fileolen.png"
 
 const Hot = ({display,func,back}) => {
 const lean = useSelector(state=>state.one)
@@ -14,7 +15,7 @@ const lean = useSelector(state=>state.one)
     <>
       <div className={display?"skakes":"snakes none"}>
     <div className='btn-back' onClick={back}>←</div>
-    <div className='snakes-item'>Горячие блюда</div>
+    <div className='snakes-item'>{lean==="ru"?"Горячие блюда":"Hot dishes"}</div>
 
     {/* <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Ассорти из морепродуктов, обжаренных с чесноком, в соусе из устриц":"Assorted seafood fried with garlic in oyster sauce"}</div>
@@ -72,7 +73,7 @@ const lean = useSelector(state=>state.one)
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Филе оленя на муссе из печёной свёклы с винным соусом":"Deer fillet on roasted beetroot mousse with wine sauce"}</div>
-            {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
+            <div className="wr_img"><img src={olem} alt="" /></div>
             <span className='price-pl'>1280 ₽</span>
           </div>
 

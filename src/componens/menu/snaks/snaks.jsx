@@ -1,6 +1,6 @@
 import React from 'react'
 //import { snakes } from "../../../data/database"
-import strelka from "../../../png/strelka.png"
+// import strelka from "../../../png/strelka.png"
 import "../snaks/snaks.css"
 import { useSelector} from 'react-redux'
 
@@ -10,6 +10,8 @@ import ikra from "../../../png/foot/ikra.png"
 import seledka from "../../../png/foot/seledka.png"
 import sheese from "../../../png/foot/chees.png"
 import tartar from "../../../png/foot/tartar.png"
+import forchmak from "../../../png/foot/for4mak.png"
+import gribi from "../../../png/foot/gribi.png"
 
 
 const Snaks = ({display,func,back}) => {
@@ -21,7 +23,8 @@ const lean = useSelector(state=>state.one)
     <>
     
     <div className={display?"skakes":"snakes none"}>
-    <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
+    <div className='btn-back' onClick={back}>←</div>
+    {/* <div className='strelka' onClick={back}><img src={strelka} alt="" /></div> */}
     <div className='snakes-item'>{lean==="ru"?"Закуски":"Snacks"}</div>
     
 
@@ -99,7 +102,7 @@ const lean = useSelector(state=>state.one)
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Форшмак из Олютюрской сельди и кислого яблока":"Olyutur herring and sour apple forshmak"}</div>
-            {/* <div className="wr_img"><img src={sheese} alt="" /></div> */}
+            <div className="wr_img"><img src={forchmak} alt="" /></div>
             <span className='price-pl'>390 ₽</span>
           </div>
 
@@ -118,13 +121,15 @@ const lean = useSelector(state=>state.one)
             <span className='price'>390 ₽</span>
           </div>
 
-          <div className='item' tabIndex="0" >
+          <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Боровики с душистым маслом":"Mushrooms with fragrant oil"}</div>
-            <span className='price'>580 ₽</span>
+            <div className="wr_img"><img src={gribi} alt="" /></div>
+            <span className='price-pl'>580 ₽</span>
           </div>
 
           <div className='item' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Грузди со сметаной":"Milk mushrooms with sour cream"}</div>
+            
             <span className='price'>580 ₽</span>
           </div>
 

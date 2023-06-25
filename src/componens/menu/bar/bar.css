@@ -53,7 +53,7 @@ h2{
     text-align: center;
 }
 .items{
-    width: 70%;
+    width: 80%;
     margin-top: 8px;
     font-family:bolt;
     font-size: 17px;
@@ -111,4 +111,22 @@ h2{
 
 img .strelka{
     width: 80px;
+}
+
+.item_b{
+    display: flex;
+    border-bottom: 1px solid grey;
+    padding-bottom: 12px;
+}
+.label_b{
+    width: 200px;
+    font-size: 20px;
+    margin-top: 8px;
+    /* font-family:bolt; */
+    font-weight: 500;
+}
+
+.price_m{
+    width: 70px;
+    color:brown;
 }
