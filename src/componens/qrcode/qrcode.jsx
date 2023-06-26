@@ -19,7 +19,7 @@ return (
              
              size={256}
             //  style={{ height: "auto", maxWidth: "300", width: "100%"}}
-             value={"https://truekitchen.netlify.app/?name=777"}
+             value={"https://truekitchen.netlify.app/?name=1"}
              iewBox={`0 0 500 500`}
            />
    

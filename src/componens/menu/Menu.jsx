@@ -354,7 +354,7 @@ useEffect(()=>{
   return (
     <>
    
-    <Link to="qrcode?name=lotus hello" >qrcode</Link>
+    
    <div className='lang' onClick={lang_ch} >{lean}</div>
    {/* <img   className='lang' src={lang_img} alt="" onClick={lang_ch}/> */}
    <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
