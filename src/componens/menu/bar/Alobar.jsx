@@ -18,8 +18,8 @@ export const Alobar = ({display,back,add}) => {
         <div className='item_b' key={index}>
           
           <span className='label_b' onClick={add}>{el.name}</span>
-          <span className='price'>{el.volume}мл /</span>
-          <span className='price'>{el.price} ₽</span>
+          <span className='price_m'>{el.volume}мл /</span>
+          <span className='price_m'>{el.price} ₽</span>
         </div>
         ))}
 
@@ -55,8 +55,8 @@ export const Alobar = ({display,back,add}) => {
            <h1 className='bar_h'>Водка</h1>
         {vodka.map(el=>(
           <div className='item_b'><span className='label' onClick={add}>{el.name}</span>
-          <span className='price'>{el.volume}мл/</span>
-          <span className='price'>{el.price} ₽</span>
+          <span className='price_m'>{el.volume}мл/</span>
+          <span className='price_m'>{el.price} ₽</span>
           </div>
           ))}
           <h1 className='bar_h'>Коктели</h1>

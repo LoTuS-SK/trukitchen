@@ -3,6 +3,7 @@ import './App.css';
 import Menu from "./componens/menu/Menu";
 import {Routes,Route} from 'react-router-dom';
 import Chek from "./componens/chek/Chek"
+import Qr from "./componens/qrcode/qrcode.jsx"
 import { useState } from 'react';
 //import chekimg from "./img/free.png"
 
@@ -41,7 +42,7 @@ function App() {
     chsetdis={chsetdis}
     
     />} />
-      
+      <Route path={"qrcode"} element={<Qr/>} />
       <Route path={"menu"} element={<Menu/>} />
       <Route path="chek" element={<Chek/>} />
      

@@ -12,13 +12,14 @@ import send from "../../png/send.png"
 const Сhek = () => {
   const list1 = useSelector(state => state.chek).filter(el=>el.count!==0)
   const list2 = useSelector(state => state.chek_en).filter(el=>el.count!==0)
-  const lang = useSelector(state=>state.one)
+  //const lang = useSelector(state=>state.one)
+  const table = useSelector(state=>state.qrcode)
   
   
   // const [queryParameters] = useSearchParams()
   // const str = decodeURI(queryParameters.get("name"))
   // const arr = JSON.parse(str)
-  console.log(lang)
+  //console.log(lang)
   
 
 
@@ -118,7 +119,8 @@ function send2(){
  //console.log("yes")
  
  animesend()
- let message = ""
+ let message = `стол - ${table}`
+ message +='                                              '
 
  list1.forEach(element=>{
   message += `${element.name} - ${element.count} `
@@ -147,7 +149,7 @@ console.log(list1.lenght)
 
   return (
     <div >
-      <Link to={"/"} className='back'>
+      <Link to={`/?name=${table}`} className='back'>
         
         <img src={menu} alt="" className='menu-back'/>
        

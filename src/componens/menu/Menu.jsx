@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 import ferma from "../../png/ferma2.png"
 import tractor from "../../png/tracot.png"
-
+import { useSearchParams } from "react-router-dom"
 //import Chek from  "../../componens/chek/Chek"
 import chekimg from "../../png/kor.png"
 //import  lang_img from "../../png/language.png"
-import { useSelector } from 'react-redux'
+import { useSelector} from 'react-redux'
 import Snaks from './snaks/snaks';
 import Salat from './salats/salat'; 
 import Hot from './hot/hot';
@@ -45,6 +45,14 @@ const [dispaly_sweets,set_display_sweets] = useState(false)
 const dispath = useDispatch()
 
 const lean = useSelector(state => state.one)
+
+
+const [queryParameters] = useSearchParams()
+
+const str = queryParameters.get("name")
+
+dispath({type:"addtable",payload:str})
+
 
 
 
@@ -346,7 +354,7 @@ useEffect(()=>{
   return (
     <>
    
-    
+    <Link to="qrcode?name=lotus hello" >qrcode</Link>
    <div className='lang' onClick={lang_ch} >{lean}</div>
    {/* <img   className='lang' src={lang_img} alt="" onClick={lang_ch}/> */}
    <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
@@ -377,7 +385,7 @@ useEffect(()=>{
           </div>
         </div>   
           
-    {/* <div className={disqr?'qrcode-wrap':"qrcode-wrap none"} onClick={display_qr}>
+    {/* <div className='qrcode-wrap' >
          
                 <QRCode
                     
@@ -387,8 +395,8 @@ useEffect(()=>{
                     iewBox={`0 0 500 500`}
                   />
           
-          </div>
-     */}
+          </div> */}
+    
      
     </>
   )
