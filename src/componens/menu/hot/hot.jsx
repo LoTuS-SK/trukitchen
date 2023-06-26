@@ -27,37 +27,37 @@ const lean = useSelector(state=>state.one)
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Томлённая утиная грудка с апельсиновым соусом, воздушным кремом и грушей":"Stewed duck breast with orange sauce, air cream and pear"}</div>
             <div className="wr_img"><img src={utka} alt="" /></div>
-            <span className='price-pl'>940 ₽</span>
+            <span className='price-pl'>300 г / 940 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Черная треска с картофельным пюре, муссом из пармезана и томатами":"Black cod with mashed potatoes, parmesan mousse and tomatoes"}</div>
             <div className="wr_img"><img src={treska} alt="" /></div>
-            <span className='price-pl'>1390 ₽</span>
+            <span className='price-pl'>270 г / 1390 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Ассорти из морепродуктов, обжаренных с чесноком, в соусе из устриц":"Assorted seafood fried with garlic in oyster sauce"}</div>
             {/* <div className="wr_img"><img src={treska} alt="" /></div> */}
-            <span className='price-pl'>1590 ₽</span>
+            <span className='price-pl'>390г / 1590 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Пельмени из щуки и Сахалинского гребешка":"Pelmeni from pike and Sakhalin scallop"}</div>
             {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
-            <span className='price-pl'>680 ₽</span>
+            <span className='price-pl'>260 г / 680 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Пельмени из дичи с домашней сметаной":"Game dumplings with homemade sour cream"}</div>
             <div className="wr_img"><img src={pelmeni} alt="" /></div>
-            <span className='price-pl'>780 ₽</span>
+            <span className='price-pl'>200г / 780 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Котлеты из дичи с соусом из опят":"Game cutlets with mushroom sauce"}</div>
             <div className="wr_img"><img src={kotlet} alt="" /></div>
-            <span className='price-pl'>790 ₽</span>
+            <span className='price-pl'>180г60г/ 790 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
