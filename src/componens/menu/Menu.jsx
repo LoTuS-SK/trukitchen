@@ -31,6 +31,7 @@ const count = list.reduce(function(sum,num){return num.count + sum},0)
 
      return (
     <>
+    hi
     <Ru/>
     <Shop count={count}/>
     {/* <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link> */}
