@@ -39,13 +39,13 @@ const count = list.reduce(function(sum,num){return num.count + sum},0)
    <img className='logo' src={logo}  alt=""/>
     <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snakes"}</Link>
     <Link to="/salat" className='menu-items new' >{ru==="ru"?"Салаты":"Salats"}</Link>
-    <Link to="/hot" className='menu-items new'>Горячие блюда</Link>
-    <Link to="/soup" className='menu-items new'>Супы</Link>
-    <Link to="/onfire" className='menu-items new'>Гриль</Link>
-    <Link to="/auqa" className='menu-items new'>Аквариум</Link>
-    <Link to="/bake" className='menu-items new'>Печь</Link>
-    <Link to="/garnish" className='menu-items new'>Гарниры</Link>
-    <Link to="/bar" className='menu-items new'>Бар</Link>
+    <Link to="/hot" className='menu-items new'>{ru==="ru"?"Горячие блюда":"Hot dishes"}</Link>
+    <Link to="/soup" className='menu-items new'>{ru==="ru"?"Супы":"Soups"}</Link>
+    <Link to="/onfire" className='menu-items new'>{ru==="ru"?"Гриль":"Grill"}</Link>
+    <Link to="/auqa" className='menu-items new'>{ru==="ru"?"Аквариум":"Aquarium"}</Link>
+    <Link to="/bake" className='menu-items new'>{ru==="ru"?"Печть":"Bake"}</Link>
+    <Link to="/garnish" className='menu-items new'>{ru==="ru"?"Гарниры":"Aside dishes"}</Link>
+    <Link to="/bar" className='menu-items new'>{ru==="ru"?"Бар":"Bar"}</Link>
     </div>
     
    
