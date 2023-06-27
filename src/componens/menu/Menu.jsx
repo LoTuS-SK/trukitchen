@@ -29,9 +29,11 @@ const Menu = () => {
 const list = useSelector(state=>state.chek)
 const count = list.reduce(function(sum,num){return num.count + sum},0)
 
+const  mob =  JSON.stringify(window.navigator.userAgentData.mobile)
+
      return (
     <>
-   
+    <p className="mob">{mob}</p>
     <Ru/>
     <Shop count={count}/>
     {/* <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link> */}
