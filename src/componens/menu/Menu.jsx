@@ -46,7 +46,8 @@ const count = list.reduce(function(sum,num){return num.count + sum},0)
     <Link to="/onfire" className='menu-items new'>{ru==="ru"?"Гриль":"Grill"}</Link>
     <Link to="/auqa" className='menu-items new'>{ru==="ru"?"Аквариум":"Aquarium"}</Link>
     <Link to="/bake" className='menu-items new'>{ru==="ru"?"Печь":"Bake"}</Link>
-    <Link to="/garnish" className='menu-items new'>{ru==="ru"?"Гарниры":"Aside dishes"}</Link>
+    <Link to="/garnish" className='menu-items new'>{ru==="ru"?"Гарниры":"side dishes"}</Link>
+    <Link to="/bread" className='menu-items new'>{ru==="ru"?"Хлеб и пирожки":"Bread and pies"}</Link>
     <Link to="/bar" className='menu-items new'>{ru==="ru"?"Бар":"Bar"}</Link>
     </div>
     

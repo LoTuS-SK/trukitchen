@@ -14,6 +14,7 @@ import Bake from './componens/menu/bake/bake';
 import Garnish from './componens/menu/garnish/garnish';
 import Sweets from './componens/menu/sweets/sweets'; 
 import  Bar  from './componens/menu/bar/bar_m';
+import Bread from "./componens/menu/bread"
 import Qrcode from "./componens/qrcode/qrcode"
 
 
@@ -41,6 +42,7 @@ function App() {
       <Route path="garnish" element={<Garnish/>} />
       <Route path="sweets" element={<Sweets/>} />
       <Route path="bar" element={<Bar/>} />
+      <Route path="bread" element={<Bread/>} />
       <Route path="qr" element={<Qrcode/>} />
      
     </Routes>

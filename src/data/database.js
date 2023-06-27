@@ -448,7 +448,7 @@ export const garnish = [
     {id:1,
         name:"Шпинат припущенный",
         name_en:"Spinach poached",
-        price:650,weight:390,section:"гарнир"},
+        price:650,weight:90,section:"гарнир"},
     {id:1,
         name:"Картофельное пюре на деревенских сливках",
         name_en:"Rustic cream mashed potatoes",

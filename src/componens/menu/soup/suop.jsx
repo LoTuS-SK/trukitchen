@@ -7,6 +7,7 @@ import suopraki from "../../../png/foot/rkaisoup.png"
 import gribsoup from "../../../png/foot/suopgrib.png"
 import borsh from "../../../png/foot/borsh.png"
 import chekimg from "../../../png/kor.png"
+import svek from "../../../png/foot/svekolnik.png"
 
 const Suop = () => {
 
@@ -43,7 +44,7 @@ const Suop = () => {
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Свекольник":"beetroot soup"}</div>
-            {/* <div className="wr_img"><img src={suopraki} alt="" /></div> */}
+            <div className="wr_img"><img src={svek} alt="" /></div>
             <div className='price-pl'>450 ₽</div>
           </div>
 
