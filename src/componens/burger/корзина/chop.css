@@ -1,0 +1,23 @@
+.chek{
+    position: absolute;
+    top:13px;
+    right: 13px;
+    width: 50px;
+  }
+
+  .cir {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+    top:1px;
+    right: 10px;
+    background-image: url("../../../img/wall-background-1481542063jfv.jpg");
+    color: black;
+    border-radius: 15px;
+    padding-top: 3px;
+    text-align: center;
+    background-position: 98px 106px;
+    font-weight: 600;
+    color:brown;
+}

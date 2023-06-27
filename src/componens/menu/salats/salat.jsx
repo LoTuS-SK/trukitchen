@@ -1,24 +1,51 @@
-import React from 'react'
+import React ,{ useState } from 'react'
 //import strelka from "../../../png/strelka.png"
+import { Link } from "react-router-dom";
 import "./salat.css"
 //import {salat} from "../../../data/database"
-import { useSelector } from 'react-redux'
+import { useSelector , useDispatch } from 'react-redux'
+import Shop from '../../burger/корзина/Shop';
 import cesar from "../../../png/foot/cesar.png"
 import svekla from "../../../png/foot/svekla.png"
 import burat from "../../../png/foot/burata.png"
 import печень  from "../../../png/foot/печень.png"
+import росбив from "../../../png/foot/росбиф3.png"
 
 
-const Salat = ({display,func,back}) => {
+const Salat = () => {
 
   const ru = useSelector(state=>state.one)
+
+  const dispath = useDispatch()
+
+const list = useSelector(state=>state.chek)
+const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
+function func(e){
+  const target = e.target.textContent
+  
+  if (ru==="ru"){
+    dispath({type:"add",payload:target})
+  }
+
+  if (ru==="en"){
+    dispath({type:"add_en",payload:target})
+  }
+  
+  setcount(list.reduce(function(sum,num){return num.count + sum},0))
+
+  
+  //console.log("количество = " + count)
+}
+
   return (
     <>
-    
-    <div className={display?"salat":"none"}>
+    <Shop count={count}/>
+    <Link to="/menu" className='btn-back' >←</Link>
+    <div className="salat">
     {/* <div className='strelka' onClick={back}><img src={strelka} alt="" /></div> */}
-    <div className='btn-back' onClick={back}>←</div>
-    <div className={display?'snakes-item':"none"} >{ru==="ru"?"Салаты":"Salads"}</div>
+    
+    <div className='snakes-item'>{ru==="ru"?"Салаты":"Salads"}</div>
     
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Цезарь с цыпленком":"Caesar with chicken"}</div>
@@ -52,7 +79,7 @@ const Salat = ({display,func,back}) => {
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Ростбиф с салатом, огурцом и сладким томатом":"Roast beef with lettuce, cucumber and sweet tomato"}</div>
-            {/* <div className="wr_img"><img src={печень} alt="" /></div> */}
+            <div className="wr_img"><img src={росбив} alt="" /></div>
             <span className='price-pl'>180 г / 690 ₽</span>
           </div>
 

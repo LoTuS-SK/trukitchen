@@ -21,6 +21,7 @@
     font-family:one;
     font-size: 50px;
     text-shadow: 3px 1px 2px rgb(144, 141, 142);
+    text-decoration: none;
 }
     .wrap_bar_1{
    height: 100vh;
@@ -29,9 +30,7 @@
    justify-content: space-around;
    align-items: center;
 }
-    .none{
-    display: none;
-}
+
 .vine_wr{
     display: flex;
    flex-direction: column;
@@ -129,4 +128,8 @@ img .strelka{
 .price_m{
     width: 70px;
     color:brown;
+}
+
+.none{
+    display: none;
 }

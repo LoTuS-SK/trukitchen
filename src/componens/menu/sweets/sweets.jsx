@@ -12,7 +12,7 @@ const Swets = ({display,back,func}) => {
   const ru = useSelector(state=>state.one)
 
   return (
-    <div className={display?"sweets":"sweets none"}>
+    <div className="sweets">
       <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
       <h1 className='sw_h1'>Десерты</h1>
       {desert.map(el=>(

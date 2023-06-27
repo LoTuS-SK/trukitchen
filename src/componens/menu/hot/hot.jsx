@@ -1,21 +1,50 @@
-import React from 'react'
+import React ,{ useState } from 'react'
 import "../snaks/snaks"
 //import {hotbluda} from "../../../data/database"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 // import more from "../../../png/foot/moreassorti.png"
+import { Link } from "react-router-dom";
+import Shop from '../../burger/корзина/Shop';
 import utka from "../../../png/foot/utka.png"
 import treska from "../../../png/foot/treska.png"
 import kotlet from "../../../png/foot/kotleta.png"
 import olem from "../../../png/foot/fileolen.png"
 import pelmeni from "../../../png/foot/pelmeni.png"
 
-const Hot = ({display,func,back}) => {
+
+
+const Hot = () => {
 const lean = useSelector(state=>state.one)
+
+
+const dispath = useDispatch()
+
+const list = useSelector(state=>state.chek)
+const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
+function func(e){
+  const target = e.target.textContent
+  
+  if (lean==="ru"){
+    dispath({type:"add",payload:target})
+  }
+
+  if (lean==="en"){
+    dispath({type:"add_en",payload:target})
+  }
+  
+  setcount(list.reduce(function(sum,num){return num.count + sum},0))
+
+  
+  //console.log("количество = " + count)
+}
 
   return (
     <>
-      <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
+    <Shop count={count}/>
+      <div className="skakes">
+      <Link to="/menu" className='btn-back' >←</Link>
+    
     <div className='snakes-item'>{lean==="ru"?"Горячие блюда":"Hot dishes"}</div>
 
     {/* <div className='item_pal' tabIndex="0" >

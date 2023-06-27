@@ -1,12 +1,14 @@
-import React from 'react'
+import React , {useState} from 'react'
 //import { bake } from '../../../data/database'
 import "../snaks/snaks.css"
 import paltus from "../../../png/foot/paltuss.png"
 import strelyd from "../../../png/foot/str3.png"
 import koz4 from "../../../png/foot/koz5.png"
-import { useSelector} from 'react-redux'
-
-
+import { useSelector , useDispatch} from 'react-redux'
+import { Link } from "react-router-dom";
+import chekimg from "../../../png/kor.png"
+import страч from "../../../png/foot/страчетелла.png"
+import Shop from '../../burger/корзина/Shop';
 //const path = "../../../png/foot/pirog_paltus 2.png"
 
 const paltus2 = require("../../../png/foot/pirog_paltus 2.png") 
@@ -18,21 +20,41 @@ const pirog_olen = require("../../../png/foot/pirog-olen.png")
 
  
 
-const Bake = ({display,func,back}) => {
-
+const Bake = () => {
+  const dispath = useDispatch()
   const lean = useSelector(state=>state.one)
-  
+  const list = useSelector(state=>state.chek)
+  const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
   function clickimg(e){
    const str = e.target.dataset.id
     func(str)
   }
 
+function func(e){
+  const target = e.target.textContent
+    
+    if (lean==="ru"){
+      dispath({type:"add",payload:target})
+    }
+
+    if (lean==="en"){
+      dispath({type:"add_en",payload:target})
+    }
+    
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+
+    
+}
+
 
   return (
     <>
-    <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
+    <Shop count={count}/>
+    <Link to="/menu" className='btn-back' >←</Link>
+    <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link>
+    <div className="skakes">
+    
     <div className='snakes-item'>Печь</div>
   
     <div className='item_pal'>
@@ -64,8 +86,9 @@ const Bake = ({display,func,back}) => {
 
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"? "Пирог с фермерской страчателлой":"Farm Stracciatella Pie"}</span>
+            <div className="wr_img"><img src={страч} alt="" /></div>
             <div className="wr_img"></div>
-            <div className='price-pl'>{790} ₽</div>
+            <div className='price-pl'>400гр / 790 ₽</div>
     </div>
           
     <div className='item_pal'>

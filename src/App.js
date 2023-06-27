@@ -4,29 +4,21 @@ import Menu from "./componens/menu/Menu";
 import {Routes,Route} from 'react-router-dom';
 import Chek from "./componens/chek/Chek"
 import Qr from "./componens/qrcode/qrcode.jsx"
-import { useState } from 'react';
-//import chekimg from "./img/free.png"
-
+import Snaks from './componens/menu/snaks/snaks';
+import Salat from './componens/menu/salats/salat'; 
+import Hot from './componens/menu/hot/hot';
+import Soup from "./componens/menu/soup/suop"
+import Onfire from './componens/menu/onfire/onfire';
+import Aqua from './componens/menu/aqua/aqua';
+import Bake from './componens/menu/bake/bake';
+import Garnish from './componens/menu/garnish/garnish';
+import Sweets from './componens/menu/sweets/sweets'; 
+import  Bar  from './componens/menu/bar/bar_m';
+import Qrcode from "./componens/qrcode/qrcode"
 
 
 function App() {
-  
-  const[disqr,set_disqr]=useState(true)
-  const[dis_ch,set_disch]=useState(false)
-  
 
-  function setqr(bol){
-    set_disqr(bol)
-  }
-  function yes(){
-    set_disqr(true)
-  }
-
-  function chsetdis(){
-    set_disch(false)
-  }
-
-  
 
   
   return (
@@ -35,16 +27,21 @@ function App() {
     
   
     <Routes>
-    <Route index element = {<Menu disqr={disqr} 
-    setqr={setqr} 
-    yes={yes} 
-    chdis={dis_ch} 
-    chsetdis={chsetdis}
-    
-    />} />
+    <Route index element = {<Menu/>} />
       <Route path={"qrcode"} element={<Qr/>} />
       <Route path={"menu"} element={<Menu/>} />
       <Route path="chek" element={<Chek/>} />
+      <Route path={"/snaks"} element={<Snaks/>} />
+      <Route path={"/salat"} element={<Salat/>} />
+      <Route path={"hot"} element={<Hot/>} />
+      <Route path={"auqa"} element={<Aqua/>} />
+      <Route path={"soup"} element={<Soup/>} />
+      <Route path={"onfire"} element={<Onfire/>}/>
+      <Route path="bake" element={<Bake/>}/>
+      <Route path="garnish" element={<Garnish/>} />
+      <Route path="sweets" element={<Sweets/>} />
+      <Route path="bar" element={<Bar/>} />
+      <Route path="qr" element={<Qrcode/>} />
      
     </Routes>
                  

@@ -1,9 +1,8 @@
-.chek{
-  position: absolute;
-  top:13px;
-  right: 13px;
-  width: 50px;
+*{
+ text-decoration: none;
 }
+
+
 
 .App-logo {
   height: 40vmin;

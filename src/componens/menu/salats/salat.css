@@ -51,9 +51,10 @@ font-family:one;
 
 }
 .label{
-    width: 300px;
+    /* width: 300px; */
     padding-top: 8px;
     font-weight: 500;
+    hyphens: auto;
     
 }
 .btn-back{

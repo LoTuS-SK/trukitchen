@@ -1,10 +1,6 @@
-//import { useSearchParams } from "react-router-dom"
 
-//const [queryParameters] = useSearchParams()
 
-//const str = queryParameters.get("name")
-
-const str = "Сергей"
+const str = ""
 
 
 

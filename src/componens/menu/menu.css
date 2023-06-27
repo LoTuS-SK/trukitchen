@@ -24,26 +24,26 @@
 
 
 
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  text-decoration:none;
-}
+
+
 .img{
     width: 50px;
     background-image:url("../../img/QR.jpg") ;
 }
 
 
-   .menu-items{
+   a .menu-items{
     font-family:sitka;
     font-size: 50px;
     text-shadow: 3px 1px 2px rgb(144, 141, 142);
+    text-decoration: none;
+    color:black;
 }
 
 body{
     background-image:url("../../../src/img/wall-background-1481542063jfv.jpg") ;
+    text-decoration: none;
+    color:black;
 }
 
 .wrap{
@@ -106,28 +106,9 @@ input{
     display: none;
 }
 
-.cir {
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
-    position: absolute;
-    top:1px;
-    right: 10px;
-    background-image: url("../../img/wall-background-1481542063jfv.jpg");
-    color: black;
-    border-radius: 15px;
-    padding-top: 3px;
-    text-align: center;
-    background-position: 98px 106px;
-    font-weight: 600;
-    color:brown;
-}
 
-.lang {
-    width:50px;
-    margin:10px 0px 0px 10px;
-    font-size: 30px;
-}
+
+
 
 .ferma{
     width:80px;
@@ -144,4 +125,9 @@ input{
     margin-bottom: 5px;
     border-bottom: 1px solid grey;
      
+}
+
+.new{
+    text-decoration: none;
+    color: black;
 }

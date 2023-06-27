@@ -64,13 +64,24 @@ font-family:one;
     
 
 }
+
+.price-b{
+width: 50px;
+}
 .label{
-    
+    width: 300px;
     padding-top: 8px;
     padding-right: 0px;
     font-weight: 500;
     font-size: 20px;
-    flex-grow:1;
+    flex-shrink:1;
+   
+}
+
+.label_nap{
+    width:310px;
+    font-size: 20px;
+    white-space: pre;
 }
 
 .label:active{

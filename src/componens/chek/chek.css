@@ -1,6 +1,7 @@
 *{
     animation-name: circle;
     animation-duration: 1s;
+    text-decoration: none;
 }
 
 @font-face {

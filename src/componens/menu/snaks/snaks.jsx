@@ -1,8 +1,9 @@
-import React from 'react'
+import React ,{useState}from 'react'
 //import { snakes } from "../../../data/database"
 // import strelka from "../../../png/strelka.png"
 import "../snaks/snaks.css"
-import { useSelector} from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
+import { Link } from "react-router-dom";
 
 import pashtet from "../../../png/foot/pashtet.png"
 import forel from "../../../png/foot/forel.png"
@@ -13,18 +14,41 @@ import tartar from "../../../png/foot/tartar.png"
 import forchmak from "../../../png/foot/for4mak.png"
 import gribi from "../../../png/foot/gribi.png"
 import  sugudai from "../../../png/foot/sugudai.png"
+import Shop from '../../burger/корзина/Shop';
 
 
-const Snaks = ({display,func,back}) => {
+const Snaks = () => {
 
 const lean = useSelector(state=>state.one)
 
 
+const dispath = useDispatch()
+
+  const list = useSelector(state=>state.chek)
+  const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
+  function func(e){
+    const target = e.target.textContent
+    
+    if (lean==="ru"){
+      dispath({type:"add",payload:target})
+    }
+
+    if (lean==="en"){
+      dispath({type:"add_en",payload:target})
+    }
+    
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+
+    
+    //console.log("количество = " + count)
+  }
+
   return (
     <>
-    
-    <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
+    <Shop count={count}/>
+    <div className="skakes">
+    <Link to="/menu" className='btn-back' >←</Link>
     {/* <div className='strelka' onClick={back}><img src={strelka} alt="" /></div> */}
     <div className='snakes-item'>{lean==="ru"?"Закуски":"Snacks"}</div>
     

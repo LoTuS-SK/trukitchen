@@ -1,402 +1,53 @@
-import React, { useEffect, useState ,useMemo} from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
-//import QRCode from "react-qr-code";
-// import Burger from '../burger/Burger';
 import logo from "../../img/Asset-1.png"
-import ferma from "../../png/ferma2.png"
-import tractor from "../../png/tracot.png"
 import { useSearchParams } from "react-router-dom"
-//import Chek from  "../../componens/chek/Chek"
-import chekimg from "../../png/kor.png"
-//import  lang_img from "../../png/language.png"
-import { useSelector} from 'react-redux'
-import Snaks from './snaks/snaks';
-import Salat from './salats/salat'; 
-import Hot from './hot/hot';
-import Soup from "../menu/soup/suop"
-import Onfire from './onfire/onfire';
-import Aqua from './aqua/aqua';
-import Bake from './bake/bake';
-import Garnish from './garnish/garnish';
-import Sweets from './sweets/sweets'; 
-import  Bar  from './bar/bar';
+//import chekimg from "../../png/kor.png";
+import Ru from "../burger/Ru"
+import Shop from "../burger/корзина/Shop"
+
 
 
 import "../menu/menu.css"
-import { useDispatch } from 'react-redux';
-
-
-const Menu = () => {
-
-const [count,setcount] = useState(false)
-
-const [display_snakes,set_display_snakes ] = useState(false)
-const [display_salat,set_display_salat] =useState(false)
-const [display_menu,set_display_menu] = useState(true)
-const [display_hot,set_display_hot] = useState(false)
-const [display_soup,set_display_soup]= useState(false)
-const [display_fire,set_display_fire]= useState(false)
-const [display_aqua,set_display_aqua]= useState(false)
-const [display_bake,set_display_bake]= useState(false)
-const [display_Garnish,set_display_Garnish]= useState(false)
-const [dispaly_bar,set_display_bar] = useState(false)
-const [dispaly_sweets,set_display_sweets] = useState(false)
-
-const dispath = useDispatch()
-
-const lean = useSelector(state => state.one)
-
-
-const [queryParameters] = useSearchParams()
-
-const str = queryParameters.get("name")
-
-dispath({type:"addtable",payload:str})
+import { useSelector , useDispatch} from 'react-redux';
 
 
 
 
+const Menu = () => { 
+  const dispatch = useDispatch()
 
-
-const menu_eat = useMemo(()=> ["Закуски","Салаты","Горячие блюда","Супы","Гриль","Аквариум","Печь","Гарниры","Десерты","Бар",],[])
-const menu_eat2 = useMemo(()=>["Snacks","Salads","Hot dishes","Soups","Grill","Aquarium","Bake","Side dishes","Desserts","Bar",],[])
-
-const [menu_lan,setmenulan] = useState(menu_eat) 
-
-useEffect(()=>{
-  if (lean==="ru"){
-    setmenulan(menu_eat)
-  }
-  if (lean==="en"){
-    setmenulan(menu_eat2)
-  }
-},[lean,menu_eat,menu_eat2])
-
-
-// function parser1(){
+  const [queryParameters] = useSearchParams()
   
-// let list = []
-// for( let elem of snakes){
+  const str = queryParameters.get("name")
 
-//   for(let elem2 of chek_list){
-//       if (elem.name === elem2.name){
-//          let obj = {id:elem.id,count:elem2.count}
-//         list.push(obj)
-//       } 
-      
-//       }
-      
-//   }
-//   set_parser_list([...list])
-// } 
-
-// function test(){
-//   set_parser_list([...parser1()])
-
-// }
-
-
-const click =(e)=>{
-  
-  const target = e.target.textContent
-  //const url = encodeURI(target)
- 
-  
-  switch (target) {
-    case "Закуски":
-      set_display_snakes(true)
-      set_display_menu(false)
-    break;
-    case "Snacks":
-      set_display_snakes(true)
-      set_display_menu(false)
-    break;
-        case "Салаты":
-        
-        set_display_salat(true)
-        set_display_menu(false)
-      
-      break;
-      case "Salads":
-        
-      set_display_salat(true)
-      set_display_menu(false)
-    
-    break;
-      case "Горячие блюда":
-        set_display_hot(true)
-        set_display_menu(false)
-      break;
-      case "Hot dishes":
-        set_display_hot(true)
-        set_display_menu(false)
-      break;
-      case "Супы":
-        set_display_soup(true)
-        set_display_menu(false)
-      break;
-      case "Soups":
-        set_display_soup(true)
-        set_display_menu(false)
-      break;
-      case "Гриль":
-        set_display_fire(true)
-        set_display_menu(false)
-      break;
-      case "Grill":
-        set_display_fire(true)
-        set_display_menu(false)
-      break;
-      
-      case "Аквариум":
-        set_display_aqua(true)
-        set_display_menu(false)
-      break;
-      case "Aquarium":
-        set_display_aqua(true)
-        set_display_menu(false)
-      break;
-      case "Печь":
-        set_display_bake(true)
-        set_display_menu(false)
-      break;
-      case "Bake":
-        set_display_bake(true)
-        set_display_menu(false)
-      break;
-      case "Гарниры":
-        set_display_Garnish(true)
-        set_display_menu(false)
-      break;
-      case "Side dishes":
-        set_display_Garnish(true)
-        set_display_menu(false)
-      break;
-      case "Бар":
-        
-        set_display_menu(false)
-        set_display_bar(true)
-      break;
-      case "Bar":
-        
-        set_display_menu(false)
-        set_display_bar(true)
-      break;
-      
-      case "Desserts":
-        set_display_sweets(true)
-        set_display_menu(false)
-        
-      break;
-      case "Десерты":
-        set_display_sweets(true)
-        set_display_menu(false)
-        
-      break;
-  
-  
-  
-    default:
-      break;
-  }
-  
-  
-}
-
-const list3 = useSelector(state=>state.chek)
-const list_en = useSelector(state=>state.chek_en)
-
-
-function add(e){
-  
-  console.log(typeof(e))
-  let target
-
-  if(typeof(e)==="object"){
-    target = e.target.textContent
-  }
-
-  if(typeof(e)==="string"){
-    target = e
-  }
-  
-  
-  
-  console.log(target)
- if (lean==="ru"){
-
-  dispath({type:"add",payload:target})
- 
-  if(list3.length===1){
-    setcount(list3[0].count)
-    } 
-    if(list3.length>1){
-     const num = list3.reduce(function(sum,num){
-      return num.count + sum
-     },0)
-      
-      setcount(num)
-      } 
-}   
-if (lean==="en"){
-
-  dispath({type:"add_en",payload:target})
- 
-  if(list_en.length===1){
-    setcount(list_en.count)
-    } 
-    if(list_en.length>1){
-     const num = list_en.reduce(function(sum,num){
-      return num.count + sum
-     },0)
-      
-      setcount(num)
-      } 
-}    
-     
-    
-
-
- 
-  
-  
-}
-
-function back(){ 
-  set_display_menu(true)
-  set_display_snakes(false)
-  set_display_salat(false)
-  set_display_hot(false)
-  set_display_soup(false)
-  set_display_fire(false)
-  set_display_aqua(false)
-  set_display_bake(false)
-  set_display_Garnish(false)
- 
-  set_display_bar(false)
-  set_display_sweets(false)
-}
-
-// function chek(){
-//   console.log(query)
-// }
-
-//const query = `https://teal-lamington-08734d.netlify.app/salat?name=${JSON.stringify(parser_list)}`
-//const query = `http://localhost:3001/salat?name=${chek_list}`
-//const query = "https://truekitchen.netlify.app/"
- 
-// function display_qr(){
-//   setqr(false)
-// }
-function yes(){
-  dispath({type:"del"})
-  
-  
-}
-
-
-function lang_ch(){
-  
-  if (lean==="ru"){
-    setmenulan(menu_eat2)
-    dispath({type:"en"})
-    dispath({type:"del"})
-  }
-  if (lean==="en"){
-    setmenulan(menu_eat)
-    dispath({type:"ru"})
-    dispath({type:"delone"})
-  }
-}  
+  const ru = useSelector(state=>state.one)
+  dispatch({type:"addtable",payload:str})
   
 
+//const str = queryParameters.get("name")
+const list = useSelector(state=>state.chek)
+const count = list.reduce(function(sum,num){return num.count + sum},0)
 
-
-
-
-
-function display_bar_off(){
-  set_display_bar(false)
-}
-
-function display_bar_on(){
-  set_display_bar(true)
-}
-
-useEffect(()=>{
-  if(list3.length===1){
-    setcount(list3[0].count)
-    } 
-    if(list3.length>1){
-     const num = list3.reduce(function(sum,num){
-      return num.count + sum
-     },0)
-      
-      setcount(num)
-      } 
-      if(list_en.length===1){
-        setcount(list_en[0].count)
-        } 
-        if(list_en.length>1){
-         const num = list_en.reduce(function(sum,num){
-          return num.count + sum
-         },0)
-          
-          setcount(num)
-          } 
-
-      
-      },[count,list3,list_en])
-
-
-
-
-  return (
+     return (
     <>
+    <Ru/>
+    <Shop count={count}/>
+    {/* <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link> */}
+    <div className="wrap">
+   <img className='logo' src={logo}  alt=""/>
+    <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snakes"}</Link>
+    <Link to="/salat" className='menu-items new' >Салаты</Link>
+    <Link to="/hot" className='menu-items new'>Горячие блюда</Link>
+    <Link to="/soup" className='menu-items new'>Супы</Link>
+    <Link to="/onfire" className='menu-items new'>Гриль</Link>
+    <Link to="/auqa" className='menu-items new'>Аквариум</Link>
+    <Link to="/bake" className='menu-items new'>Печь</Link>
+    <Link to="/garnish" className='menu-items new'>Гарниры</Link>
+    <Link to="/bar" className='menu-items new'>Бар</Link>
+    </div>
+    
    
-    
-   <div className='lang' onClick={lang_ch} >{lean}</div>
-   {/* <img   className='lang' src={lang_img} alt="" onClick={lang_ch}/> */}
-   <Link to="/chek"><img  className='chek' src={chekimg} alt=""/>
-   {(list3.length>0 || list_en.length>0) && <div className="cir">{count}</div>}
-   </Link>
-    <Snaks display={display_snakes} func={add} back={back}/>
-    <Salat display={display_salat} func={add} back={back}/>
-    <Hot display={display_hot} func={add} back={back}/>
-    <Soup display={display_soup} func={add} back={back}/>
-    <Onfire display={display_fire} func={add} back={back}/>
-    <Aqua display={display_aqua} func={add} back={back}/>
-    <Bake display={display_bake} func={add} back={back}/>
-    <Garnish display={display_Garnish} func={add} back={back}/>
-    <Sweets display={dispaly_sweets} func={add} back={back}/>
-    
-    <Bar display={dispaly_bar} func={add} back={back} display_off={display_bar_off} display_on={display_bar_on} />
-    
-    
-    <div className={display_menu?"wrap":"wrap none"}>
-    <img className='logo' src={logo} alt="" onClick={yes}/>
-   
-    
-  
-        {menu_lan.map((el)=>(<div className='menu-items' onClick={click}>{el}</div>))}
-            <div className="wr_footer">
-              <img className='ferma' src={tractor} alt="" onClick={yes}/>
-              <img className='ferma' src={ferma} alt="" onClick={yes}/>
-          </div>
-        </div>   
-          
-    {/* <div className='qrcode-wrap' >
-         
-                <QRCode
-                    
-                    size={256}
-                    style={{ height: "auto", maxWidth: "300", width: "100%"}}
-                    value={query}
-                    iewBox={`0 0 500 500`}
-                  />
-          
-          </div> */}
-    
      
     </>
   )

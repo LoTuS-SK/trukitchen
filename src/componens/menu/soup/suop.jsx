@@ -2,20 +2,25 @@ import React from 'react'
 import "../snaks/snaks"
 // import { soup } from '../../../data/database'
 import { useSelector} from 'react-redux'
-
+import { Link } from "react-router-dom";
 import suopraki from "../../../png/foot/rkaisoup.png"
 import gribsoup from "../../../png/foot/suopgrib.png"
 import borsh from "../../../png/foot/borsh.png"
+import chekimg from "../../../png/kor.png"
 
-const Suop = ({display,back,func}) => {
+const Suop = () => {
 
+  function func(){
+    console.log("soup")
+  }
 
 
   const lean = useSelector(state=>state.one)
   return (
     <>
-     <div className={display?"skakes":"snakes none"}>
-    <div className='btn-back' onClick={back}>←</div>
+    <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link>
+     <div className="skakes">
+     <Link to="/menu" className='btn-back' >←</Link>
     <div className='snakes-item'>{lean==="ru"?"Супы":"Soups"}</div>
 
     <div className='item_pal' tabIndex="0" >

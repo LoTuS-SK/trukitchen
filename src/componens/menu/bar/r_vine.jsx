@@ -1,6 +1,6 @@
 import React from 'react'
 import {vine} from '../../../data/basevine'
-import "./bar"
+import "./bar_m"
 const r_vine = ({display,back,add}) => {
   return (
     
