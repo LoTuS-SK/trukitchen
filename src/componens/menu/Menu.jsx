@@ -31,14 +31,14 @@ const count = list.reduce(function(sum,num){return num.count + sum},0)
 
      return (
     <>
-    hi
+   
     <Ru/>
     <Shop count={count}/>
     {/* <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link> */}
     <div className="wrap">
    <img className='logo' src={logo}  alt=""/>
     <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snakes"}</Link>
-    <Link to="/salat" className='menu-items new' >Салаты</Link>
+    <Link to="/salat" className='menu-items new' >{ru==="ru"?"Салаты":"Salats"}</Link>
     <Link to="/hot" className='menu-items new'>Горячие блюда</Link>
     <Link to="/soup" className='menu-items new'>Супы</Link>
     <Link to="/onfire" className='menu-items new'>Гриль</Link>
