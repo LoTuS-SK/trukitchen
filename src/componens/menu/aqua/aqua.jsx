@@ -16,6 +16,8 @@ const Aqua = () => {
   const dispath = useDispatch()
 
   const list = useSelector(state=>state.chek)
+  const list2 = useSelector(state=>state.chek_en)
+
   const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
   function func(e){
@@ -23,13 +25,15 @@ const Aqua = () => {
     
     if (ru==="ru"){
       dispath({type:"add",payload:target})
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
     }
 
     if (ru==="en"){
       dispath({type:"add_en",payload:target})
+      setcount(list2.reduce(function(sum,num){return num.count + sum},0))
     }
     
-    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    
 
     
     //console.log("количество = " + count)

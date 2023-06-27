@@ -51,7 +51,7 @@ function func(e){
   return (
     <>
     <Shop count={count}/>
-    <Link to="/menu" className='btn-back' >←</Link>
+    <Link to="/menu" className='btn-back'>←</Link>
     <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link>
     <div className="skakes">
     

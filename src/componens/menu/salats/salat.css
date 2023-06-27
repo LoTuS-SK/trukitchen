@@ -58,9 +58,13 @@ font-family:one;
     
 }
 .btn-back{
+    position: absolute;
+    top:5px;
+    left:5px;
     font-size: 30px;
     height: 50px;
     padding-left: 10px;
+    color: black;
 }
 .btn-back img{
     width: 100%;

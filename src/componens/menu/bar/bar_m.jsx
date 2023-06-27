@@ -5,6 +5,7 @@ import imgbar from "../../../png/bar.png"
 import Vine from "./vine"
 import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
+import { Link } from 'react-router-dom'
 //import { useDispatch} from 'react-redux'
 
 
@@ -70,6 +71,8 @@ function func(e){
   return (
     <>
     <div className={display?"wrap_bar_1":"wrap_bar_1 none"}>
+
+    <Link to="/menu" className='btn-back' >←</Link>
         {bar_menu.map(((el,index)=>(
             <div className='menu-items' onClick={bar_click} key={index}>{el}</div>
         )))}

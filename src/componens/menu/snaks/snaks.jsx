@@ -48,7 +48,7 @@ const dispath = useDispatch()
     <>
     <Shop count={count}/>
     <div className="skakes">
-    <Link to="/menu" className='btn-back' >←</Link>
+    <Link to="/menu" className='btn-back new ' >←</Link>
     {/* <div className='strelka' onClick={back}><img src={strelka} alt="" /></div> */}
     <div className='snakes-item'>{lean==="ru"?"Закуски":"Snacks"}</div>
     
