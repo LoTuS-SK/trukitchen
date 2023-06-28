@@ -6,7 +6,7 @@ import Vine from "./vine"
 import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 //import { useDispatch} from 'react-redux'
 
 
@@ -18,11 +18,23 @@ const Bar = () => {
   const [display_vine,set_display_vine]= useState(false)
   const [display_alko,set_display_alko]= useState(false)
   const [display_bar,set_display_bar]= useState(false)
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
 function func(e){
   const target = e.target.textContent
-  console.log(target)
+    
+  if (ru==="ru"){
+    dispatch({type:"add",payload:target})
+    //setcount(list.reduce(function(sum,num){return num.count + sum},0))
+  }
+
+  if (ru==="en"){
+    dispatch({type:"add_en",payload:target})
+    //setcount(list2.reduce(function(sum,num){return num.count + sum},0))
+  }
+  
+  
+
 }
 
   const ru = useSelector(state=>state.one)

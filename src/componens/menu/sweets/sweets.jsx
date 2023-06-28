@@ -15,7 +15,7 @@ const Swets = ({display,back,func}) => {
     <div className="sweets">
     <Link to="/menu" className='btn-back' >←</Link>
       
-      <h1 className='sw_h1'>Десерты</h1>
+      <h1 className='sw_h1'>{ru==="ru"?"Десерты":"Dessert"}</h1>
       {desert.map(el=>(
         <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>
     ))}
@@ -23,7 +23,7 @@ const Swets = ({display,back,func}) => {
 {ice.map(el=>(
         <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>
     ))}
-    <h1 className='sw_h1'>Варенье</h1>
+    <h1 className='sw_h1'>{ru==="ru"?"Варенье":"Jam"}</h1>
 {jam.map(el=>(
         <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>
     ))}

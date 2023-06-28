@@ -16,6 +16,7 @@ import gribi from "../../../png/foot/gribi.png"
 import  sugudai from "../../../png/foot/sugudai.png"
 import Shop from '../../burger/корзина/Shop';
 import solen from "../../../png/foot/soleny.png"
+import lomtika from "../../../png/foot/lomtiki utki.png"
 
 
 const Snaks = () => {
@@ -173,9 +174,10 @@ const dispath = useDispatch()
             <span className='price'>50 г / 450 ₽</span>
           </div>
 
-          <div className='item' tabIndex="0" >
+          <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Филе утки холодного копчения":"Cold smoked duck fillet"}</div>
-            <span className='price'>50г / 550 ₽</span>
+            <div className="wr_img"><img src={lomtika} alt="" /></div>
+            <span className='price-pl'>50г / 550 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
