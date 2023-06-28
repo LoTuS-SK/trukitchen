@@ -52,3 +52,8 @@
     font-family: h2;
     color: brown;
 }
+.wr_content .data{
+    margin: 0px auto;
+    border: none;
+}
+

@@ -15,7 +15,7 @@ const Bron = () => {
             <input type="text" name="name" placeholder='Ваше имя'/>
             <input type="tel" name="tel" placeholder="номер телефона"/>
             <input type="numder" placeholder="Количетво персон"/>
-            <input type="date" name="" id="" />
+            <input type="date" name="" id="" className='data'/>
                 <div className="wr_button">
                     <div className="button">Отправить</div>
                 </div>
