@@ -7,7 +7,7 @@ import "./bron.css"
 const Bron = () => {
 
 const [name,setname]= useState("")
-const [tel,settel]=useState("")
+//const [tel,settel]=useState("")
 
 function setnames(e){
     setname(e.target.value)
