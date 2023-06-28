@@ -14,12 +14,18 @@
 }
 .wr_content input {
     text-decoration: none;
-    padding: 10px 50px;
+    padding: 10px 10px;
     margin: 5px 10px;
     border: none;
     color: brown;
     font-size: 20px;
+    font-family: h2;
+    border-bottom: 1px solid brown;
 
+}
+
+.wr_content input::placeholder{
+    color: brown;
 }
 
 .wr_content {
@@ -38,7 +44,7 @@
     font-size: 20px;
 }
 .wr_button{
-    
+    font-family: h2;
     margin: 30px auto;
 }
 
