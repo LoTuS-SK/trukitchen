@@ -2,6 +2,7 @@
 import React ,{useState} from 'react'
 import logo1 from "../../png/bron/logo1.png"
 import logo2 from "../../png/bron/logo2.png"
+import logo3 from "../../img/Asset-1.png"
 import "./bron.css"
 
 const Bron = () => {
@@ -24,7 +25,9 @@ function submit(){
         <div className="img_head">
         <img src={logo2} alt="" />
         </div>
+        <div className="logotip"><img src={logo3} alt="" className='logotip'/></div>
         <div className="wr_content">
+        
             <h2 className='bron_h2'>Бронирование столика</h2>
             <input type="text" name="name" placeholder='Ваше имя' value={name} onChange={setnames}/>
             <input type="tel" name="tel" placeholder="номер телефона" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
