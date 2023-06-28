@@ -197,7 +197,7 @@ const dispath = useDispatch()
 
           <div className='item' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Домашнее сало на гренках":"Homemade lard on toast"}</div>
-            <span className='price'>120 г / 990 ₽</span>
+            <span className='price'>120 г / 460 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
