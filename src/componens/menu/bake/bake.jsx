@@ -55,7 +55,7 @@ function func(e){
     <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link>
     <div className="skakes">
     
-    <div className='snakes-item'>Печь</div>
+    <div className='snakes-item'>{lean==="ru"?"Печь":"Bake"}</div>
   
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Пирог с рапаной":"Pie with rapana"}</span>

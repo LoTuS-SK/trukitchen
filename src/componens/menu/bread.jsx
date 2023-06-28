@@ -5,7 +5,7 @@ import pirogki from "../../png/foot/piroshki.png"
 import lepeshka from "../../png/foot/lepeshka.png"
 import breadkor from "../../png/foot/bredkor.png"
 import { Link } from 'react-router-dom'
-
+//import { useTest } from '../hooks/usechek'
 
 const Bread = () => {
     const ru = useSelector(state=>state.one)
@@ -13,21 +13,26 @@ const Bread = () => {
     const dispath = useDispatch()
   
     const list = useSelector(state=>state.chek)
+    const list_en = useSelector(state=>state.chek_en)
     const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
   
+    
+    
     function func(e){
       const target = e.target.textContent
       
       if (ru==="ru"){
         dispath({type:"add",payload:target})
+        setcount(list.reduce(function(sum,num){return num.count + sum},0))
       }
   
       if (ru==="en"){
         dispath({type:"add_en",payload:target})
+        setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
       }
       
-      setcount(list.reduce(function(sum,num){return num.count + sum},0))
-  
+      
+      
       
       //console.log("количество = " + count)
     }
@@ -37,7 +42,7 @@ const Bread = () => {
     <>
     <Link to="/menu" className='btn-back new ' >←</Link>
     <Shop count={count}/>
-    <div className='snakes-item'>хлеб и прирожки</div>
+    <div className='snakes-item'>{ru==="ru"?"хлеб и прирожик":"bread and pies"}</div>
     <div className="wrp">
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Пирожок с картофелем и грибамии":"Pie with potatoes and mushrooms"}</div>

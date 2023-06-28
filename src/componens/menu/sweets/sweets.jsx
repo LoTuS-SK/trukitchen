@@ -1,7 +1,7 @@
 import React from 'react'
 import "./sweets.css"
 import { Sweets } from '../../../data/database'
-import strelka from "../../../png/strelka.png"
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Swets = ({display,back,func}) => {
@@ -13,7 +13,8 @@ const Swets = ({display,back,func}) => {
 
   return (
     <div className="sweets">
-      <div className='strelka' onClick={back}><img src={strelka} alt="" /></div>
+    <Link to="/menu" className='btn-back' >←</Link>
+      
       <h1 className='sw_h1'>Десерты</h1>
       {desert.map(el=>(
         <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>

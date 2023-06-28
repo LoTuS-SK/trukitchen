@@ -15,6 +15,7 @@ import forchmak from "../../../png/foot/for4mak.png"
 import gribi from "../../../png/foot/gribi.png"
 import  sugudai from "../../../png/foot/sugudai.png"
 import Shop from '../../burger/корзина/Shop';
+import solen from "../../../png/foot/soleny.png"
 
 
 const Snaks = () => {
@@ -25,6 +26,7 @@ const lean = useSelector(state=>state.one)
 const dispath = useDispatch()
 
   const list = useSelector(state=>state.chek)
+  const list_en =useSelector(state=>state.chek_en)
   const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
   function func(e){
@@ -32,13 +34,16 @@ const dispath = useDispatch()
     
     if (lean==="ru"){
       dispath({type:"add",payload:target})
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
     }
 
     if (lean==="en"){
       dispath({type:"add_en",payload:target})
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
     }
+
     
-    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    
 
     
     //console.log("количество = " + count)
@@ -195,7 +200,13 @@ const dispath = useDispatch()
             <span className='price'>120 г / 990 ₽</span>
           </div>
 
-    
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{lean==="ru"?"Домашние Соленья":"homemade pickles"}</div>
+            <div className="wr_img"><img src={solen} alt="" /></div>
+            <span className='price-pl'>300 г / 490 ₽</span>
+          </div>
+
+
 
     
     

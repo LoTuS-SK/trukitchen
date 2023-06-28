@@ -27,7 +27,15 @@ const Menu = () => {
 
 //const str = queryParameters.get("name")
 const list = useSelector(state=>state.chek)
-const count = list.reduce(function(sum,num){return num.count + sum},0)
+const list_en =useSelector(state=>state.chek_en)
+let count = list.reduce(function(sum,num){return num.count + sum},0)
+
+if (ru==="ru"){
+  count = list.reduce(function(sum,num){return num.count + sum},0)
+}
+if (ru==="en"){
+  count = list_en.reduce(function(sum,num){return num.count + sum},0)
+}
 
 
 
@@ -48,6 +56,7 @@ const count = list.reduce(function(sum,num){return num.count + sum},0)
     <Link to="/bake" className='menu-items new'>{ru==="ru"?"Печь":"Bake"}</Link>
     <Link to="/garnish" className='menu-items new'>{ru==="ru"?"Гарниры":"side dishes"}</Link>
     <Link to="/bread" className='menu-items new'>{ru==="ru"?"Хлеб и пирожки":"Bread and pies"}</Link>
+    <Link to="/sweets" className='menu-items new'>{ru==="ru"?"Десерты":"Dessert"}</Link>
     <Link to="/bar" className='menu-items new'>{ru==="ru"?"Бар":"Bar"}</Link>
     </div>
     

@@ -45,7 +45,7 @@ const Aqua = () => {
     <Shop count={count}/>
      <div className="skakes:">
      <Link to="/menu" className='btn-back' >←</Link>
-    <div className='snakes-item'>Аквариум</div>
+    <div className='snakes-item'>{ru==="ru"?"Аквариум":"Aquarium"}</div>
 
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Морской ёж":"Sea urchin"}</div>

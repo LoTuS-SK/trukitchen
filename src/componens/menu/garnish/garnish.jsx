@@ -40,7 +40,7 @@ const Garnish = () => {
     <Shop count={count}/>
     <div className="skakes">
     {/* <div className='btn-back' onClick={back}>←</div> */}
-    <div className='snakes-item'>Гарниры</div>
+    <div className='snakes-item'>{ru==="ru"?'Гарниры':"side dishes"}</div>
 
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Спаржа":"Asparagus"}</div>

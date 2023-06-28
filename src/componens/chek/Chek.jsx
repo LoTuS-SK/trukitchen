@@ -7,6 +7,7 @@ import menu from "../../png/menu2.png"
 import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 import send from "../../png/send.png"
+import { useTest } from "../../componens/hooks/usechek"
 
 
 const Сhek = () => {
@@ -21,8 +22,8 @@ const Сhek = () => {
   // const arr = JSON.parse(str)
   //console.log(lang)
   
-
-
+  const a = useTest()
+  console.log(a)
   
 
   

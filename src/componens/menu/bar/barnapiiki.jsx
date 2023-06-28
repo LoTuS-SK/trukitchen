@@ -24,7 +24,7 @@ export const Barnapitki = ({display,back,add}) => {
       <h1 className='bar_h'>{ru==="ru"?"Напитки":"drinks"}</h1>
       {drinks.map(el=>(
         <div className='item'>
-            <span className='label' onClick={add}>{el.name}</span>
+            <span className='label' onClick={add}>{ru==="ru"?el.name:el.name_en}</span>
         <span className='price-b'>{el.price} ₽</span>
         </div>
       ))}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState ,useMemo} from 'react'
 import "./bar.css"
 import imgbar from "../../../png/bar.png"
 //import strelka from "../../../png/strelka.png"
@@ -6,6 +6,7 @@ import Vine from "./vine"
 import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 //import { useDispatch} from 'react-redux'
 
 
@@ -24,10 +25,21 @@ function func(e){
   console.log(target)
 }
 
+  const ru = useSelector(state=>state.one)
 
+  const bar_menu = useMemo(()=>["Вино","Алкоголь","Напитки"],[])
+  const bar_menu_en = useMemo(()=>["Vine","Alcohol","Drinks"],[])
+  const [bar_list,set_barlist] = useState(bar_menu)
 
-  const bar_menu = ["Вино","Алкоголь","Напитки",]
-  //const vine_menu = []
+  useEffect(()=>{
+    if(ru==="ru"){
+      set_barlist(bar_menu)
+    }
+    if(ru==="en"){
+      set_barlist(bar_menu_en)
+    }
+  },[ru,bar_menu,bar_menu_en])
+
   function bar_click(e){
     const target = e.target.textContent
 
@@ -35,15 +47,27 @@ function func(e){
       case "Вино":
         set_display_vine(true)
         setdislay(false)
-
-        
+        break;
+        case "Vine":
+        set_display_vine(true)
+        setdislay(false)
         break;
         case "Алкоголь":
         
         set_display_alko(true)
         setdislay(false)
         break;
+        case "Alcohol":
+        
+        set_display_alko(true)
+        setdislay(false)
+        break;
         case "Напитки":
+        set_display_bar(true)
+  
+        setdislay(false)
+        break;
+        case "Drinks":
         set_display_bar(true)
   
         setdislay(false)
@@ -73,7 +97,7 @@ function func(e){
     <div className={display?"wrap_bar_1":"wrap_bar_1 none"}>
 
     <Link to="/menu" className='btn-back' >←</Link>
-        {bar_menu.map(((el,index)=>(
+        {bar_list.map(((el,index)=>(
             <div className='menu-items' onClick={bar_click} key={index}>{el}</div>
         )))}
         <div className='wrap_img_bar'><img src={imgbar} alt="" /></div>
