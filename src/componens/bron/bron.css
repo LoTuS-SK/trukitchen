@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 @font-face {
     font-family: h2;
     src: url(../../fonts/ofont.ru_Zing\ Rust.ttf) format(ttf);
@@ -45,7 +48,7 @@
 }
 .wr_button{
     font-family: h2;
-    margin: 30px auto;
+    margin: 20px auto;
 }
 
 .bron_h2{
@@ -53,8 +56,25 @@
     color: brown;
 }
 .wr_content .data{
-    margin: 20px auto;
+    margin: 0px ;
     border: none;
     background-color: white;
 }
+.data_label{
+    font-family: h2;
+    font-size: 20px;
+    color: brown;
+    
+}
+.data_wr{
+    border-bottom: 1px solid brown;
+    margin:10px 15px;
+    padding: 0px 0px;
+}
+
+.button:active{
+    color: white;
+    background-color: brown;
+}
+
 
