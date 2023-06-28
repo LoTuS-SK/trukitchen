@@ -5,7 +5,9 @@
     font-style: normal;
          
 }
-
+.bron_wr img {
+    width: 100%;
+}
 
 .bron_wr{
    background-color: white;
@@ -13,7 +15,7 @@
 .wr_content input {
     text-decoration: none;
     padding: 10px 50px;
-    margin: 5px 100px;
+    margin: 5px 10px;
     border: none;
     color: brown;
     font-size: 20px;

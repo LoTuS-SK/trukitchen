@@ -11,13 +11,13 @@ const Bron = () => {
         <img src={logo2} alt="" />
         </div>
         <div className="wr_content">
-            <h2 className='bron_h2'>Бронирование</h2>
+            <h2 className='bron_h2'>Бронирование столика</h2>
             <input type="text" name="name" placeholder='Ваше имя'/>
             <input type="tel" name="tel" placeholder="номер телефона"/>
             <input type="numder" placeholder="Количетво персон"/>
             <input type="date" name="" id="" />
                 <div className="wr_button">
-                    <div className="button">забронировать</div>
+                    <div className="button">Отправить</div>
                 </div>
         </div>
         <div className="img_footer">
