@@ -17,6 +17,7 @@ import  sugudai from "../../../png/foot/sugudai.png"
 import Shop from '../../burger/корзина/Shop';
 import solen from "../../../png/foot/soleny.png"
 import lomtika from "../../../png/foot/lomtiki utki.png"
+import assor from "../../../png/foot/assorim.png"
 
 
 const Snaks = () => {
@@ -192,9 +193,10 @@ const dispath = useDispatch()
             <span className='price'>150г / 1200 ₽</span>
           </div>
 
-          <div className='item' tabIndex="0" >
+          <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Сыровяленое ассорти":"Dry-cured assortment"}</div>
-            <span className='price'>160г / 990 ₽</span>
+            <div className="wr_img"><img src={assor} alt="" /></div>
+            <span className='price-pl'>160г / 990 ₽</span>
           </div>
 
           <div className='item' tabIndex="0" >
