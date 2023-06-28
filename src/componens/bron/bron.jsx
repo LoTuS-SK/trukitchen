@@ -29,7 +29,11 @@ function submit(){
             <input type="text" name="name" placeholder='Ваше имя' value={name} onChange={setnames}/>
             <input type="tel" name="tel" placeholder="номер телефона" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
             <input type="numder" placeholder="Количетво персон"/>
-            <input type="time" placeholder="время"/>
+            
+                <div className="data_wr">
+                    <label for="time" className="data_label">Время</label>
+                    <input type="time" name="" id="time" className='data'/>
+                </div>
                 <div className="data_wr">
                     <label for="date" className="data_label">Дата</label>
                     <input type="date" name="" id="date" className='data'/>
