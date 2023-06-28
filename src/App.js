@@ -16,6 +16,7 @@ import Sweets from './componens/menu/sweets/sweets';
 import  Bar  from './componens/menu/bar/bar_m';
 import Bread from "./componens/menu/bread"
 import Qrcode from "./componens/qrcode/qrcode"
+import Bron from "../src/componens/bron/bron"
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       <Route path="bar" element={<Bar/>} />
       <Route path="bread" element={<Bread/>} />
       <Route path="qr" element={<Qrcode/>} />
+      <Route path="bron" element={<Bron/>} />
      
     </Routes>
                  

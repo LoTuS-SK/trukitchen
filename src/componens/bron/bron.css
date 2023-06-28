@@ -1,0 +1,46 @@
+@font-face {
+    font-family: h2;
+    src: url(../../fonts/ofont.ru_Zing\ Rust.ttf) format(ttf);
+    font-weight: 800;
+    font-style: normal;
+         
+}
+
+
+.bron_wr{
+   background-color: white;
+}
+.wr_content input {
+    text-decoration: none;
+    padding: 10px 50px;
+    margin: 5px 100px;
+    border: none;
+    color: brown;
+    font-size: 20px;
+
+}
+
+.wr_content {
+    margin:50px 0px;
+   width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+.button{
+    text-align: center;
+    border: 1px solid brown;
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    color: brown;
+    font-size: 20px;
+}
+.wr_button{
+    
+    margin: 30px auto;
+}
+
+.bron_h2{
+    font-family: h2;
+    color: brown;
+}
