@@ -18,6 +18,7 @@ import Shop from '../../burger/корзина/Shop';
 import solen from "../../../png/foot/soleny.png"
 import lomtika from "../../../png/foot/lomtiki utki.png"
 import assor from "../../../png/foot/assorim.png"
+import salo from "../../../png/foot/salo.png"
 
 
 const Snaks = () => {
@@ -199,9 +200,10 @@ const dispath = useDispatch()
             <span className='price-pl'>160г / 990 ₽</span>
           </div>
 
-          <div className='item' tabIndex="0" >
+          <div className='item-pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Домашнее сало на гренках":"Homemade lard on toast"}</div>
-            <span className='price'>120 г / 460 ₽</span>
+            <div className="wr_img"><img src={salo} alt="" /></div>
+            <span className='price-pl'>120 г / 460 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >

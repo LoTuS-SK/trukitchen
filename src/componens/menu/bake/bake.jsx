@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import chekimg from "../../../png/kor.png"
 import страч from "../../../png/foot/страчетелла.png"
 import Shop from '../../burger/корзина/Shop';
+import bone from "../../../png/foot/bon.png"
 //const path = "../../../png/foot/pirog_paltus 2.png"
 
 const paltus2 = require("../../../png/foot/pirog_paltus 2.png") 
@@ -68,6 +69,7 @@ function func(e){
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Мозговая косточка из печи":"Marrow bone from the oven"}</span>
             <div className="wr_img"></div>
+            <div className="wr_img"><img src={bone} alt="" /></div>
             <div className='price-pl'>{590} ₽</div>
     </div>
 

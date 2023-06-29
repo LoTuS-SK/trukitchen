@@ -10,6 +10,7 @@ import treska from "../../../png/foot/treska.png"
 import kotlet from "../../../png/foot/kotleta.png"
 import olem from "../../../png/foot/fileolen.png"
 import pelmeni from "../../../png/foot/pelmeni.png"
+import more from "../../../png/foot/assortimore.png"
 
 
 
@@ -67,7 +68,7 @@ function func(e){
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Ассорти из морепродуктов, обжаренных с чесноком, в соусе из устриц":"Assorted seafood fried with garlic in oyster sauce"}</div>
-            {/* <div className="wr_img"><img src={treska} alt="" /></div> */}
+            <div className="wr_img"><img src={more} alt="" /></div>
             <span className='price-pl'>390г / 1590 ₽</span>
           </div>
 
