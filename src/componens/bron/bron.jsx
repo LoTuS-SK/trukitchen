@@ -7,9 +7,10 @@ import "./bron.css"
 
 const Bron = () => {
 
+    //6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4
     const bot = {
-        token:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
-        chatID:"-985566494",
+        token:"6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4",
+        chatID:"-996929511",
         name:"t.me/chikentruebot."
       }
 
@@ -21,6 +22,7 @@ const [homo,sethomo]= useState("")
 const [data,setdate]=useState("")
 const [time,settime]=useState("")
 const [time2,settime2] = useState()
+const [wrdis,setwrdis] = useState(true)
 
 
 function setnames(e){
@@ -39,6 +41,10 @@ function settimes(e){
     settime(e.target.value)
 }
 
+function table(){
+    setwrdis(true)
+}
+
 function setintel(e){
     settel(e.target.value)
     if (tel.length===10){
@@ -53,19 +59,25 @@ function setintel(e){
        
         settel("")
     }
+
 }
+
+
+  
+
 
 
 function submit(){
     
+    setwrdis(false)
     let message = `Имя: ${name} \n`
-        message+="                                     "
+        message+="                                                   "
         message+= `телефон: ${time2} \n`
-        message+="                                     "
+        message+="                                                   "
         message+=`Количество персон: ${homo} \n`
-        message+="                                     "
+        message+="                                                   "
         message+=`Дата: ${data}\n`
-        message+="                                     "
+        message+="                                                   "
         message+=`время: ${time}\n`
    
     
@@ -83,7 +95,7 @@ function submit(){
         <img src={logo1} alt="" />
         </div>
         <div className="logotip"><img src={logo3} alt="" className='logotip'/></div>
-        <div className="wr_content">
+        <div className={wrdis?"wr_content":"wr_content none"}>
         
             <h2 className='bron_h2'>Бронирование столика</h2>
             <input type="text" name="name" placeholder='Ваше имя' value={name} 
@@ -99,7 +111,11 @@ function submit(){
             
                 <div className="data_wr">
                     <label for="time" className="data_label" >Время</label>
-                    <input type="time" name="" id="time" className='data'onChange={settimes} value={time}/>
+                    <input type="time" 
+                            name="" id="time" 
+                            className='data'
+                            onChange={settimes} 
+                            value={time}/>
                 </div>
                 <div className="data_wr">
                     <label for="date" className="data_label">Дата</label>
@@ -109,6 +125,7 @@ function submit(){
                     <div className="button" onClick={submit}>Отправить</div>
                 </div>
         </div>
+        <div className={wrdis?"none":"done"} onClick={table}>Столик забронирован</div>
         <div className="img_footer">
         <img src={logo2} alt="" />
         </div>

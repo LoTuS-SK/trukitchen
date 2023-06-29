@@ -83,3 +83,16 @@
     
     margin: 0 auto;
 }
+
+.none {
+    display: none;
+}
+
+.done{
+    margin: 100px 0px;
+    font-family: h2;
+    font-size:45px;
+    text-align: center;
+    color:brown;
+
+}

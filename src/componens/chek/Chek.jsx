@@ -128,6 +128,9 @@ function send2(){
   message += `${element.name} - ${element.count} `
   message +='                                           '
  })
+
+ //6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4
+
  //const message  = JSON.stringify(list)
   fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatID}&text=${message}`,{method:"GET"})
 
