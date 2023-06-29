@@ -10,6 +10,8 @@ import chekimg from "../../../png/kor.png"
 import страч from "../../../png/foot/страчетелла.png"
 import Shop from '../../burger/корзина/Shop';
 import bone from "../../../png/foot/bon.png"
+import pigorgrab from "../../../png/foot/pirodgrab.png"
+import nogka from "../../../png/foot/utkanogka.png"
 //const path = "../../../png/foot/pirog_paltus 2.png"
 
 const paltus2 = require("../../../png/foot/pirog_paltus 2.png") 
@@ -81,6 +83,7 @@ function func(e){
 
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Растомлённая утиная ножка с пюре из сельдерея":"Mashed duck leg with celery puree"}</span>
+            <div className="wr_img"><img src={nogka} alt="" /></div>
             <div className="wr_img"></div>
             <div className='price-pl'>{920} ₽</div>
     </div>
@@ -95,6 +98,7 @@ function func(e){
           
     <div className='item_pal'>
       <span className='label' onClick={func}>{lean==="ru"? "Пирог с камчатским крабом":"Pie with king crab"}</span>
+      <div className="wr_img"><img src={pigorgrab} alt="" /></div>
       <div className="wr_img"></div>
       <div className='price-pl'>1050 ₽</div>
     </div>

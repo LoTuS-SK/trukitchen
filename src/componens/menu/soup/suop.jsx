@@ -1,7 +1,8 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import "../snaks/snaks"
+import Shop from '../../burger/корзина/Shop';
 // import { soup } from '../../../data/database'
-import { useSelector} from 'react-redux'
+import { useSelector,useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
 import suopraki from "../../../png/foot/rkaisoup.png"
 import gribsoup from "../../../png/foot/suopgrib.png"
@@ -10,15 +11,37 @@ import chekimg from "../../../png/kor.png"
 import svek from "../../../png/foot/svekolnik.png"
 
 const Suop = () => {
-
-  function func(){
+  const lean = useSelector(state=>state.one)
+  const list = useSelector(state=>state.chek)
+  const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+  
+  const dispath = useDispatch()
+  
+  function func(e){
     console.log("soup")
+    const target = e.target.textContent
+    
+    if (lean==="ru"){
+      dispath({type:"add",payload:target})
+    }
+
+    if (lean==="en"){
+      dispath({type:"add_en",payload:target})
+    }
+    
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+
+
+
+
+
   }
 
 
-  const lean = useSelector(state=>state.one)
+  
   return (
     <>
+    <Shop count={count}/>
     <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link>
      <div className="skakes">
      <Link to="/menu" className='btn-back' >←</Link>
