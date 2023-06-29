@@ -20,6 +20,7 @@ const [tel,settel]=useState("")
 const [homo,sethomo]= useState("")
 const [data,setdate]=useState("")
 const [time,settime]=useState("")
+const [time2,settime2] = useState()
 
 
 function setnames(e){
@@ -42,7 +43,7 @@ function setintel(e){
     settel(e.target.value)
     if (tel.length===10){
        const tel = e.target.value
-
+        settime2(tel)
         const tel1 = tel[0]+" - ("+tel[1]+tel[2]+tel[3]+") - "+tel[4]+tel[5]+tel[6] +" - "+tel[7]+tel[8]+" - " +tel[9]+tel[10]
         console.log(tel1.length)
         settel(tel1)
@@ -58,13 +59,13 @@ function setintel(e){
 function submit(){
     
     let message = `Имя: ${name} \n`
-        message+="                                   "
-        message+= `телефон: ${tel} \n`
-        message+="                                   "
+        message+="                                     "
+        message+= `телефон: ${time2} \n`
+        message+="                                     "
         message+=`Количество персон: ${homo} \n`
-        message+="                                   "
+        message+="                                     "
         message+=`Дата: ${data}\n`
-        message+="                                   "
+        message+="                                     "
         message+=`время: ${time}\n`
    
     
@@ -94,7 +95,7 @@ function submit(){
             placeholder="номер телефона" 
             value={tel} onChange={setintel}/>
             
-            <input type="numder" placeholder="Количетво персон" onChange={sethomes} value={homo} />
+            <input type="tel" placeholder="Количетво персон" onChange={sethomes} value={homo} />
             
                 <div className="data_wr">
                     <label for="time" className="data_label" >Время</label>
