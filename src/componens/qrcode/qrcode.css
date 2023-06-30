@@ -4,10 +4,7 @@ display: flex;
 flex-direction: column;
 
 }
-*{
-    background-color: white
-    ;
-}
+
 h1{
     color: brown;
     text-align: center;
