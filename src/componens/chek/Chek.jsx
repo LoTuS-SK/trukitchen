@@ -16,6 +16,7 @@ const Сhek = () => {
   //const lang = useSelector(state=>state.one)
   const table = useSelector(state=>state.qrcode)
   
+  console.log(table)
   
   // const [queryParameters] = useSearchParams()
   // const str = decodeURI(queryParameters.get("name"))
@@ -117,7 +118,11 @@ function send2(){
  //console.log("yes")
  
  animesend()
- let message = `стол - ${table}`
+ console.log(table.table)
+ let message = " "
+ message += `стол - ${table.table}`
+ message +='                                              '
+ message +=`офицант  - ${table.name}`
  message +='                                              '
 
  list1.forEach(element=>{
@@ -146,7 +151,7 @@ function animesend(){
   
 }
 
-console.log(list1.lenght)
+
 
   return (
     <div >

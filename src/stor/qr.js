@@ -1,6 +1,9 @@
 
 
-const str = ""
+const str = {
+    name:"",
+    table:""
+}
 
 
 
@@ -8,9 +11,13 @@ const reducer = (state = str,action) =>{
     
     switch (action.type) {
         case "addtable":
-            return state = action.payload
-        case "get":
-        return state = "en"
+                state = {...state,table:action.payload}
+
+            return state
+        case "addname":
+            state = {...state,name:action.payload}
+
+        return state
 
             
         default:

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Link } from "react-router-dom";
 import logo from "../../img/Asset-1.png"
 import { useSearchParams } from "react-router-dom"
@@ -20,9 +20,22 @@ const Menu = () => {
   const [queryParameters] = useSearchParams()
   
   const str = queryParameters.get("name")
+  const str2 = queryParameters.get("table")
 
   const ru = useSelector(state=>state.one)
-  dispatch({type:"addtable",payload:str})
+  
+   //dispatch({type:"addtable",payload:str})
+  useMemo(()=>{
+    dispatch({type:"addname",payload:str})
+    dispatch({type:"addtable",payload:str2})
+  },[str,str2,dispatch])
+   
+  
+  const table = useSelector(state=>state.qrcode)
+  
+  console.log(table)
+  console.log(typeof(table.table))
+  
   
 
 //const str = queryParameters.get("name")
