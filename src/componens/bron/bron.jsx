@@ -1,5 +1,6 @@
 
 import React ,{useState} from 'react'
+import { Link } from 'react-router-dom'
 import logo1 from "../../png/bron/logo1.png"
 import logo2 from "../../png/bron/logo2.png"
 import logo3 from "../../img/Asset-1.png"
@@ -125,7 +126,13 @@ function submit(){
                     <div className="button" onClick={submit}>Отправить</div>
                 </div>
         </div>
-        <div className={wrdis?"none":"done"} onClick={table}>Столик забронирован</div>
+        <div className={wrdis?"none":"done"} onClick={table}>
+            <span className='done'>Столик забронирован</span>
+            <div className="wr_button">
+                    <Link to="/menu"><div className="button" >Меню</div></Link>
+                </div>
+
+            </div>
         <div className="img_footer">
         <img src={logo2} alt="" />
         </div>

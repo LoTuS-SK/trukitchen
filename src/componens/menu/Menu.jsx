@@ -63,13 +63,13 @@ if (ru==="en"){
    <img className='logo' src={logo}  alt=""/>
     <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snakes"}</Link>
     <Link to="/salat" className='menu-items new' >{ru==="ru"?"Салаты":"Salats"}</Link>
-    <Link to="/hot" className='menu-items new'>{ru==="ru"?"Горячие блюда":"Hot dishes"}</Link>
+    <div className="li"><Link to="/hot" className='menu-items new'>{ru==="ru"?"Горячие блюда":"Hot dishes"}</Link></div>
     <Link to="/soup" className='menu-items new'>{ru==="ru"?"Супы":"Soups"}</Link>
     <Link to="/onfire" className='menu-items new'>{ru==="ru"?"Гриль":"Grill"}</Link>
     <Link to="/auqa" className='menu-items new'>{ru==="ru"?"Аквариум":"Aquarium"}</Link>
     <Link to="/bake" className='menu-items new'>{ru==="ru"?"Печь":"Bake"}</Link>
     <Link to="/garnish" className='menu-items new'>{ru==="ru"?"Гарниры":"side dishes"}</Link>
-    <Link to="/bread" className='menu-items new'>{ru==="ru"?"Хлеб и пирожки":"Bread and pies"}</Link>
+    <div className="li"><Link to="/bread" className='menu-items new'>{ru==="ru"?"Хлеб и пирожки":"Bread and pies"}</Link></div>
     <Link to="/sweets" className='menu-items new'>{ru==="ru"?"Десерты":"Dessert"}</Link>
     <Link to="/bar" className='menu-items new'>{ru==="ru"?"Бар":"Bar"}</Link>
     </div>

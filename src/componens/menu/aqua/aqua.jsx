@@ -8,6 +8,7 @@ import usrici from "../../../png/foot/устрица.png"
 import krevetki from "../../../png/foot/krevetki.png"
 import grebesh from "../../../png/foot/grebeshek.png"
 import Shop from '../../burger/корзина/Shop';
+import midi from "../../../png/foot/midii2.png"
 
 const Aqua = () => {
 
@@ -46,6 +47,13 @@ const Aqua = () => {
      <div className="skakes:">
      <Link to="/menu" className='btn-back' >←</Link>
     <div className='snakes-item'>{ru==="ru"?"Аквариум":"Aquarium"}</div>
+
+    <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Мидии":"Mussels"}</div>
+            <div className="wr_img"><img src={midi} alt="img" /></div>
+            <span className='price-pl'>500г / 870 ₽</span>
+          </div>
+
 
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Морской ёж":"Sea urchin"}</div>

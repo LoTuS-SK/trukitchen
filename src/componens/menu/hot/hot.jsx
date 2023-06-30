@@ -11,7 +11,7 @@ import kotlet from "../../../png/foot/kotleta.png"
 import olem from "../../../png/foot/fileolen.png"
 import pelmeni from "../../../png/foot/pelmeni.png"
 import more from "../../../png/foot/assortimore.png"
-
+import barabul from "../../../png/foot/barabulka.png" 
 
 
 const Hot = () => {
@@ -93,31 +93,31 @@ function func(e){
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Котлеты из Ленской щуки":"Lena pike cutlets"}</div>
             {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
-            <span className='price-pl'>940 ₽</span>
+            <span className='price-pl'>160г / 940 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Домашний бефстроганов с картофельным пюре":"Homemade beef stroganoff with mashed potatoes"}</div>
             {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
-            <span className='price-pl'>670 ₽</span>
+            <span className='price-pl'>400г / 670 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Филе оленя на муссе из печёной свёклы с винным соусом":"Deer fillet on roasted beetroot mousse with wine sauce"}</div>
             <div className="wr_img"><img src={olem} alt="" /></div>
-            <span className='price-pl'>1280 ₽</span>
+            <span className='price-pl'>240г / 1280 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Cтаврида":"Scad"}</div>
-            {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
-            <span className='price-pl'>550 ₽</span>
+            <div className="wr_img"><img src={barabul} alt="" /></div>
+            <span className='price-pl'>200г / 550 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Черноморская барабулька":"Black Sea red mullet"}</div>
             {/* <div className="wr_img"><img src={utka} alt="" /></div> */}
-            <span className='price-pl'>550 ₽</span>
+            <span className='price-pl'>200г /550 ₽</span>
           </div>
 
     

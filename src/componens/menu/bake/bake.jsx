@@ -33,9 +33,28 @@ const Bake = () => {
    const str = e.target.dataset.id
     func(str)
   }
+// function func2(e){
+//   const target = e.target
+
+//   console.log(target)
+
+// }
+
+const [target,settarget] =useState("")
 
 function func(e){
-  const target = e.target.textContent
+  
+  
+
+  if(e.target.dataset.id === "undefined") {
+    settarget(e.target.textContent)
+  } if(typeof(e.target.dataset.id) === "string") {
+    settarget(e.target.dataset.id)
+    
+  }
+  
+ 
+  
     
     if (lean==="ru"){
       dispath({type:"add",payload:target})
@@ -46,7 +65,7 @@ function func(e){
     }
     
     setcount(list.reduce(function(sum,num){return num.count + sum},0))
-
+  
     
 }
 
@@ -63,29 +82,29 @@ function func(e){
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Пирог с рапаной":"Pie with rapana"}</span>
             <div className="wr_img"></div>
-            <div className='price-pl'>{790} ₽</div>
+            <div className='price-pl'>400г / 790 ₽</div>
     </div>
 
 
 
     <div className='item_pal'>
-            <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Мозговая косточка из печи":"Marrow bone from the oven"}</span>
-            <div className="wr_img"></div>
-            <div className="wr_img"><img src={bone} alt="" /></div>
-            <div className='price-pl'>{590} ₽</div>
+            <span className='label active' onClick={func} tabIndex="0" >{lean==="ru"?"Мозговая косточка из печи":"Marrow bone from the oven"}</span>
+            
+            <div className="wr_img" >< img src={bone}  className='active' alt="" onClick={func} data-id={lean==="ru"?"Мозговая косточка из печи":"Marrow bone from the oven"} /></div>
+            <div className='price-pl'>370г / 590 ₽</div>
     </div>
 
      <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Беломорский палтус с тыквенным пюре и молодым горошком":"White Sea halibut with pumpkin puree and young peas"}</span>
             <div className="wr_img"><img src={paltus} alt="" /></div>
-            <div className='price-pl'>{1340} ₽</div>
+            <div className='price-pl'>300г / 1340 ₽</div>
     </div>
 
     <div className='item_pal'>
             <span className='label' onClick={func} tabIndex="0" >{lean==="ru"?"Растомлённая утиная ножка с пюре из сельдерея":"Mashed duck leg with celery puree"}</span>
             <div className="wr_img"><img src={nogka} alt="" /></div>
             <div className="wr_img"></div>
-            <div className='price-pl'>{920} ₽</div>
+            <div className='price-pl'>290г / 920 ₽</div>
     </div>
 
 
@@ -100,14 +119,14 @@ function func(e){
       <span className='label' onClick={func}>{lean==="ru"? "Пирог с камчатским крабом":"Pie with king crab"}</span>
       <div className="wr_img"><img src={pigorgrab} alt="" /></div>
       <div className="wr_img"></div>
-      <div className='price-pl'>1050 ₽</div>
+      <div className='price-pl'>400г / 1050 ₽</div>
     </div>
 
           
           <div className='item_pal'>
             <span className='label' onClick={func}>{lean==="ru"? "Пирог с копчёным оленем на подушке из грибного рагу":"Smoked reindeer pie on a bed of mushroom stew"}</span>
               <div className="wr_img"><img src={pirog_olen} alt="" data-id={lean==="ru"? "Пирог с копчёным оленем на подушке из грибного рагу":"Smoked reindeer pie on a bed of mushroom stew"}onClick={clickimg}/></div>
-             <div className='price-pl'>990 ₽</div>
+             <div className='price-pl'>430г / 990 ₽</div>
           </div>
 
           <div className='item_pal'>
@@ -115,7 +134,7 @@ function func(e){
             
             <span className='label' onClick={func}>{lean==="ru"?"Гусь с Палехской фермы томлёный с черносливом":"Goose from the Palekh farm stewed with prunes"}</span>
             <div className="wr_img"><img src={gus} alt="" /></div>
-            <div className='price-pl'>1290 ₽</div>
+            <div className='price-pl'>450г / 1290 ₽</div>
             
           </div>
           <div className='item_pal'>
@@ -123,7 +142,7 @@ function func(e){
             
         <span className='label' onClick={func}>{lean==="ru"?"Стерлядь":"Sterlet"}</span>
         <div className="wr_img"><img src={strelyd} alt="" /></div>
-        <div className='price-pl'>2500 ₽</div>
+        <div className='price-pl'> 1шт / 2500 ₽</div>
         
       </div>
           <div className='item_pal'>
@@ -131,7 +150,7 @@ function func(e){
             
         <span className='label' onClick={func}>{lean==="ru"? "Пирог с дальневосточным палтусом, налимьей печенью и обжаренным луком":"Pie with Far Eastern halibut, burbot liver and fried onions"}</span>
         <div className="wr_img"><img src={paltus2} alt="" /></div>
-        <div className='price-pl'>990 ₽</div>
+        <div className='price-pl'>420г / 990 ₽</div>
         
       </div>
           <div className='item_pal'>
@@ -139,7 +158,7 @@ function func(e){
             
         <span className='label' onClick={func}>{lean==="ru"?"Мясо молодого козлёнка с ароматными травами и молодым картофелем}":"Young goat meat with aromatic herbs and new potatoes"}</span>
         <div className="wr_img"><img src={koz4} alt="" /></div>
-        <div className='price-pl'>1890 ₽</div>
+        <div className='price-pl'>400г / 1890 ₽</div>
         
       </div>
     

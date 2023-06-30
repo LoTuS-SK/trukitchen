@@ -21,11 +21,11 @@ const Swets = ({display,back,func}) => {
     ))}
 <h1 className='sw_h1'>{ru==="ru"?"Мороженое":"Ice cream"}</h1>
 {ice.map(el=>(
-        <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>
+        <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.weight}г / {el.price} ₽</span></div>
     ))}
     <h1 className='sw_h1'>{ru==="ru"?"Варенье":"Jam"}</h1>
 {jam.map(el=>(
-        <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.price} ₽</span></div>
+        <div className='item' tabIndex="0" ><span className='label' onClick={func}>{ru==="ru"?el.name:el.name_en}</span><span className='price'>{el.weight}г / {el.price} ₽</span></div>
     ))}
 
     </div>

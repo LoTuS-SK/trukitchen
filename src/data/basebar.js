@@ -140,6 +140,7 @@ export const strong = [
     // {id:4,name:"Бакарди Резерва 8 лет",name_en:"Auchentoshan 12 Years Old",price:490,volume:50,section:"ром"},
     {id:4,name:"Ботукал Дипломатико",name_en:"Botucal Diplomatico Mantuano",price:650,volume:50,section:"ром"},
     {id:4,name:"Президенте 19 лет",name_en:"Presidente 19 Anos",price:650,volume:50,section:"ром"},
+    {id:4,name:"Комю VSOP",name_en:"Camus VSOP",price:1100,volume:50,section:"коньяк"},
     {id:4,name:"Мартель ХО",name_en:"Martell XO Extra Old",price:2500,volume:50,section:"коньяк"},
     {id:4,name:"Мартель VS",name_en:"Martell VS Single Distillery",price:690,volume:50,section:"коньяк"},
     {id:4,name:"Курвуазье ВСОП",name_en:"Courvoisier VSOP",price:1200,volume:50,section:"коньяк"},

@@ -36,7 +36,7 @@ function qroff(){
 
 return (
     <>
-    <h1>QR code</h1>
+    <h1 className='qrh1'>QR code</h1>
         <div className="wr_input_qr">
             <input type="text" value={name} onChange={funname} placeholder='офицант'/>
             <input type="text" value={table} onChange={funtable} placeholder='номер стола'/>

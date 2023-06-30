@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
 }
 @font-face {
     font-family: h2;
@@ -89,10 +90,15 @@
 }
 
 .done{
-    margin: 100px 30px;
+    margin: 50px 30px;
     font-family: h2;
     font-size:45px;
     text-align: center;
     color:brown;
 
+}
+
+.done{
+    display: flex;
+    flex-direction: column;
 }

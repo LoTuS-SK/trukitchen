@@ -50,43 +50,43 @@ const Suop = () => {
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Суп из Астраханских раков с обжаренными лангустинами и муссом из Пармезана":"Astrakhan crayfish soup with fried langoustines and Parmesan mousse"}</div>
             <div className="wr_img"><img src={suopraki} alt="" /></div>
-            <div className='price-pl'>690 ₽</div>
+            <div className='price-pl'>300г / 690 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Наваристый борщ с дичью и домашней сметаной":"Rich borscht with game and homemade sour cream"}</div>
             <div className="wr_img"><img src={borsh} alt="" /></div>
-            <div className='price-pl'>450 ₽</div>
+            <div className='price-pl'>300г / 450 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Суп из лесных грибов":"wild mushroom soup"}</div>
             <div className="wr_img"><img src={gribsoup} alt="" /></div>
-            <div className='price-pl'>420 ₽</div>
+            <div className='price-pl'>300г /420 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Свекольник":"beetroot soup"}</div>
             <div className="wr_img"><img src={svek} alt="" /></div>
-            <div className='price-pl'>450 ₽</div>
+            <div className='price-pl'>300г / 450 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Окрошка на Квасе":"Okroshka on Kvass"}</div>
             {/* <div className="wr_img"><img src={suopraki} alt="" /></div> */}
-            <div className='price-pl'>450 ₽</div>
+            <div className='price-pl'> 300г / 450 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Окрошка на Тане":"Okroshka on Tanya"}</div>
             {/* <div className="wr_img"><img src={suopraki} alt="" /></div> */}
-            <div className='price-pl'>450 ₽</div>
+            <div className='price-pl'>300г / 450 ₽</div>
           </div>
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Уха из северной рыбы":"Northern fish ear"}</div>
             {/* <div className="wr_img"><img src={suopraki} alt="" /></div> */}
-            <div className='price-pl'>450 ₽</div>
+            <div className='price-pl'>300г / 450 ₽</div>
           </div>
       
       

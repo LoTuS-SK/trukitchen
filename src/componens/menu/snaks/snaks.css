@@ -45,9 +45,10 @@ font-family:one;
     margin:0px 15px 0px 15px;
 }
 
-.item:active{
+.label:active {
     color: aliceblue;
 }
+
 .price{
     
     color: brown;
@@ -67,7 +68,7 @@ font-family:one;
 }
 
 .price-b{
-width: 50px;
+width: 200px;
 }
 .label{
     width: 300px;
@@ -85,10 +86,10 @@ width: 50px;
     white-space: pre;
 }
 
-.label:active{
-    color: aliceblue;
-  
-}
+/* .label:active {
+    color: white;
+} */
+
 .wrp{
     margin-bottom: 50px;
 }
@@ -108,4 +109,7 @@ width: 50px;
 
 .wr_img img{
     width:100%;
+}
+.active:active .label{
+    color:white;
 }

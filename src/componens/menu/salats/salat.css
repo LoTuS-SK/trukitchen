@@ -33,7 +33,7 @@ font-family:one;
     display: flex;
     border-bottom: 1px solid grey;
     justify-content: space-between;
-    padding: 5px 5px 5px 0px ;
+    padding: 5px 0px 5px 0px ;
     background: none;
 
 }
