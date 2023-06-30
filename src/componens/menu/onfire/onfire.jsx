@@ -6,6 +6,7 @@ import kamamber from "../../../png/foot/kamamber2.png"
 import feele from "../../../png/foot/file.png"
 import { Link } from "react-router-dom";
 import Shop from '../../burger/корзина/Shop'
+import ridai from "../../../png/foot/ribai.png"
 
 const Onfire = () => {
 
@@ -59,7 +60,7 @@ const Onfire = () => {
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Стейк Рибай":"Ribeye steak"}</div>
-            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <div className="wr_img"><img src={ridai} alt="" /></div>
             <span className='price-pl'>230г / 3300 ₽</span>
           </div>  
 
