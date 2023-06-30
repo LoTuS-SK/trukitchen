@@ -155,7 +155,7 @@ function animesend(){
 
   return (
     <div >
-      <Link to={`/?name=${table.name}&table${table.table}`} className='back'>
+      <Link to={`/?name=${table.name}&table=${table.table}`} className='back'>
         
         <img src={menu} alt="" className='menu-back'/>
        
