@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Shop from '../../burger/корзина/Shop';
 import utka from "../../../png/foot/utka.png"
 import treska from "../../../png/foot/treska.png"
-import kotlet from "../../../png/foot/kotleta.png"
+import kotlet from "../../../png/foot/kotleti.png"
 import olem from "../../../png/foot/fileolen.png"
 import pelmeni from "../../../png/foot/pelmeni.png"
 import more from "../../../png/foot/assortimore.png"
