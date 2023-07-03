@@ -10,7 +10,9 @@ const Bron = () => {
 
     //6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4
     const bot = {
-        token:"6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4",
+        token1:"6146285866:AAEzIDl9PSjxpBWjtS82qioTpC_cgmVG5q4",
+        token2:"6103840895:AAHX2THv4-mjtvyx0wQITN-PN9i7eOR3AAA",
+        chatID2:"-985566494",
         chatID:"-996929511",
         name:"t.me/chikentruebot."
       }
@@ -51,11 +53,11 @@ function setintel(e){
     if (tel.length===10){
        const tel = e.target.value
         settime2(tel)
-        const tel1 = tel[0]+" - ("+tel[1]+tel[2]+tel[3]+") - "+tel[4]+tel[5]+tel[6] +" - "+tel[7]+tel[8]+" - " +tel[9]+tel[10]
+        const tel1 = tel[0]+"-("+tel[1]+tel[2]+tel[3]+")-"+tel[4]+tel[5]+tel[6] +"-"+tel[7]+tel[8]+"-" +tel[9]+tel[10]
         console.log(tel1.length)
         settel(tel1)
     }
-    if (tel.length===22){
+    if (tel.length>15){
        
        
         settel("")
@@ -69,8 +71,17 @@ function setintel(e){
 
 
 function submit(){
+    if (name.length<2){
+        alert("введите Имя")
+    }
+
+    if (tel.length<9){
+        alert("Заполните телефон")
+    }
+
+  
     
-    setwrdis(false)
+    
     let message = `Имя: ${name} \n`
         message+="                                                   "
         message+= `телефон: ${time2} \n`
@@ -82,10 +93,12 @@ function submit(){
         message+=`время: ${time}\n`
    
     
-    
+    if(name.length>3 && tel.length>9){
+        fetch(`https://api.telegram.org/bot${bot.token1}/sendMessage?chat_id=${bot.chatID2}&text=${message}`,{method:"GET"})
+        setwrdis(false)
+    }
 
 
-    fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatID}&text=${message}`,{method:"GET"})
 
 }
 
@@ -111,7 +124,9 @@ function submit(){
             <input type="tel" placeholder="Количетво персон" onChange={sethomes} value={homo} />
             
                 <div className="data_wr">
-                    <label for="time" className="data_label" >Время</label>
+                    <label for="time" 
+                    min="12:00" max="21:00"
+                    className="data_label" >Время</label>
                     <input type="time" 
                             name="" id="time" 
                             className='data'

@@ -19,6 +19,7 @@ import solen from "../../../png/foot/soleny.png"
 import lomtika from "../../../png/foot/lomtiki utki.png"
 import assor from "../../../png/foot/assorim.png"
 import salo from "../../../png/foot/salo.png"
+import tarbu from "../../../png/foot/tartarBU.png"
 
 
 const Snaks = () => {
@@ -188,10 +189,10 @@ const dispath = useDispatch()
             <span className='price-pl'>140г / 1190 ₽</span>
           </div>
 
-          <div className='item' tabIndex="0" >
+          <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Тартар из мраморной говядины":"Marbled beef tartare"}</div>
-            {/* <div className="wr_img"><img src={tartar} alt="" /></div> */}
-            <span className='price'>150г / 1200 ₽</span>
+            <div className="wr_img"><img src={tarbu} alt="" /></div>
+            <span className='price-pl'>150г / 1200 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
@@ -209,7 +210,7 @@ const dispath = useDispatch()
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Домашние Соленья":"homemade pickles"}</div>
             <div className="wr_img"><img src={solen} alt="" /></div>
-            <span className='price-pl'>300 г / 490 ₽</span>
+            <span className='price-pl'>400 г / 590 ₽</span>
           </div>
 
 

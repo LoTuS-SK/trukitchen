@@ -7,6 +7,7 @@ import feele from "../../../png/foot/file.png"
 import { Link } from "react-router-dom";
 import Shop from '../../burger/корзина/Shop'
 import ridai from "../../../png/foot/ribai.png"
+import yazich from "../../../png/foot/yazichki.png"
 
 const Onfire = () => {
 
@@ -95,7 +96,7 @@ const Onfire = () => {
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Язычки ягнёнка с овощами":"Lamb tongues with vegetables"}</div>
-            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <div className="wr_img"><img src={yazich} alt="" /></div>
             <span className='price-pl'>210 г / 990 ₽</span>
           </div> 
           

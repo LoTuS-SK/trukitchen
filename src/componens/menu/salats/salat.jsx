@@ -10,6 +10,7 @@ import svekla from "../../../png/foot/svekla.png"
 import burat from "../../../png/foot/burata.png"
 import печень  from "../../../png/foot/печень.png"
 import росбив from "../../../png/foot/росбиф3.png"
+import salatKrab from "../../../png/foot/saladKRAB.png"
 
 
 const Salat = () => {
@@ -91,7 +92,7 @@ function func(e){
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Дальневосточный краб с авокадо и сладким томатом":"Far Eastern crab with avocado and sweet tomato"}</div>
-            {/* <div className="wr_img"><img src={печень} alt="" /></div> */}
+            <div className="wr_img"><img src={salatKrab} alt="" /></div>
             <span className='price-pl'>200 г / 1290 ₽</span>
           </div>
 
