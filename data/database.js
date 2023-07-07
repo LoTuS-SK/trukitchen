@@ -83,7 +83,7 @@ export const hotbluda = [
 ] 
 
 export const onFire = [
-    {id:1,name:"Стейк Рибай",price:2700,weight:300,section:"гриль"},
+    {id:1,name:"Стейк Рибай",price:2700,weight:350,section:"гриль"},
     {id:2,name:"Стейк стриплойн",price:2100,weight:300,section:"гриль"},
     {id:3,name:"Стейк филе",price:2500,weight:250,section:"гриль"},
     {id:4,name:"Рёбра бычка на гриле",price:1900,weight:250,section:"гриль"},

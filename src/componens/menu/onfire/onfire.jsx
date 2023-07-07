@@ -58,19 +58,19 @@ const Onfire = () => {
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Стейк филе":"fillet steak"}</div>
             <div className="wr_img"><img src={feele} alt="" /></div>
-            <span className='price-pl'>250 г / 2500 ₽</span>
+            <span className='price-pl'>300 г / 2500 ₽</span>
           </div>      
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Стейк Рибай":"Ribeye steak"}</div>
             <div className="wr_img"><img src={ridai} alt="" /></div>
-            <span className='price-pl'>230г / 3300 ₽</span>
+            <span className='price-pl'>350г / 3300 ₽</span>
           </div>  
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Стейк стриплойн":"Striploin steak"}</div>
             {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
-            <span className='price-pl'>230г / 3300 ₽</span>
+            <span className='price-pl'>300г / 3300 ₽</span>
           </div>  
           
      
