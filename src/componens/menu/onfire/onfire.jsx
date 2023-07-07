@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Shop from '../../burger/корзина/Shop'
 import ridai from "../../../png/foot/ribai.png"
 import yazich from "../../../png/foot/yazichki.png"
+import chiking from "../../../png/foot/chiking.png"
+import rebra from "../../../png/foot/bichki.png"
 
 const Onfire = () => {
 
@@ -74,7 +76,7 @@ const Onfire = () => {
      
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Рёбра бычка на гриле":"Grilled bull ribs"}</div>
-            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <div className="wr_img"><img src={rebra} alt="" /></div>
             <span className='price-pl'>250г / 1900 ₽</span>
           </div> 
           
@@ -90,7 +92,7 @@ const Onfire = () => {
           
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Шашлык из Каширского петуха со сладкими томатами":"Shish kebab from Kashirsky rooster with sweet tomatoes"}</div>
-            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <div className="wr_img"><img src={chiking} alt="" /></div>
             <span className='price-pl'>350г / 690 ₽</span>
           </div>   
 

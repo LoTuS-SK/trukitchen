@@ -11,6 +11,8 @@ import burat from "../../../png/foot/burata.png"
 import печень  from "../../../png/foot/печень.png"
 import росбив from "../../../png/foot/росбиф3.png"
 import salatKrab from "../../../png/foot/saladKRAB.png"
+import tomato from "../../../png/foot/tomato.png"
+import derev from "../../../png/foot/dereven.png"
 
 
 const Salat = () => {
@@ -74,7 +76,7 @@ function func(e){
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Салат по-деревенски":"rustic salad"}</div>
-            {/* <div className="wr_img"><img src={печень} alt="" /></div> */}
+            <div className="wr_img"><img src={derev} alt="" /></div>
             <span className='price-pl'>250 г / 550 ₽</span>
           </div>
 
@@ -104,10 +106,10 @@ function func(e){
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Сладкие томаты с каперсами, красным луком и кремом бальзамик":"Sweet tomatoes with capers, red onion and balsamic cream"}</div>
-            {/* <div className="wr_img"><img src={печень} alt="" /></div> */}
+            <div className="wr_img"><img src={tomato} alt="" /></div>
             <span className='price-pl'>270 г / 770 ₽</span>
           </div>
-
+/
 
 
 

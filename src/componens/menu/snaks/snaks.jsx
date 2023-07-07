@@ -20,7 +20,7 @@ import lomtika from "../../../png/foot/lomtiki utki.png"
 import assor from "../../../png/foot/assorim.png"
 import salo from "../../../png/foot/salo.png"
 import tarbu from "../../../png/foot/tartarBU.png"
-
+import sugforel from "../../../png/foot/forel-sugudai.png"
 
 const Snaks = () => {
 
@@ -124,7 +124,7 @@ const dispath = useDispatch()
 
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{lean==="ru"?"Сугудай из Мурманской форели с Ялтинским луком":"Sugudai from Murmansk trout with Yalta onion"}</div>
-            {/* <div className="wr_img"><img src={seledka} alt="" /></div> */}
+            <div className="wr_img"><img src={sugforel} alt="" /></div>
             <span className='price-pl'>140г / 790 ₽</span>
           </div>
 
