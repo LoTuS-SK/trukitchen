@@ -40,7 +40,7 @@ const Bake = () => {
 
 // }
 
-const [target,settarget] =useState("")
+
 
 function func(e){
   
