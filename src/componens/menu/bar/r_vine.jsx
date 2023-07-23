@@ -1,15 +1,19 @@
 import React from 'react'
 import {vine} from '../../../data/basevine'
 import "./bar_m"
-const r_vine = ({display,back,add}) => {
-  return (
+import { useSelector } from 'react-redux'
+
+const R_vine = ({display,back,add}) => {
+  
+    const ru = useSelector(state=>state.one)
+    return (
     
     <div className={display?"r_wr_vine":"r_wr_vine none"}>
     <div className='btn-back' onClick={back}>←</div>
     <h2 className='h2'>ВИНА ПО БОКАЛАМ </h2>
     
     {vine.filter(el=>(el.price<1000)&&(el.type==="красное")).map(el=>(
-        <div className='vine-items'><div  className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
+        <div className='vine-items'><div  className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
     
     <h2 className='h2'>RUSSIA / РОССИЯ  </h2>
@@ -78,4 +82,4 @@ const r_vine = ({display,back,add}) => {
   )
 }
 
-export default r_vine
+export default R_vine

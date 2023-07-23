@@ -1,7 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React,{useState} from 'react'
+import { useSelector,useDispatch } from 'react-redux'
 import "./bar.css"
 import {tincture,strong,cocktails} from "../../../data/basebar"
+import Shop from '../../burger/корзина/Shop';
 
 export const Alobar = ({display,back,add}) => {
 
@@ -12,16 +13,42 @@ export const Alobar = ({display,back,add}) => {
     const tequila = strong.filter(el=>el.section==="текила")
     const vodka = strong.filter(el=>el.section==="водка")
 
+    const dispath = useDispatch()
+  
+    const list = useSelector(state=>state.chek)
+    const list_en =useSelector(state=>state.chek_en)
+  const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
+  function func(e){
+    const target = e.target.textContent
+    
+    if (ru==="ru"){
+      dispath({type:"add",payload:target})
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    }
+
+    if (ru==="en"){
+      dispath({type:"add_en",payload:target})
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  }
+
+
+
   return (
+    <>
+    <Shop count={count}/>
     <div className={display?"barwarp":"barwarap none"}>
         <div className='btn-back' onClick={back}>←</div>
       <h1 className='bar_h'>{ru==="ru"?"Настойки":"Tincturen"}</h1>
       {tincture.map((el,index)=>(
         <div className='item_b' key={index}>
           
-          <span className='label_b' onClick={add}>{ru==="ru"?el.name:el.name_en}</span>
+          <span className='label_b' onClick={func}>{ru==="ru"?el.name:el.name_en}</span>
+          <div>
           <span className='price_m'>{el.volume}мл /</span>
           <span className='price_m'>{el.price} ₽</span>
+          </div>
         </div>
         ))}
 
@@ -69,5 +96,6 @@ export const Alobar = ({display,back,add}) => {
           </div>
           ))}
         </div>
+        </> 
   )
 }

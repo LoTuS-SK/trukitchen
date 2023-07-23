@@ -24,8 +24,8 @@ const cheking = (state = chek,action) =>{
         case "add_en":
             const add = action.payload
             const eat = arreat.some(some=>some.name_en===add)
-            const bar = arrbar.some(some=>some.name===add)
-            const vine2 = vine.some(some=>some.name===add)
+            const bar = arrbar.some(some=>some.name_en===add)
+            const vine2 = vine.some(some=>some.name_en===add)
             
             
             if (eat&&chek.length===0) {
@@ -66,22 +66,22 @@ const cheking = (state = chek,action) =>{
             // }
             
             if (bar&&chek.length===0) {
-                const ch = arrbar.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = arrbar.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 console.log(ch)
                 return state = chek
             }
             if (bar&&chek.length>=1) {
-                if(chek.some(chek=>chek.name===add)){
+                if(chek.some(chek=>chek.name_en===add)){
                     
-                    const count = chek[chek.findIndex(el=>el.name===add)].count
-                    chek[chek.findIndex(el=>el.name===add)].count = count + 1
+                    const count = chek[chek.findIndex(el=>el.name_en===add)].count
+                    chek[chek.findIndex(el=>el.name_en===add)].count = count + 1
                     console.log(chek)
                     
                 } else {
-                const ch = arrbar.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = arrbar.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 }
 
@@ -92,22 +92,22 @@ const cheking = (state = chek,action) =>{
             }
 
             if (vine2&&chek.length===0) {
-                const ch = vine.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = vine.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 console.log(ch)
                 return state = chek
             }
             if (vine2&&chek.length>=1) {
-                if(chek.some(chek=>chek.name===add)){
+                if(chek.some(chek=>chek.name_en===add)){
                     
-                    const count = chek[chek.findIndex(el=>el.name===add)].count
-                    chek[chek.findIndex(el=>el.name===add)].count = count + 1
+                    const count = chek[chek.findIndex(el=>el.name_en===add)].count
+                    chek[chek.findIndex(el=>el.name_en===add)].count = count + 1
                     console.log(chek)
                     
                 } else {
-                const ch = vine.filter(el=>el.name===add)
-                ch[ch.findIndex(el=>el.name===add)].count = 1
+                const ch = vine.filter(el=>el.name_en===add)
+                ch[ch.findIndex(el=>el.name_en===add)].count = 1
                 chek.push(...ch)
                 }
 

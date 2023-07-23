@@ -39,7 +39,7 @@ function func(e){
 
   const ru = useSelector(state=>state.one)
 
-  const bar_menu = useMemo(()=>["Вино","Алкоголь","Напитки"],[])
+  const bar_menu = useMemo(()=>["Винная карта","Алкоголь","Напитки"],[])
   const bar_menu_en = useMemo(()=>["Vine","Alcohol","Drinks"],[])
   const [bar_list,set_barlist] = useState(bar_menu)
 
@@ -56,7 +56,7 @@ function func(e){
     const target = e.target.textContent
 
     switch (target) {
-      case "Вино":
+      case "Винная карта":
         set_display_vine(true)
         setdislay(false)
         break;

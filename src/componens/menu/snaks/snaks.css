@@ -69,6 +69,7 @@ font-family:one;
 
 .price-b{
 width: 200px;
+text-align:right;
 }
 .label{
     width: 300px;

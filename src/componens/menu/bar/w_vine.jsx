@@ -1,21 +1,27 @@
 import React from 'react'
 import { vine } from '../../../data/basevine'
 import "./bar_m"
+import { useSelector } from 'react-redux'
 
 const W_VINE = ({display,back,add}) => {
   
-    
+    const ru = useSelector(state=>state.one)
   
     return (
     <div className={display?"w_wr_vine":"w_wr_vine none"}>
         <div className='btn-back' onClick={back}>←</div>
-    <h2 className='h2'>ВИНА ПО БОКАЛАМ </h2>
+    <h2 className='h2'>Вина по бокалам </h2>
     {vine.filter(el=>(el.price<1000)&&(el.type==="белое")).map((el,index)=>(
-        <div className='vine-items' key={index}><div className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
+        <div className='vine-items' key={index}><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
+    <h2 className='h2'>Вина 375 мл</h2>
+    {vine.filter(el=>(el.type==="белое-мал")).map((el,index)=>(
+        <div className='vine-items' key={index}><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
+    ))}
+
     
     <h2 className='h2'>RUSSIA / РОССИЯ  </h2>
-    {vine.filter(el=>(el.country==="Россия")&&(el.type==="белое")).map(el=>(
+    {vine.filter(el=>(el.country==="Россия")&&(el.type==="белое")&&(el.price>1000)).map(el=>(
         <div className='vine-items'><div className='items' onClick={add}>{el.name}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
     <h2 className='h2'>FRANCE / ФРАНЦИЯ </h2>
