@@ -44,25 +44,22 @@ const [target,settarget] =useState("")
 
 function func(e){
   
-  
+  const target = e.target.textContent
 
-  if(e.target.dataset.id === "undefined") {
-    settarget(e.target.textContent)
-  } if(typeof(e.target.dataset.id) === "string") {
-    settarget(e.target.dataset.id)
-    
+  if (lean==="ru"){
+    dispath({type:"add",payload:target})
   }
-  
+
+  if (lean==="en"){
+    dispath({type:"add_en",payload:target})
+  }
+
+
+
  
   
     
-    if (lean==="ru"){
-      dispath({type:"add",payload:target})
-    }
-
-    if (lean==="en"){
-      dispath({type:"add_en",payload:target})
-    }
+    
     
     setcount(list.reduce(function(sum,num){return num.count + sum},0))
   
