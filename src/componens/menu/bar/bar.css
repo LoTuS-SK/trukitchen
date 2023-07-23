@@ -39,6 +39,7 @@
 .vine-items{
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
 
 }
 .h2{
@@ -53,9 +54,9 @@ h2{
 }
 .items{
     width: 80%;
-    margin-top: 8px;
+    margin-top: 18px;
     font-family:bolt;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .items:active{
