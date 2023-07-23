@@ -9,7 +9,7 @@
     width: 30px;
     height: 30px;
     border: 2px solid black;
-    position: absolute;
+    position: fixed;
     top:1px;
     right: 10px;
     background-image: url("../../../img/wall-background-1481542063jfv.jpg");
