@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useMemo} from 'react'
 import "../snaks/snaks"
 //import { garnish } from '../../../data/database'
 import {useSelector,useDispatch} from 'react-redux'
@@ -14,6 +14,7 @@ const Garnish = () => {
   const dispath = useDispatch()
 
   const list = useSelector(state=>state.chek)
+  const list2 = useSelector(state=>state.chek_en)
   const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
   function func(e){
@@ -32,6 +33,15 @@ const Garnish = () => {
     
     //console.log("количество = " + count)
   }
+
+  useMemo(()=>{
+    if (ru==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list2.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list2,ru])
+  
   
 
   return (

@@ -8,6 +8,7 @@ import { Alobar } from './Alobar'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 //import { useDispatch} from 'react-redux'
+import Shop from '../../burger/корзина/Shop';
 
 
 
@@ -19,18 +20,22 @@ const Bar = () => {
   const [display_alko,set_display_alko]= useState(false)
   const [display_bar,set_display_bar]= useState(false)
   const dispatch = useDispatch();
-  
+
+  const list = useSelector(state=>state.chek)
+    const list_en =useSelector(state=>state.chek_en)
+    const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
 function func(e){
   const target = e.target.textContent
     
   if (ru==="ru"){
     dispatch({type:"add",payload:target})
-    //setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
   }
 
   if (ru==="en"){
     dispatch({type:"add_en",payload:target})
-    //setcount(list2.reduce(function(sum,num){return num.count + sum},0))
+    setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
   }
   
   
@@ -46,9 +51,11 @@ function func(e){
   useEffect(()=>{
     if(ru==="ru"){
       set_barlist(bar_menu)
+
     }
     if(ru==="en"){
       set_barlist(bar_menu_en)
+
     }
   },[ru,bar_menu,bar_menu_en])
 
@@ -97,7 +104,13 @@ function func(e){
     setdislay(true)
     
   }
-
+  useMemo(()=>{
+    if (ru==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list_en,ru])
   // function add(e){
   //   const chek = e.target.textContent
   //   dispatch({type:"add",payload:chek})
@@ -106,6 +119,7 @@ function func(e){
     
   return (
     <>
+    <Shop count={count}/>
     <div className={display?"wrap_bar_1":"wrap_bar_1 none"}>
 
     <Link to="/menu" className='btn-back' >←</Link>
@@ -115,7 +129,7 @@ function func(e){
         <div className='wrap_img_bar'><img src={imgbar} alt="" /></div>
         {/* <div className='btn' onClick={back}><img className="strelka"src={strelka} alt="" /></div> */}
     </div>
-    <Vine display={display_vine} back={backvine} add={func}/>
+    <Vine display={display_vine} back={backvine} add={func} />
     <Barnapitki display = {display_bar} back={backvine} add={func}/>
     <Alobar display = {display_alko} back={backvine} add={func}/>
     </>

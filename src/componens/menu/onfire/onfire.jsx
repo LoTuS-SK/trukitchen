@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useMemo, useState} from 'react'
 import "../snaks/snaks.css"
 //import { onFire } from '../../../data/database'
 import { useSelector , useDispatch} from 'react-redux'
@@ -18,20 +18,31 @@ const Onfire = () => {
   const dispath = useDispatch()
 
   const list = useSelector(state=>state.chek)
+  const list_en =useSelector(state=>state.chek_en)
   const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
+
+  useMemo(()=>{
+    if (ru==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list_en,ru])
 
   function func(e){
     const target = e.target.textContent
     
     if (ru==="ru"){
       dispath({type:"add",payload:target})
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
     }
 
     if (ru==="en"){
       dispath({type:"add_en",payload:target})
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
     }
     
-    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    
 
     
     //console.log("количество = " + count)
@@ -113,7 +124,32 @@ const Onfire = () => {
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Люля из щуки и Сахалинского гребешка":"Kebub from pike and Sakhalin scallop"}</div>
             {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
-            <span className='price-pl'>210 г / 680 ₽</span>
+            <span className='price-pl'>1290 ₽</span>
+          </div> 
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Стейк Мачете":"Steak Machete"}</div>
+            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <span className='price-pl'>1290 ₽</span>
+          </div> 
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Стейк Чак рол":"Chuck ol Steak"}</div>
+            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <span className='price-pl'>1290₽</span>
+          </div> 
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Стейк Пиканья":"Steak Picanya"}</div>
+            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <span className='price-pl'> 1290 ₽</span>
+          </div> 
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Т-бон":"T-bone Steak"}</div>
+            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <span className='price-pl'>100 г / 690 ₽</span>
+          </div> 
+          <div className='item_pal' tabIndex="0" >
+            <div className='label' onClick={func}>{ru==="ru"?"Стейк Ковбой":"Cowboy Steak"}</div>
+            {/* <div className="wr_img"><img src={feele} alt="" /></div> */}
+            <span className='price-pl'>100 г / 690 ₽</span>
           </div> 
 
           <div className='item_pal' tabIndex="0" >

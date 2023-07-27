@@ -124,7 +124,7 @@ const cheking = (state = chek,action) =>{
             
             return state
 
-        case "del":
+        case "delone_en":
             chek = [];    
             console.log(chek)
         return state = chek   
@@ -137,7 +137,7 @@ const cheking = (state = chek,action) =>{
             }
         })
         
-        return state
+        return state = chek
         
         
         case "del-all":

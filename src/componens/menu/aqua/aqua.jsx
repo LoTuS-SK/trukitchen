@@ -1,4 +1,4 @@
-import React , {useState}from 'react'
+import React , {useState,useMemo}from 'react'
 import "../snaks/snaks"
 //import { aqua } from '../../../data/database'
 import { useDispatch, useSelector } from 'react-redux'
@@ -34,11 +34,19 @@ const Aqua = () => {
       setcount(list2.reduce(function(sum,num){return num.count + sum},0))
     }
     
-    
+   
 
     
     //console.log("количество = " + count)
   }
+
+  useMemo(()=>{
+    if (ru==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list2.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list2,ru])
   
 
   return (

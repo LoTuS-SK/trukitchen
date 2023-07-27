@@ -137,7 +137,7 @@ const cheking = (state = chek,action) =>{
             }
         })
         
-        return state
+        return state = chek
         
         
         case "del-all2":

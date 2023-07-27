@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState,useMemo}from 'react'
 //import { snakes } from "../../../data/database"
 // import strelka from "../../../png/strelka.png"
 import "../snaks/snaks.css"
@@ -45,13 +45,15 @@ const dispath = useDispatch()
       dispath({type:"add_en",payload:target})
       setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
     }
-
-    
-    
-
-    
-    //console.log("количество = " + count)
   }
+  useMemo(()=>{
+    if (lean==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list_en,lean])
+    
 
   return (
     <>

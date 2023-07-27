@@ -6,7 +6,10 @@ import { useSelector } from 'react-redux'
 const W_VINE = ({display,back,add}) => {
   
     const ru = useSelector(state=>state.one)
+
   
+
+
     return (
     <div className={display?"w_wr_vine":"w_wr_vine none"}>
         <div className='btn-back' onClick={back}>←</div>

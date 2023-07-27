@@ -1,4 +1,4 @@
-import React ,{ useState } from 'react'
+import React ,{ useState,useMemo } from 'react'
 import "../snaks/snaks"
 //import {hotbluda} from "../../../data/database"
 import { useSelector, useDispatch } from "react-redux"
@@ -21,6 +21,7 @@ const lean = useSelector(state=>state.one)
 const dispath = useDispatch()
 
 const list = useSelector(state=>state.chek)
+const list_en =useSelector(state=>state.chek_en)
 const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
 function func(e){
@@ -28,17 +29,24 @@ function func(e){
   
   if (lean==="ru"){
     dispath({type:"add",payload:target})
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
   }
 
   if (lean==="en"){
     dispath({type:"add_en",payload:target})
+    setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
   }
-  
-  setcount(list.reduce(function(sum,num){return num.count + sum},0))
+}
+useMemo(()=>{
+  if (lean==="ru"){
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
+  } else{
+    setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+  }
+},[list,list_en,lean])
 
   
-  //console.log("количество = " + count)
-}
+  //console.log("количество =}
 
   return (
     <>

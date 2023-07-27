@@ -122,6 +122,7 @@ img .strelka{
     display: flex;
     border-bottom: 1px solid grey;
     padding-bottom: 12px;
+    justify-content: space-between;
 }
 .label_b{
     width: 70%;

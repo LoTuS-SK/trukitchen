@@ -1,4 +1,4 @@
-import React ,{ useState } from 'react'
+import React ,{ useState,useMemo } from 'react'
 //import strelka from "../../../png/strelka.png"
 import { Link } from "react-router-dom";
 import "./salat.css"
@@ -22,6 +22,7 @@ const Salat = () => {
   const dispath = useDispatch()
 
 const list = useSelector(state=>state.chek)
+const list_en =useSelector(state=>state.chek_en)
 const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
 
 function func(e){
@@ -29,17 +30,23 @@ function func(e){
   
   if (ru==="ru"){
     dispath({type:"add",payload:target})
+    setcount(list.reduce(function(sum,num){return num.count + sum},0))
   }
 
   if (ru==="en"){
     dispath({type:"add_en",payload:target})
+    setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
   }
-  
-  setcount(list.reduce(function(sum,num){return num.count + sum},0))
+ 
+  }
 
-  
-  //console.log("количество = " + count)
-}
+  useMemo(()=>{
+    if (ru==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list_en,ru])
 
   return (
     <>

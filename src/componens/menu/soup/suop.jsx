@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState,useMemo}from 'react'
 import "../snaks/snaks"
 import Shop from '../../burger/корзина/Shop';
 // import { soup } from '../../../data/database'
@@ -13,6 +13,7 @@ import svek from "../../../png/foot/svekolnik.png"
 const Suop = () => {
   const lean = useSelector(state=>state.one)
   const list = useSelector(state=>state.chek)
+  const list_en =useSelector(state=>state.chek_en)
   const [count,setcount] = useState(list.reduce(function(sum,num){return num.count + sum},0))
   
   const dispath = useDispatch()
@@ -23,19 +24,22 @@ const Suop = () => {
     
     if (lean==="ru"){
       dispath({type:"add",payload:target})
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
     }
 
     if (lean==="en"){
       dispath({type:"add_en",payload:target})
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
     }
-    
-    setcount(list.reduce(function(sum,num){return num.count + sum},0))
-
-
-
-
-
   }
+
+  useMemo(()=>{
+    if (lean==="ru"){
+      setcount(list.reduce(function(sum,num){return num.count + sum},0))
+    } else{
+      setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
+    }
+  },[list,list_en,lean])
 
 
   

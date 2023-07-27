@@ -20,6 +20,14 @@
          
    }
 
+   @font-face {
+    font-family: chek;
+    src: url(../../../fonts/chek.ttf) format(ttf);
+    font-weight: 800;
+    font-style: normal;
+         
+   }
+
 
 
 .menu-back{
@@ -43,6 +51,20 @@
     text-align: center;
 }
 
+.button{
+    text-align: center;
+    border: 1px solid brown;
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    color: brown;
+    font-size: 20px;
+    margin:50px auto;
+}
+.wr_button{
+    font-family: h2;
+    margin: 20px auto;
+}
 
 .list_ch{
     position: relative;
@@ -144,3 +166,21 @@
             transform:translate(200px);
         }
         }
+Link {
+   
+}
+
+a{
+    color:brown;
+}
+
+.none{
+    display: none;
+}
+
+.logo3{
+    color:brown;
+    margin:10px 30px 0px 30px;
+    font-family: chek;
+    
+}
