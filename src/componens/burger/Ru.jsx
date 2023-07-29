@@ -17,7 +17,7 @@ const Ru = () => {
     if (ru==="en"){
      
       dispath({type:"ru"})
-      dispath({type:"delone"})
+      dispath({type:"del-all"})
     }
   } 
 

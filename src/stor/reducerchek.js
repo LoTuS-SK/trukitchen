@@ -2,6 +2,7 @@ import * as eat from "../data/database"
 import { vine }  from "../data/basevine"
 import * as bar from "../data/basebar"
 
+
 const arreat = []
 const arrbar = []
 let chek = []
@@ -52,7 +53,7 @@ const cheking = (state = chek,action) =>{
                 }
 
 
-                console.log(chek)
+                
                 return state = chek
             }
 
@@ -124,27 +125,26 @@ const cheking = (state = chek,action) =>{
             
             return state
 
-        case "delone_en":
-            chek = [];    
-            console.log(chek)
-        return state = chek   
-
+       
         case "delone":
-        const delone = action.payload
-        state.forEach((el)=>{
-            if(el.name===delone){
-                el.count = el.count -1 
-            }
-        })
+        let delone = action.payload
+       
+        if(delone===undefined){
+            delone = []
+        }
         
-        return state = chek
-        
+        return state = delone
         
         case "del-all":
-                const del = action.payload
+             
+               
+           return state = []
+   
+        // case "del-all":
+        //         const del = action.payload
                 
         
-        return state = del  
+        // return state = del  
             
         default:
             return state

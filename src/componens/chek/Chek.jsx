@@ -11,10 +11,15 @@ import logo from "../../img/Asset-1.png"
 
 
 const Сhek = () => {
+
+  //const ru = useSelector(state=>state.one)
   const list1 = useSelector(state => state.chek).filter(el=>el.count!==0)
   const list2 = useSelector(state => state.chek_en).filter(el=>el.count!==0)
   
-  
+  const [list_ru,setlist_ru] = useState([...list1])
+  const [list_en,setlist_en] = useState([...list2])
+
+  const dispath = useDispatch()
   
   //const lang = useSelector(state=>state.one)
   const table = useSelector(state=>state.qrcode)
@@ -24,65 +29,52 @@ const Сhek = () => {
   // const arr = JSON.parse(str)
   //console.log(lang)
   
-  const sum1 = list1.reduce(function(sum,num){
+  const sum1 = list_ru.reduce(function(sum,num){
     return (num.price * num.count) + sum
   },0)
 
-  const sum2 = list2.reduce(function(sum,num){
+  const sum2 = list_en.reduce(function(sum,num){
     return (num.price * num.count) + sum
   },0)
 
  
-const dispath = useDispatch()
 
-function click(e){
+
+function click_ru(e){
   
   const target = e.target.textContent
+ const a =  list1[list1.findIndex(el=>el.name===target)].count
+ list1[list1.findIndex(el=>el.name===target)].count = a -1
+ 
+ const filter = list1.filter(el=>el.count!==0)
+setlist_ru([...filter])
 
-  list2.forEach(el=>{
-    if((el.name_en)===target){
-      
-      console.log(list2)
-      dispath({type:"delone_en",payload:target})
-      
-      //setsum(list3.reduce(function(sum,num){return (num.price * num.count) + sum},0))
-  }})
-  
+if (filter.length===0){
+  dispath({type:"del-all"})
+}
+ 
+ 
+ 
+ 
 
-  list2.forEach(el=>{
-    if(el.count===0){
-      const arr = list2.filter(el=>el.count!==0)
-      dispath({type:"del-all",payload:arr})
-    }
-  }
-  
-  )
+ 
 
-  
 
+ // console.log(list1[list1.findIndex(el=>el.name===target)].count)
 }
 
-function click2(e) {
-   const target = e.target.textContent
-   
-   list1.forEach(el=>{
-    if((el.name)===target){
-      //console.log(target)
-      dispath({type:"delone",payload:target})
-      //setsum(list3.reduce(function(sum,num){return (num.price * num.count) + sum},0))
-  }})
-
-
-    list1.forEach(el=>{
-      if(el.count===0){
-        const arr = list1.filter(el=>el.count!==0)
-        dispath({type:"del-all",payload:arr})
-      }
-    }
-    )
-    
-
+function click_en(e){
+  
+  const target = e.target.textContent
+  const a =  list2[list2.findIndex(el=>el.name_en===target)].count
+  list2[list2.findIndex(el=>el.name_en===target)].count = a -1
+  
+  const filter = list2.filter(el=>el.count!==0)
+ setlist_en([...filter])
+  
 }
+
+
 
 
 const bot = {
@@ -142,22 +134,22 @@ function animesend(){
       </Link>
       <div className="wr_logo_ch"><img className='logo-ch-2' src={logo} alt=""/></div>
       <div className={dis?"true":"none"}>
-      {list1.length===0 && list2.length===0 && <div className="button"><Link to={"/"} className='back_li'>Выбирите блюдо</Link></div>}
-      {list1.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
-      {list2.length>0 && <h1 className='zakaz'>You choise</h1>}
+      {list_ru.length===0 && list_en.length===0 && <div className="button"><Link to={"/"} className='back_li'>Выбирите блюдо</Link></div>}
+      {list_ru.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
+      {list_en.length>0 && <h1 className='zakaz'>You choise</h1>}
       <div className="test">
         
-        {list1.length>0 && list1.map(state=>(
+        {list_ru.length>0 && list_ru.map(state=>(
         <div className='list_ch'>
-           <div className='name' onClick={click2}>{state.name}</div>
+           <div className='name' onClick={click_ru}>{state.name}</div>
            <span className='count' data-id={state.name}>{state.count}</span>
            <div className='prise'><div>{state.count * state.price} ₽</div></div>      
         </div> 
       ))}
 
-     {list2.length>0 && list2.map(state=>(
+     {list_en.length>0 && list_en.map(state=>(
         <div className='list_ch'>
-           <div className='name' onClick={click} >{state.name_en}</div>
+           <div className='name' onClick={click_en} >{state.name_en}</div>
            <span className='count'  data-id={state.name_en}>{state.count}</span>
            <div className='prise'><div>{state.count * state.price} ₽</div></div>      
         </div> 
@@ -169,13 +161,13 @@ function animesend(){
            <div className='prise'><div>{state.count * state.price} ₽</div></div>      
         </div> 
       ))} */}
-      {list1.length>0 && <div className="acc"><span className='sum'>Итого: {sum1} ₽</span></div>}
-      {list2.length>0 && <div className="acc"><span className='sum'>count: {sum2} ₽</span></div>}
+      {list_ru.length>0 && <div className="acc"><span className='sum'>Итого: {sum1} ₽</span></div>}
+      {list_en.length>0 && <div className="acc"><span className='sum'>count: {sum2} ₽</span></div>}
       {/* {list3.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>} */}
       
     
 
-{list1.length>0 &&<div className="wr_button"><div to="/menu"><div className="button" onClick={send2}>Отправить </div></div></div>}
+{list_ru.length>0 &&<div className="wr_button"><div to="/menu"><div className="button" onClick={send2}>Отправить </div></div></div>}
           </div>
       </div> 
      {table.name && <h2 className={dis?'none':"logo3"}> Заказ отправлен</h2>}

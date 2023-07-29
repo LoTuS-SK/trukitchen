@@ -124,21 +124,43 @@ const cheking = (state = chek,action) =>{
             
             return state
 
-        case "delone":
-            chek = [];    
-            console.log(chek)
-        return state = chek   
+        // case "delone":
+        //     chek = [];    
+        //     console.log(chek)
+        // return state = chek   
 
-        case "delone_en":
-        const delone = action.payload
-        state.forEach((el)=>{
-            if(el.name_en===delone){
-                el.count = el.count -1 
-            }
-        })
+        // case "delone_en":
+        // const delone = action.payload
+        // state.forEach((el)=>{
+        //     if(el.name_en===delone){
+        //         el.count = el.count -1 
+        //     }
+        // })
         
-        return state = chek
+        // return state 
         
+        // case "delone_en":
+        // const delone = action.payload
+        
+        
+        // const rh = state.map((el)=>{
+        //     if(el.name_en===delone[0].name_en){
+        //         el.count = el.count -1 
+        //         return el
+        //     }
+        // })
+        // console.log(state)
+        // return  state = rh
+
+        case "del-all":
+             
+               
+        return state = []
+
+
+
+
+
         
         case "del-all2":
                 const del = action.payload
