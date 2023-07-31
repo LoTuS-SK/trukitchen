@@ -15,6 +15,8 @@ const Сhek = () => {
   //const ru = useSelector(state=>state.one)
   const list1 = useSelector(state => state.chek).filter(el=>el.count!==0)
   const list2 = useSelector(state => state.chek_en).filter(el=>el.count!==0)
+  //const chttic = useSelector(state => state.chtic)
+
   
   const [list_ru,setlist_ru] = useState([...list1])
   const [list_en,setlist_en] = useState([...list2])
@@ -45,6 +47,7 @@ function click_ru(e){
   const target = e.target.textContent
  const a =  list1[list1.findIndex(el=>el.name===target)].count
  list1[list1.findIndex(el=>el.name===target)].count = a -1
+ dispath({type:"chek",payload:list1})
  
  const filter = list1.filter(el=>el.count!==0)
 setlist_ru([...filter])
@@ -86,7 +89,7 @@ const bot = {
 
 
 
-function send2(){
+async function send2(){
  //console.log("yes")
  setdis(false)
  animesend()
@@ -98,8 +101,20 @@ function send2(){
  message +='                                              '
 
  list1.forEach(element=>{
+  if(element.name==="Дигустационный сет/3"){
+    message += `${element.name} - 1 `
+    message +='                                              '
+    element.tri.forEach(el=>{
+      message +='                                              '
+      message += `${el}`
+    })
+    message +='                                              '
+    return 
+  }
+
   message += `${element.name} - ${element.count} `
   message +='                                           '
+  
  })
  list2.forEach(element=>{
   message += `${element.name} - ${element.count} `
@@ -110,8 +125,22 @@ function send2(){
 
  //const message  = JSON.stringify(list)
   fetch(`https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatID}&text=${message}`,{method:"GET"})
+//  const server = "http://localhost:5001/pdf"
+ 
+//   fetch(server,{
+//     method:"POST",
+//     headers: {
+//       'Content-Type': 'application/json'
+//        //'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     credentials: 'same-origin',
+//     mode: 'cors',
+//     body:JSON.stringify(list1)
+//   }).then(data=>{console.log(data)})
 
-
+// const mess = await fetch("http://localhost:5001/message",{method:"GET"})
+// const text = await mess.json()
+// console.log(text)
 }
 
 const [activ,setactiv]= useState(true) 
@@ -134,36 +163,47 @@ function animesend(){
       </Link>
       <div className="wr_logo_ch"><img className='logo-ch-2' src={logo} alt=""/></div>
       <div className={dis?"true":"none"}>
-      {list_ru.length===0 && list_en.length===0 && <div className="button"><Link to={"/"} className='back_li'>Выбирите блюдо</Link></div>}
-      {list_ru.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
-      {list_en.length>0 && <h1 className='zakaz'>You choise</h1>}
+        {list_ru.length===0 && list_en.length===0 && <div className="button"><Link to={"/"} className='back_li'>Выберите блюдо</Link></div>}
+        {list_ru.length>0 && <h1 className='zakaz'>Ваш заказ</h1>}
+        {list_en.length>0 && <h1 className='zakaz'>You choise</h1>}
       <div className="test">
         
         {list_ru.length>0 && list_ru.map(state=>(
-        <div className='list_ch'>
-           <div className='name' onClick={click_ru}>{state.name}</div>
-           <span className='count' data-id={state.name}>{state.count}</span>
-           <div className='prise'><div>{state.count * state.price} ₽</div></div>      
-        </div> 
+       
+              <div className="wr">
+               <div className="list_ch">
+                <div className='name' onClick={click_ru}>{state.name}</div>
+                <span className='count' data-id={state.name}>{state.count}</span>
+                <div className='prise'>
+                  <div>{state.count * state.price} ₽</div>      
+                </div>
+                </div>
+                <div className='wr_tic'>
+               {state.tri?state.tri.map(el=>(
+                  <div className="tica">{el}</div>
+                )):""}
+                </div>  
+                </div>
+             
+            
+              
+                
+        
       ))}
-
-     {list_en.length>0 && list_en.map(state=>(
-        <div className='list_ch'>
+      
+     {list_en.length>0 && list_en.map((state,index)=>(
+        <div className='list_ch' key={index}>
            <div className='name' onClick={click_en} >{state.name_en}</div>
            <span className='count'  data-id={state.name_en}>{state.count}</span>
-           <div className='prise'><div>{state.count * state.price} ₽</div></div>      
+           <div className='prise'><div>{state.count * state.price} ₽</div>
+           </div> 
+
         </div> 
+        
       ))}
-      {/* {list3.map(state=>(
-        <div className='list_ch'>
-           <div className='name' >{state.name}</div>
-           <span className='count'  data-id={state.name}>{state.count}</span>
-           <div className='prise'><div>{state.count * state.price} ₽</div></div>      
-        </div> 
-      ))} */}
+     
       {list_ru.length>0 && <div className="acc"><span className='sum'>Итого: {sum1} ₽</span></div>}
       {list_en.length>0 && <div className="acc"><span className='sum'>count: {sum2} ₽</span></div>}
-      {/* {list3.length===0 && <Link to={"/"} ><h1 className='zakaz'>Выберите блюдо</h1></Link>} */}
       
     
 

@@ -7,7 +7,6 @@ import { Barnapitki } from './barnapiiki'
 import { Alobar } from './Alobar'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
-//import { useDispatch} from 'react-redux'
 import Shop from '../../burger/корзина/Shop';
 
 
@@ -29,11 +28,23 @@ function func(e){
   const target = e.target.textContent
     
   if (ru==="ru"){
+    if(target==="Дигустационный сет/3"||target==="Дигустационный сет/5"){
+      setdistic(true)
+      set_display_alko(false)
+    }
+    
+    
     dispatch({type:"add",payload:target})
     setcount(list.reduce(function(sum,num){return num.count + sum},0))
   }
 
   if (ru==="en"){
+    if(target==="Digustation set/3"||target==="Digustation set/5"){
+      setdistic(true)
+      
+    }
+
+
     dispatch({type:"add_en",payload:target})
     setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
   }
@@ -111,11 +122,16 @@ function func(e){
       setcount(list_en.reduce(function(sum,num){return num.count + sum},0))
     }
   },[list,list_en,ru])
-  // function add(e){
-  //   const chek = e.target.textContent
-  //   dispatch({type:"add",payload:chek})
-  //   console.log(chek)
-  // }
+
+  const [distic,setdistic] = useState(false)
+
+  function distic_off(){
+    setdistic(false)
+  }
+
+  function display_on(){
+    set_display_alko(true)
+  }
     
   return (
     <>
@@ -131,7 +147,14 @@ function func(e){
     </div>
     <Vine display={display_vine} back={backvine} add={func} />
     <Barnapitki display = {display_bar} back={backvine} add={func}/>
-    <Alobar display = {display_alko} back={backvine} add={func}/>
+    <Alobar 
+    display = {display_alko} 
+    display_on = {display_on}
+    back={backvine} 
+    add={func} 
+    distic={distic}
+    distic_off={distic_off}
+    />
     </>
   )
 }

@@ -140,3 +140,13 @@ img .strelka{
 .none{
     display: none;
 }
+
+.yes{
+    color:brown
+}
+.ticwrap{
+    font-size: 25px;
+    padding-left: 10px;
+    
+    border-bottom: 1px solid grey;
+}
