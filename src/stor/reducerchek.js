@@ -19,7 +19,7 @@ for (const property in eat) {
   }
   
 
-
+console.log(bar)
 
 const cheking = (state = chek,action) =>{
     switch (action.type) {
@@ -28,7 +28,7 @@ const cheking = (state = chek,action) =>{
             const eat = arreat.some(some=>some.name===add)
             const bar = arrbar.some(some=>some.name===add)
             const vine2 = vine.some(some=>some.name===add)
-            
+            console.log(bar)
             
             if (eat&&chek.length===0) {
                 const ch = arreat.filter(el=>el.name===add)

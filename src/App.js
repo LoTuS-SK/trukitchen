@@ -1,4 +1,4 @@
-
+//import { createRef } from 'react'
 import './App.css';
 import Menu from "./componens/menu/Menu";
 import {Routes,Route} from 'react-router-dom';
@@ -20,7 +20,7 @@ import Bron from "../src/componens/bron/bron"
 
 
 function App() {
-
+  
 
   
   return (
@@ -29,10 +29,10 @@ function App() {
     
   
     <Routes>
-    <Route index element = {<Menu/>} />
+    <Route path={'/'}index element = {<Menu/>}/>
       <Route path={"qrcode"} element={<Qr/>} />
-      <Route path={"menu"} element={<Menu/>} />
-      <Route path="chek" element={<Chek/>} />
+      <Route path={"menu"}element={<Menu/>}/>
+      <Route path={"chek"} element={<Chek/>}/>
       <Route path={"/snaks"} element={<Snaks/>} />
       <Route path={"/salat"} element={<Salat/>} />
       <Route path={"hot"} element={<Hot/>} />

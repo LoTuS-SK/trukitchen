@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import './chek.css'
-// import { useSearchParams } from "react-router-dom"
+ import { useLocation } from "react-router-dom"
 // import { snakes } from '../../data/database'
 import { useSelector , useDispatch} from 'react-redux'
 import menu from "../../png/menu2.png"
@@ -152,10 +152,11 @@ function animesend(){
   } 
   
 }
+const location = useLocation()
 
-
+console.log(location.pathname)
   return (
-    <div> 
+    <div className='page'> 
       <Link to={`/?name=${table.name}&table=${table.table}`} className='back'>
         
         <img src={menu} alt="" className='menu-back'/>

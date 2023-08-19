@@ -42,4 +42,38 @@ img{
     transform: rotate(360deg);
   }
 }
+/* .page-enter {
+  
+  transform: translateX(-400);
+} */
+.page-enter-active {
+  animation: fade-in 1s forwards;
+}
+/* .page-exit {
+ 
+  transform: translateX(-400);
+} */
+.page-exit-active {
+  animation: fade-out 1s forwards;
+}
+
+
+
+@keyframes fade-in{
+  from {
+    transform: translateX(-400);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(400);
+  }
+}
 

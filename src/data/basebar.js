@@ -158,8 +158,12 @@ export const strong = [
     {id:4,name:"Клаусталер безалкогольное",name_en:"Clausthaler Original Non-Alcoholic",price:420,volume:500,section:"пиво"},
     {id:4,name:"Сидр Маглуар п/сл",name_en:"Pere Magloire",price:1890,volume:750,section:"пиво"},
     {id:4,name:"Чистые россы",name_en:"Pure Rosses",price:450,volume:50,section:"водка"},
+    {id:4,name:"Чистые россы",name_en:"Pure Rosses",price:9000,volume:1000,section:"водка"},
     {id:4,name:"Золотая Царская",name_en:"Golden Royal",price:320,volume:50,section:"водка"},
-    {id:4,name:"Онегин",name_en:"Onegin",price:470,volume:50,section:"водка"},
+    {id:4,name:"Золотая Царская",name_en:"Golden Royal",price:6400,volume:1000,section:"водка"},
+    
+    {id:4,name:"Онегин",name_en:"Onegin",price:6580,volume:50,section:"водка"},
+    {id:4,name:"Онегин",name_en:"Onegin",price:6580,volume:700,section:"водка"},
     {id:4,name:"Косогоров Самогон No2 Пшеничный",name_en:"Kosogorov Moonshine No2 Wheatd",price:320,volume:50,section:"водка"},
     {id:4,name:"Косогоров Самогон» No3 Ржаной",name_en:"Kosogorov Moonshine No3 Rye",price:320,volume:50,section:"водка"},
 
@@ -220,13 +224,13 @@ export const tee =[
     
 ]
 
-export const vodka = [
-    {id:4,name:"Чистые россы",price:450,volume:50,section:"водка"},
-    {id:4,name:"Золотая Царская",price:320,volume:50,section:"водка"},
-    {id:4,name:"Онегин",price:470,volume:50,section:"водка"},
-    {id:4,name:"Косогоров Самогон No2 Пшеничный",price:270,volume:50,section:"водка"},
-    {id:4,name:"Косогоров Самогон» No3 Ржаной",price:270,volume:50,section:"водка"},
-]
+// export const vodka = [
+//     {id:4,name:"Чистые россы",price:450,volume:50,section:"водка"},
+//     {id:4,name:"Золотая Царская",price:320,volume:50,section:"водка"},
+//     {id:4,name:"Онегин",price:470,volume:50,section:"водка"},
+//     {id:4,name:"Косогоров Самогон No2 Пшеничный",price:270,volume:50,section:"водка"},
+//     {id:4,name:"Косогоров Самогон» No3 Ржаной",price:270,volume:50,section:"водка"},
+// ]
  export const APERITIFS = [
     {id:4,name:"Гран Марье",name_en:"Grand Marnier",price:450,volume:50,section:"Аперитивы"},
     {id:4,name:"Апероль",name_en:"Aperol",price:650,volume:50,section:"Аперитивы"},
