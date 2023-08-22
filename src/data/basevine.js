@@ -100,7 +100,7 @@ export const vine = [
     {name:"Каса Делла Неббиа Барбареско",name_en:"Barbaresco Casa Della Nebbia",country:"Италия",type:"красное",producer:"классика",price:6900},
     {name:"Кьянти Классико Агрикола Кверчабелла",name_en:"Chianti Classico Agricola Querciabella",country:"Италия",type:"красное",producer:"виником",price:7700},
     {name:"Амороне Делла Вальполичелла",name_en:"Amarone della Valpolicella, Ottella Ripa della Volta",country:"Италия",type:"красное",producer:"???",price:12500},
-    {name:"Изоле е Олена Чеппарелло",name_en:"",country:"Италия",type:"красное",producer:"ДП ТРЕЙД",price:19700},
+    {name:"Изоле е Олена Чеппарелло",name_en:"Isole e Olena,Cepparello,Toscana",country:"Италия",type:"красное",producer:"ДП ТРЕЙД",price:19700},
     {name:"Курни о Аси Марк",name_en:"Kurni Oasi degli Angeli",country:"Италия",type:"красное",producer:"симпл",price:21000},
     {name:" 50 & 50  Капанелле Тоскана",name_en:"50&50 Capannelle Toscana",country:"Италия",type:"красное",producer:"симпл",price:31500},
     {name:"Сассикая Болгери",name_en:"Sassicaia , Bolgheri Sassicaia Tenuta San Guido",country:"Италия",type:"красное",producer:"симпл",price:49100},
