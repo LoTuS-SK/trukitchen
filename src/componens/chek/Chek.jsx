@@ -207,10 +207,11 @@ console.log(location.pathname)
       {list_en.length>0 && <div className="acc"><span className='sum'>count: {sum2} ₽</span></div>}
       
     
-
+      {list_en.length>0 &&<div className="wr_button"><div to="/menu"><div className="button" onClick={send2}>Отправить </div></div></div>}
 {list_ru.length>0 &&<div className="wr_button"><div to="/menu"><div className="button" onClick={send2}>Отправить </div></div></div>}
           </div>
       </div> 
+     
      {table.name && <h2 className={dis?'none':"logo3"}> Заказ отправлен</h2>}
 
   </div>

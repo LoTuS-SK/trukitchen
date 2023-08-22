@@ -160,7 +160,7 @@ export const strong = [
     {id:4,name:"Чистые россы",name_en:"Pure Rosses",price:450,volume:50,section:"водка"},
     {id:4,name:"Чистые россы 1л",name_en:"Pure Rosses 1l",price:9000,volume:1000,section:"водка"},
     {id:4,name:"Золотая Царская",name_en:"Golden Royal",price:320,volume:50,section:"водка"},
-    {id:4,name:"Золотая Царская 1л",name_en:"Golden Royal 1l",price:6400,volume:1000,section:"водка"},
+    {id:4,name:" Золотая Царская",name_en:"Golden Royal 1l",price:6400,volume:1000,section:"водка"},
     
     {id:4,name:"Онегин ",name_en:"Onegin",price:6580,volume:50,section:"водка"},
     {id:4,name:"Онегин 0,7",name_en:"Onegin 0,7",price:6580,volume:700,section:"водка"},

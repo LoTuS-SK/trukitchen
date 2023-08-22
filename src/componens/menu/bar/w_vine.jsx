@@ -35,14 +35,11 @@ const W_VINE = ({display,back,add}) => {
     {vine.filter(el=>(el.country==="Италия")&&(el.type==="белое")).map(el=>(
         <div className='vine-items'><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
-    <h2 className='h2'>SPIN / ИТАЛИЯ</h2>
-    {vine.filter(el=>(el.country==="Италия")&&(el.type==="белое")).map(el=>(
+    <h2 className='h2'>SPAIN / ИСПАНИЯ</h2>
+    {vine.filter(el=>(el.country==="Испания")&&(el.type==="белое")).map(el=>(
         <div className='vine-items'><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
     ))}
-    <h2 className='h2'>SPIN / ИТАЛИЯ</h2>
-    {vine.filter(el=>(el.country==="Италия")&&(el.type==="белое")).map(el=>(
-        <div className='vine-items'><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
-    ))}
+   
     <h2 className='h2'>USA / США</h2>
     {vine.filter(el=>(el.country==="США")&&(el.type==="белое")).map(el=>(
         <div className='vine-items'><div className='items' onClick={add}>{ru==="ru"?el.name:el.name_en}</div><span className='h2'>{el.price} ₽</span></div>
