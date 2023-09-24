@@ -61,7 +61,7 @@ if (ru==="en"){
     {/* <Link to="/chek"><img  className='chek' src={chekimg} alt="img"/></Link> */}
     <div className="wrap">
    <img className='logo' src={logo}  alt=""/>
-    <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snakes"}</Link>
+    <Link to="/snaks"  className='menu-items new' >{ru==="ru"?"Закуски":"Snackes"}</Link>
     <Link to="/salat" className='menu-items new' >{ru==="ru"?"Салаты":"Salats"}</Link>
     <div className="li"><Link to="/hot" className='menu-items new'>{ru==="ru"?"Горячие блюда":"Hot dishes"}</Link></div>
     <Link to="/soup" className='menu-items new'>{ru==="ru"?"Супы":"Soups"}</Link>
