@@ -72,7 +72,7 @@ function func(e){
           <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Буррата со сладкими томатами":"Burrata with sweet tomatoes"}</div>
             <div className="wr_img"><img src={burat} alt="" /></div>
-            <span className='price-pl'>220 г / 850 ₽</span>
+            <span className='price-pl'>220 г / 950 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
