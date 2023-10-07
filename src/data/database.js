@@ -150,7 +150,7 @@ export const salat = [
     {id:30,
         name:"Буррата со сладкими томатами",
         name_en:"Burrata with sweet tomatoes",
-        price:850,weight:220,section:"салаты"},
+        price:950,weight:220,section:"салаты"},
     {id:31,
         name:"Салат по-деревенски",
         name_en:"rustic salad",
