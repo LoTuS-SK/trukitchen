@@ -22,7 +22,7 @@ export const snakes = [
     {id:4,
         name:"Икра нерки с румяными тостами и сливочным маслом",
         name_en:"Sockeye salmon caviar with ruddy toast and butter",
-        price:550,
+        price:820,
         weight:100,
         section:"закуски"},
     {id:5,

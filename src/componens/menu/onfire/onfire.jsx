@@ -63,7 +63,7 @@ const Onfire = () => {
     <div className='item_pal' tabIndex="0" >
             <div className='label' onClick={func}>{ru==="ru"?"Камамбер на гриле с брусничным вареньем":"Grilled camembert with lingonberry jam"}</div>
             <div className="wr_img"><img src={kamamber} alt="" /></div>
-            <span className='price-pl'>125г / 670 ₽</span>
+            <span className='price-pl'>125г / 690 ₽</span>
           </div>
 
           <div className='item_pal' tabIndex="0" >
